@@ -92,5 +92,83 @@ namespace CRM_DAL
             finally { con.Close(); }
 
         }
+
+        public int InsuranceDefaultSMS_Insert_Update_Delete(BALDefaultSMS bdefaultSMS)
+        {
+            try
+            {
+
+                con.Open();
+                cmd = new SqlCommand("SP_InsuranceDefaultSMS", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Flag", 1);
+                cmd.Parameters.AddWithValue("@SelectCategory", bdefaultSMS.SelectCategory);
+                cmd.Parameters.AddWithValue("@DefaultDate", bdefaultSMS.DefaultSMSDate);
+                cmd.Parameters.AddWithValue("@DefaultMessage", bdefaultSMS.DefaultMessage);
+                cmd.Parameters.AddWithValue("@S_Status", bdefaultSMS.S_Status);
+                cmd.Parameters.AddWithValue("@C_Date", bdefaultSMS.C_Date);
+                int i = cmd.ExecuteNonQuery();
+                return i;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { con.Close(); }
+
+        }
+
+        public int DealerFollowupDefaultSMS_Insert_Update_Delete(BALDefaultSMS bdefaultSMS)
+        {
+            try
+            {
+
+                con.Open();
+                cmd = new SqlCommand("SP_DealerFollowupDefaultSMS", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Flag", 1);
+                cmd.Parameters.AddWithValue("@SelectCategory", bdefaultSMS.SelectCategory);
+                cmd.Parameters.AddWithValue("@DefaultDate", bdefaultSMS.DefaultSMSDate);
+                cmd.Parameters.AddWithValue("@DefaultMessage", bdefaultSMS.DefaultMessage);
+                cmd.Parameters.AddWithValue("@S_Status", bdefaultSMS.S_Status);
+                cmd.Parameters.AddWithValue("@C_Date", bdefaultSMS.C_Date);
+                int i = cmd.ExecuteNonQuery();
+                return i;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { con.Close(); }
+
+        }
+
+        public int CustomerFollowupDefaultSMS_Insert_Update_Delete(BALDefaultSMS bdefaultSMS)
+        {
+            try
+            {
+
+                con.Open();
+                cmd = new SqlCommand("SP_CustomerFollowupDefaultSMS", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Flag", 1);
+                cmd.Parameters.AddWithValue("@SelectCategory", bdefaultSMS.SelectCategory);
+                cmd.Parameters.AddWithValue("@DefaultDate", bdefaultSMS.DefaultSMSDate);
+                cmd.Parameters.AddWithValue("@DefaultMessage", bdefaultSMS.DefaultMessage);
+                cmd.Parameters.AddWithValue("@S_Status", bdefaultSMS.S_Status);
+                cmd.Parameters.AddWithValue("@C_Date", bdefaultSMS.C_Date);
+                int i = cmd.ExecuteNonQuery();
+                return i;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { con.Close(); }
+
+        }
     }
 }

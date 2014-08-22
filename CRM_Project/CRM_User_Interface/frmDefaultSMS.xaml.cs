@@ -121,6 +121,75 @@ namespace CRM_User_Interface
                     con.Close();
                 }
             }
+            else if(cmbSelectCategory.Text.Equals("Insurance"))
+            {
+                try
+                {
+                    bdeafultSMS.Flag = 1;
+                    bdeafultSMS.SelectCategory = cmbSelectCategory.Text;
+                    bdeafultSMS.DefaultSMSDate = dtpDate.Text;
+                    bdeafultSMS.DefaultMessage = txtMessage.Text;
+                    bdeafultSMS.S_Status = "Active";
+                    bdeafultSMS.C_Date = System.DateTime.Now.ToShortDateString();
+                    ddefaultSMS.InsuranceDefaultSMS_Insert_Update_Delete(bdeafultSMS);
+                    MessageBox.Show("Data Save Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
+                    ResetText();
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            else if(cmbSelectCategory.Text.Equals("Dealer Follow-up"))
+            {
+                try
+                {
+                    bdeafultSMS.Flag = 1;
+                    bdeafultSMS.SelectCategory = cmbSelectCategory.Text;
+                    bdeafultSMS.DefaultSMSDate = dtpDate.Text;
+                    bdeafultSMS.DefaultMessage = txtMessage.Text;
+                    bdeafultSMS.S_Status = "Active";
+                    bdeafultSMS.C_Date = System.DateTime.Now.ToShortDateString();
+                    ddefaultSMS.DealerFollowupDefaultSMS_Insert_Update_Delete(bdeafultSMS);
+                    MessageBox.Show("Data Save Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
+                    ResetText();
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            else if(cmbSelectCategory.Text.Equals("Customer Follow-up"))
+            {
+                try
+                {
+                    bdeafultSMS.Flag = 1;
+                    bdeafultSMS.SelectCategory = cmbSelectCategory.Text;
+                    bdeafultSMS.DefaultSMSDate = dtpDate.Text;
+                    bdeafultSMS.DefaultMessage = txtMessage.Text;
+                    bdeafultSMS.S_Status = "Active";
+                    bdeafultSMS.C_Date = System.DateTime.Now.ToShortDateString();
+                    ddefaultSMS.CustomerFollowupDefaultSMS_Insert_Update_Delete(bdeafultSMS);
+                    MessageBox.Show("Data Save Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
+                    ResetText();
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
