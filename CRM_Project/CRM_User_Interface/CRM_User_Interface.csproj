@@ -70,6 +70,9 @@
     <Compile Include="frmCustomerBirthdayAlert.xaml.cs">
       <DependentUpon>frmCustomerBirthdayAlert.xaml</DependentUpon>
     </Compile>
+    <Compile Include="frmDefaultSMS.xaml.cs">
+      <DependentUpon>frmDefaultSMS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="frmInsurance.xaml.cs">
       <DependentUpon>frmInsurance.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="frmCustomerBirthdayAlert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmDefaultSMS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

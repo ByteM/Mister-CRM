@@ -48,7 +48,7 @@
                     <MenuItem Header="Open New Procurement" x:Name="smnewprocurement" Click="smnewprocurement_Click"/>
                     <MenuItem Header="Finalized Procurement" x:Name="smfprocurement"/>
                     <MenuItem Header="Notification" x:Name="smnotification"/>
-                    <MenuItem Header="Default Messages" x:Name="smdmessages"/>
+                    <MenuItem Header="Default Messages" x:Name="smdmessages" Click="smdmessages_Click"/>
                     <MenuItem Header="Default Timespan" x:Name="smdtime"/>
                     <MenuItem Header="Employee Details" x:Name="smemployee" Click="smemployee_Click"/>
                     <MenuItem Header="Dealer Details" x:Name="smdealerentry" Click="smdealerentry_Click" />

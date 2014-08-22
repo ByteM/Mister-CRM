@@ -144,7 +144,7 @@ namespace CRM_User_Interface
                 //baddprd.C_Date =Convert .ToDateTime( DATE);
                 bempetr.C_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
                 dempetr.EmployeeEntry_Insert_Update_Delete(bempetr);
-                MessageBox.Show("Data Save Successfully");
+                MessageBox.Show("Data Save Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
                 ResetText();
             }
             catch (Exception)
@@ -5524,6 +5524,11 @@ namespace CRM_User_Interface
         #endregion Insurance Event
         #endregion Insurance Function
 
+        private void smdmessages_Click(object sender, RoutedEventArgs e)
+        {
+            frmDefaultSMS obj = new frmDefaultSMS();
+            obj.ShowDialog();
+        }
     }
 }
 
