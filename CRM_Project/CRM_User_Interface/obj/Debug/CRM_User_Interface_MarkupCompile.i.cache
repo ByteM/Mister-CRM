@@ -4,16 +4,24 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\
+=======
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\
+>>>>>>> origin/master
 CRM_User_Interface
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\App.xaml
+=======
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\App.xaml
+>>>>>>> origin/master
 15411067390
 1-9177176
-25408174343
-211833442941
+251493031398
+211130327752
 Add Product\Add_Products.xaml;ADD_Tax.xaml;AdminLogin.xaml;Admin_Dashbord.xaml;CRM_AdminDashbord.xaml;CRM_MainDashbord.xaml;CRM_MainForm.xaml;CSS.xaml;frmCRM_DealerDetailsEdit.xaml;frmCRM_EmpDetailsEdit.xaml;frmCustomerBirthdayAlert.xaml;frmDefaultSMS.xaml;MainWindow.xaml;CRM_Main_Login.xaml;frmInsurance.xaml;
 
 False

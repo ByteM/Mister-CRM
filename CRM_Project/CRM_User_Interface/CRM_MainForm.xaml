@@ -6,7 +6,7 @@
         Title="CRM_Admin_Dashbord" Height="655" Width="1200"  WindowStartupLocation="CenterScreen"  Margin="0,0,0,0" WindowState="Normal"  AllowsTransparency="True" WindowStyle="None"  ShowInTaskbar="False" Background="Transparent">
     <Border BorderBrush="Transparent"   BorderThickness="1" Height="655" VerticalAlignment="Top" CornerRadius="15" Background="Black">
 
-        <Grid Margin="-1,-1,1,-1" >
+        <Grid Margin="-1,5,1,-7" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0*"/>
@@ -535,7 +535,7 @@
             <Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales"  Visibility="Hidden"                        VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <!--<Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales1"  Visibility="Hidden" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">-->
 
-                <Grid HorizontalAlignment="Left" Height="545" Visibility="Visible"  Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
+                <Grid HorizontalAlignment="Left" Height="545" Visibility="Hidden"   Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="191*"/>
                         <ColumnDefinition Width="38*"/>
@@ -1168,7 +1168,7 @@
             <TextBox x:Name="txtdiffdate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="690,15,0,0"/>
             <TextBox x:Name="txtnoti" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="470,38,0,0" Background="#FFD30711" Foreground="White"/>
 
-            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Hidden"      Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Visible"       Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
@@ -1218,19 +1218,19 @@
                 <Label Content="Customer Alert" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="459,0,0,0"/>
                 <Button x:Name="btnAlertExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1065,2,0,0" Click="btnAlertExit_Click"/>
                 <TextBox x:Name="txttestdate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="5,5,0,0"/>
-                <DataGrid HorizontalAlignment="Left" Name="DGRD_CAFollowup" Visibility="Hidden"  VerticalAlignment="Top" Margin="8,112,0,0" Height="435" Width="1142">
+                <DataGrid HorizontalAlignment="Left" Name="DGRD_CAFollowup" Visibility="Hidden" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="8,112,0,0" Height="435" Width="1142">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Width="20" x:Name="grdidCAF" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}" />
                         <DataGridTextColumn Header="FID" Width="80" x:Name="grdfidCAF" SortMemberPath="VisitorName" Binding="{Binding Followup_ID, Mode=TwoWay}" />
                         <DataGridTextColumn Header="Name" x:Name="grdNameCAF" Width="130" SortMemberPath="MobileNo" Binding="{Binding Name, Mode=TwoWay}" />
                         <DataGridTextColumn Header="Mobile_No" Width="100"  x:Name="grdmobileCAF" SortMemberPath="PhoneNo" Binding="{Binding Mobile_No, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="Date_Of_Birth" Width="90" x:Name="grddobCAF" SortMemberPath="VisitorAddress" Binding="{Binding Date_Of_Birth, Mode=TwoWay}" />
+                        <!--<DataGridTextColumn Header="Date_Of_Birth" Width="90" x:Name="grddobCAF" SortMemberPath="VisitorAddress" Binding="{Binding Date_Of_Birth, Mode=TwoWay}" />
                         <DataGridTextColumn Header="Email_ID" x:Name="grdeidCAF" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Email_ID, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="Address" x:Name="grdaddressCAF" Width="127" SortMemberPath="AvgBuget" Binding="{Binding Address, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="Address" x:Name="grdaddressCAF" Width="127" SortMemberPath="AvgBuget" Binding="{Binding Address, Mode=TwoWay}" />-->
                         <DataGridTextColumn Header="Product_Details" x:Name="grdprodetailsCAF" Width="100" SortMemberPath="AvgBuget" Binding="{Binding Product_Details, Mode=TwoWay}" />
                         <DataGridTextColumn Header="Followup_Type" x:Name="grdfollowuptypeCAF" Width="100" SortMemberPath="AvgBuget" Binding="{Binding Followup_Type, Mode=TwoWay}" />
                         <DataGridTextColumn Header="F_Date" x:Name="grdfdateCAF" SortMemberPath="AvgBuget" Width="80" Binding="{Binding F_Date, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="Issude_Date" x:Name="grdcdateCAF" Width="82" SortMemberPath="AvgBuget" Binding="{Binding C_Date, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="F_Message" x:Name="grdcfmessageCAF" Width="82" SortMemberPath="AvgBuget" Binding="{Binding F_Message, Mode=TwoWay}" />
                         <!--<DataGridCheckBoxColumn Header="IsInterested" x:Name="isInterested" SortMemberPath="IsInterested" Binding="{Binding IsInterested, Mode=TwoWay}" />-->
                         <DataGridTemplateColumn Header="Default" x:Name="customerFollowupDefault" Width="60" >
                             <DataGridTemplateColumn.CellTemplate>
@@ -1290,6 +1290,7 @@
                 </Grid>
                 <Label Content="Employee Alerts" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,-2,0,0"/>
             </Grid>
+            <TextBox x:Name="txtdiffdateF" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="727,16,0,0"/>
         </Grid>
 
 

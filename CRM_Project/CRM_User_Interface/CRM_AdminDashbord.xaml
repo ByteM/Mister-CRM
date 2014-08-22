@@ -1111,7 +1111,6 @@
                     <Label Content="Waranty:" HorizontalAlignment="Left" Margin="532,239,0,0" VerticalAlignment="Top" Width="135"/>
                 </Grid>
             </Grid>
-
            
             <Grid x:Name="grd_Insurance" Visibility="Hidden"  HorizontalAlignment="Left" Height="565" Margin="20,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Button x:Name="btnInsurance_Exit" Content="Exit" HorizontalAlignment="Left" Margin="1085,0,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnInsurance_Exit_Click"/>

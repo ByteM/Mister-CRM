@@ -410,3 +410,8 @@ C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\D
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.baml
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.g.cs
+<<<<<<< HEAD
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.g.cs
+=======
+>>>>>>> 9bfa8f0efc2954497b4e3b744a35a512f12f92e0

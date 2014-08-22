@@ -29,8 +29,8 @@ namespace CRM_User_Interface
         SqlDataReader dr;
         string caption = "Green Future Glob";
 
-        BALDefaultSMS bdeafultSMS = new BALDefaultSMS();
-        DAL_DefaultSMS ddefaultSMS = new DAL_DefaultSMS();
+        BALDefaultSMS  bdeafultSMS = new BALDefaultSMS();
+        DAL_DefaultSMS  ddefaultSMS = new DAL_DefaultSMS();
 
         #region Load Event
         public frmDefaultSMS()
