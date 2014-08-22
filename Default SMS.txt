@@ -1,0 +1,308 @@
+
+Create Table tlb_DefaultCustomerBirthdaySMS
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_DefaultCustomerBirthdaySMS PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_DefaultCustomerBirthdaySMS
+Select * From tlb_DefaultCustomerBirthdaySMS
+
+===========================================================================================
+
+Create Table tlb_CustomerBalance
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_tlb_CustomerBalance PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_CustomerBalance
+Select * From tlb_CustomerBalance
+
+============================================================================================
+
+Create Table tlb_Waranty
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_tlb_Waranty PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_Waranty
+Select * From tlb_Waranty
+
+============================================================================================
+
+Create Table tlb_InsuranceDefaultSMS
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_tlb_Insurance PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_InsuranceDefaultSMS
+Select * From tlb_InsuranceDefaultSMS
+
+============================================================================================
+
+Create Table tlb_DealerFollowupDefaultSMS
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_tlb_DealerFollowupDefaultSMS PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_DealerFollowupDefaultSMS
+Select * From tlb_DealerFollowupDefaultSMS
+
+============================================================================================
+
+Create Table tlb_CustomerFollowupDefaultSMS
+(
+	ID int IDENTITY(1,1) CONSTRAINT PK_tlb_CustomerFollowupDefaultSMS PRIMARY KEY(ID) NOT NULL,
+	SelectCategory nvarchar(MAX) not null,
+	SMSDate nvarchar(MAX) not null,
+	SMSMessage nvarchar(MAX) not null,
+	S_Status nvarchar(MAX) not null,
+	C_Date nvarchar(MAX) not null
+)
+
+Drop table tlb_CustomerFollowupDefaultSMS
+Select * From tlb_CustomerFollowupDefaultSMS
+
+
+
+================================
+
+USE [DB_CRM]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_DealerFollowupDefaultSMS]    Script Date: 22-08-2014 15:37:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_DealerFollowupDefaultSMS]
+	@Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_DealerFollowupDefaultSMS(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+
+===========================================================================
+
+USE [DB_CRM]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_BalanceDefaultSMS]    Script Date: 22-08-2014 15:39:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_BalanceDefaultSMS]
+    @Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_CustomerBalance(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+
+
+======================================================
+
+USE [DB_CRM]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_WarantyDefaultSMS]    Script Date: 22-08-2014 15:40:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_WarantyDefaultSMS]
+	@Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_Waranty(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+
+
+=======================================================================
+
+
+USE [DB_CRM]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_InsuranceDefaultSMS]    Script Date: 22-08-2014 15:41:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_InsuranceDefaultSMS]
+	@Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_InsuranceDefaultSMS(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+
+
+=================================================================
+
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE SP_DealerFollowupDefaultSMS
+	@Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_DealerFollowupDefaultSMS(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+GO
+
+
+
+====================================================================================
+
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE SP_CustomerFollowupDefaultSMS
+	@Flag int=null,
+	@SelectCategory nvarchar(MAX),
+	@DefaultDate nvarchar(Max),
+	@DefaultMessage nvarchar(MAX),
+	@S_Status nvarchar(MAX),
+	@C_Date nvarchar(MAX)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	if(@Flag = 1)
+	begin
+	Insert Into tlb_CustomerFollowupDefaultSMS(SelectCategory, SMSDate, SMSMessage, S_Status, C_Date) Values (@SelectCategory, @DefaultDate, @DefaultMessage, @S_Status, @C_Date)
+	end
+END
+GO
