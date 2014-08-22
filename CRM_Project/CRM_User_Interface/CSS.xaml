@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Window }" x:Key="Bwindow">
+        <Setter Property="Background"  >
+            <Setter.Value >
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5AF0DB" Offset="0.926"/>
+                    <GradientStop Color="#FF717171"/>
+                    <GradientStop Color="WhiteSmoke"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,255 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="CRM_User_Interface.CRM_Admin_Dashbord"
+        Title="CRM_Admin_Dashbord" Height="655" Width="1200" WindowStartupLocation="CenterScreen"  Margin="0,0,0,0" WindowState="Normal"  AllowsTransparency="True" WindowStyle="None"  ShowInTaskbar="False" Background="Transparent">
+    <Border BorderBrush="Transparent"  BorderThickness="1" Height="655" VerticalAlignment="Top" CornerRadius="15" Background="Black">
+        <Grid Margin="-1,-1,1,-1" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="19,10,0,0" TextWrapping="Wrap" FontSize="14px" Text="Customer  Relationship Management" VerticalAlignment="Top" Width="230" Height="21" Foreground="#FFF7EDED"/>
+            <Button x:Name="btnmainexit" Content="X" HorizontalAlignment="Left" Margin="1138,7,0,0" VerticalAlignment="Top" Width="40" Background="WhiteSmoke" Height="20" FontWeight="Bold"  />
+            <Menu HorizontalAlignment="Left" Height="25" Margin="20,35,0,0"  VerticalAlignment="Top" Width="1160" Foreground="#FF212121" Background="#FF302D2D">
+                <MenuItem  Header="Home" Name="mhome" Foreground="White" Width="55" />
+                <MenuItem Width="65">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" >Sales</Label>
+                            <Border>
+                                <ToggleButton IsChecked="False" IsHitTestVisible="False"
+                    BorderBrush="{TemplateBinding Border.BorderBrush}"
+                    Background="{TemplateBinding Panel.Background}">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="IsTabStop" Value="False" />
+                                            <Setter Property="Control.Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Path Data="M0,0L3.5,4 7,0z" Fill="White"  Name="Arrow"
+                                    Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Border>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem  Name="smnewwalkin" Header="Open New Walk-In"/>
+                    <MenuItem Header=" View Walkins" Name="smviewwalkin"/>
+                    <MenuItem Header=" View Sales" Name="smviewsale"/>
+                    <MenuItem Header=" View Reports" Name="smviewreports"/>
+                    <MenuItem Header=" Import/Export" Name="smiport_export"/>
+                </MenuItem>
+                <MenuItem Width="105">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" >Procurements</Label>
+                            <Border>
+                                <ToggleButton IsChecked="False" IsHitTestVisible="False"
+                    BorderBrush="{TemplateBinding Border.BorderBrush}"
+                    Background="{TemplateBinding Panel.Background}">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="IsTabStop" Value="False" />
+                                            <Setter Property="Control.Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Path Data="M0,0L3.5,4 7,0z" Fill="White"  Name="Arrow"
+                                    Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Border>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="Open New Procurement" Name="smnewprocurement"/>
+                    <!--<MenuItem Header=" View Walkins"/>
+                    <MenuItem Header=" View Sales"/>
+                    <MenuItem Header=" View Reports"/>
+                    <MenuItem Header=" Import/Export"/>-->
+                </MenuItem>
+                <MenuItem Width="85">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" >Warranty</Label>
+                            <Border>
+                                <ToggleButton IsChecked="False" IsHitTestVisible="False"
+                    BorderBrush="{TemplateBinding Border.BorderBrush}"
+                    Background="{TemplateBinding Panel.Background}">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="IsTabStop" Value="False" />
+                                            <Setter Property="Control.Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Path Data="M0,0L3.5,4 7,0z" Fill="White"  Name="Arrow"
+                                    Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Border>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="View Warranty On Sale " Name="smviewwarranty"/>
+                    <MenuItem Header=" Check Status" Name="smchksataus"/>
+                    <MenuItem Header=" Extend Particular Warranty" Name="smextendwarranty"/>
+
+                </MenuItem>
+                <MenuItem Width="85">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" >Insurance</Label>
+                            <Border>
+                                <ToggleButton IsChecked="False" IsHitTestVisible="False"
+                    BorderBrush="{TemplateBinding Border.BorderBrush}"
+                    Background="{TemplateBinding Panel.Background}">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="IsTabStop" Value="False" />
+                                            <Setter Property="Control.Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Path Data="M0,0L3.5,4 7,0z" Fill="White"  Name="Arrow"
+                                    Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                            </Border>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="Open New Insurance" Name="sminsurance"/>
+                    <MenuItem Header=" View All Insurance" Name="smviewinsurance"/>
+                    <MenuItem Header=" Check Status" Name="smchkstatusinsurance"/>
+
+                </MenuItem>
+                <MenuItem Header="Calender"  Foreground="White" Width="70" Name="mcalender"/>
+                <MenuItem Header="Alerts"  Foreground="White" Width="55" Name="malerts" />
+                <MenuItem Header="Forecast"  Foreground="White" Width="70" Name="mforcast" />
+                <TextBox Height="23" Name="txtsearch" TextWrapping="Wrap" Margin="200,0,0,0" Text="" Foreground="White"  Width="245" Background="#FF302D2D"/>
+                <Button Content="Search" HorizontalAlignment="Left" Name="btnsearch" Margin="0,0,0,0" VerticalAlignment="Top"  Width="75" Background="#FFCB1717"/>
+            </Menu>
+            <Grid HorizontalAlignment="Left"  Height="5" Margin="20,60,0,0" VerticalAlignment="Top" Width="1160" Background="#FFCB1717">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="224*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="28*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="45,85,0,0" TextWrapping="Wrap" Text="HOME : OVERVIEW OF PAST 30 DAYS" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+            <Grid HorizontalAlignment="Left" Height="254" Margin="40,141,0,0" VerticalAlignment="Top" Width="1120" Background="White">
+                <Button HorizontalAlignment="Left" Name="btnsales" Margin="15,37,0,0"  VerticalAlignment="Top" Width="170" Height="185"  Background="#FF302D2D">
+                    <!--<Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Green"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Red"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>-->
+                    <StackPanel Width="134" Height="169">
+                        <TextBlock Text="SALE MADE" TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
+                        <Separator Height="6" Margin="21,2,23,2"/>
+                        <Grid Height="10"/>
+
+                        <Image Source="DASHBOARD IMAGES/sales made.png" Width="80" Margin="10,0"/>
+                        <Label x:Name="lblsaleMode" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="42,0,46,0" >40</Label>
+                    </StackPanel>
+
+                </Button>
+                <Button HorizontalAlignment="Left" x:Name="btnwalkin" Margin="197,38,0,0"  VerticalAlignment="Top" Width="175" Height="185"  Background="#FF302D2D">
+                    <StackPanel Width="135" Height="169">
+                        <TextBlock Text="WALK-IN" TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
+                        <Separator Height="9" Margin="27,2,28,2"/>
+                        <Grid Height="11" Margin="0,0,3,0"/>
+
+                        <Image Source="DASHBOARD IMAGES/walk ins.png" Margin="7,0,8,0" Height="89"/>
+                        <Label x:Name="LBLWALKIN" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="49,0" Content="66" />
+                    </StackPanel>
+
+                </Button>
+                <Button HorizontalAlignment="Left" x:Name="btnearning" Margin="386,39,0,0"  VerticalAlignment="Top" Width="170" Height="185"  Background="#FF302D2D">
+                    <StackPanel Width="134" Height="169">
+                        <TextBlock Text="EARNING" TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
+                        <Separator Height="9" Margin="32,2"/>
+                        <Grid Height="10"/>
+
+                        <Image Source="DASHBOARD IMAGES/earnings png.png" Margin="25,0,14,0" Height="88"/>
+                        <Label x:Name="lblearning" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="45,0,43,0" Content="50" />
+                    </StackPanel>
+
+                </Button>
+                <Button HorizontalAlignment="Left" x:Name="btnprogress" Margin="568,39,0,0"  VerticalAlignment="Top" Width="170" Height="185"  Background="#FF302D2D">
+                    <StackPanel Width="134" Height="169">
+                        <TextBlock Text="PROGRESS" TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
+                        <Separator Height="9" Margin="21,2,23,2"/>
+                        <Grid Height="10"/>
+
+                        <Image Source="DASHBOARD IMAGES/progress.png" Margin="19,0,20,0" Height="88"/>
+                        <Label x:Name="lblprogress" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="42,0,46,0" Content="80" />
+                    </StackPanel>
+
+                </Button>
+                <Button HorizontalAlignment="Left" x:Name="btnpfprocurement" Margin="751,39,0,0"  VerticalAlignment="Top" Width="170" Height="185"  Background="#FF302D2D">
+                    <StackPanel Width="134" Height="169">
+                        <TextBlock TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold" Height="42" Margin="2,0,-3,0"><Run Text="FINALIZED "/><LineBreak/><Run Text="PROCUREMENT"/></TextBlock>
+                        <Separator Height="8" Margin="21,2,12,2"/>
+                        <!--<Grid Height="10"/>-->
+                        <Image Source="DASHBOARD IMAGES/finalized procurements.png" Margin="19,0,12,0" Height="75"/>
+                        <Label x:Name="lblfproc" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="49,0,39,0" Content="40" />
+                    </StackPanel>
+
+                </Button>
+                <Button HorizontalAlignment="Left" x:Name="btnalerts" Margin="935,39,0,0"  VerticalAlignment="Top" Width="170" Height="185"  Background="#FF302D2D">
+                    <StackPanel Width="134" Height="169">
+                        <TextBlock Text="ALERTS" TextAlignment="Center" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
+                        <Separator Height="9" Margin="21,2,23,2"/>
+                        <Grid Height="10"/>
+
+                        <Image Source="DASHBOARD IMAGES/alerts.png" Margin="19,0,20,0" Height="88"/>
+                        <Label x:Name="lblalerts" Foreground="#FFFBF7F7" FontSize="22" FontWeight="Bold" Margin="42,0,46,0" Content="10" />
+                    </StackPanel>
+
+                </Button>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="200" Margin="40,415,0,0" VerticalAlignment="Top" Width="1120" Background="White">
+
+
+            </Grid>
+            <Button x:Name="btnadminlogin" Content="Admin" HorizontalAlignment="Left" Margin="1035,0,0,630" VerticalAlignment="Bottom" Width="80" Background="#FF171515" Height="20" FontWeight="Bold"  Foreground="#FFF9F9F9" FontSize="14"  />
+
+        </Grid>
+    </Border>
+</Window>

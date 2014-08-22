@@ -1,0 +1,313 @@
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+G:\new cmp\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\gfg\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\gfg\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\gfg\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\gfg\Documents\GitHub\CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.baml
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.dll
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Dexter\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_Content.g.cs
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.manifest
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
+<<<<<<< HEAD
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.baml
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.g.cs
+=======
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.manifest
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.dll
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.pdb
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_Content.g.cs
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
+>>>>>>> origin/master
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Nazia Tabassum\Documents\GitHub\CRM_Project\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.manifest
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.pdb
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_Content.g.cs
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest

@@ -1,0 +1,243 @@
+﻿<Window x:Class="CRM_User_Interface.Admin_Dashbord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="Customer Relationship Managment" Style="{StaticResource Bwindow }" WindowState="Maximized" Height="700" Width="900" FontFamily="Batang"  AllowsTransparency="True" WindowStyle="None" HorizontalAlignment="Left" VerticalAlignment="Top" >
+    <!--WindowStartupLocation="CenterScreen" WindowState="Maximized"-->
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--<Menu Height="34" VerticalAlignment="Bottom"  Margin="0,0,0,692" Grid.RowSpan="2">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.16"/>
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem Header="Home" x:Name="mHome" Width="70" FontSize="14" FontFamily="Batang" RenderTransformOrigin="0.512,0.962"/>
+            <MenuItem Header="ADD" x:Name="mSADD" Height="36" RenderTransformOrigin="0.512,0.962" Width="69" FontSize="14" >
+                <MenuItem Header="Product" x:Name="smopenwalkin" HorizontalAlignment="Left" Width="193"   >
+                    <MenuItem Header=" Add Product" x:Name="saddproduct" Click="saddproduct_Click"/>
+                    --><!--<MenuItem Header=" Add Product" Name="addptype" Click="addptype_Click"/>-->
+                    <!--<MenuItem Header=" Add Insurance" Name="addinsurance"/>-->
+                    <!--<MenuItem Header=" Add warranties " Name="addwarranty"/>--><!--
+                </MenuItem>
+                <MenuItem Header="Procurement" x:Name="addprocure">
+                    <MenuItem Header="Open New Procurement" x:Name="smprocurement" Click="smprocurement_Click"   />
+                    <MenuItem Header="View Pending Procurement" x:Name="smpendingpro" />
+                    <MenuItem Header="View Finalizes Procurement" x:Name="smfinalize"  />
+                    <MenuItem Header="Procurement Report" x:Name="smproreport"  />
+                    <MenuItem Header="Import/Export" x:Name="smproimportexport"/>
+                </MenuItem>
+                <MenuItem Header="Notification " x:Name="smnoti" >
+                    <MenuItem Header=" "/>
+                </MenuItem>
+                <MenuItem Header="Messages" x:Name="smmsg">
+                    <MenuItem Header="Text Thank You Message" x:Name="sthank" Click="sthank_Click"/>
+                    <MenuItem Header="Texe Follow-up Message" x:Name="sfollow" Click="sfollow_Click"/>
+                    <MenuItem Header="Text Birthday Greeting " x:Name="sbirth" Click="sbirth_Click"/>
+                </MenuItem>
+                <MenuItem Header="Default Timespan" x:Name="smSalesreport"  >
+                    <MenuItem Header="Follow-up Time " x:Name="ftime"/>
+                    <MenuItem Header="Services Interval " x:Name="stime"/>
+                </MenuItem>
+                <MenuItem Header="Employee Deatils" x:Name="addemp" Click="addemp_Click"/>
+
+            </MenuItem>
+            <MenuItem Header="View Options" x:Name="mpview" Height="36" RenderTransformOrigin="0.512,0.962" Width="126" FontSize="14" >
+                <MenuItem Header="Products List" x:Name="plist"   />
+                <MenuItem Header="Insurance List" x:Name="smpendiinsurlistngpro" />
+                <MenuItem Header="Warranty List" x:Name="smwarranty"  />
+                <MenuItem Header="View Messages" x:Name="smvmessage"  />
+                <MenuItem Header="Default Timespan" x:Name="smpdtime"/>
+                <MenuItem Header="Employee Details" x:Name="empdetails"/>
+                <MenuItem Header="Stock" x:Name="vstock"/>
+            </MenuItem>
+
+            <MenuItem Header="Reports" x:Name="report" Height="36" RenderTransformOrigin="0.512,0.962" Width="70" FontSize="14" >
+                --><!--<MenuItem Header="View Warranty on Sale" Name="smviewwarratny"/>
+                <MenuItem Header="Check Status" Name="smchkstatus"/>
+                <MenuItem Header="Extend Particular Warranty" Name="smextendwarranty"/>--><!--
+            </MenuItem>
+            <MenuItem Header="Change Password" x:Name="cpassword" Height="36" RenderTransformOrigin="0.512,0.962" Width="126" FontSize="14" >
+                <MenuItem Header="Main Login Password" x:Name="mpassword"/>
+                <MenuItem Header="Admin Password" x:Name="apassword"/>
+                <MenuItem Header="Check Status" x:Name="sminsurancechkstatus"/>
+            </MenuItem>
+            <MenuItem Header="Calender" x:Name="mcalender" Height="36" RenderTransformOrigin="0.512,0.962" Width="93" FontSize="14"/>
+            <MenuItem Header="Alerts" x:Name="malert" Height="36" RenderTransformOrigin="0.512,0.962" Width="81" FontSize="14" />
+            <MenuItem Header="Extra Feature" x:Name="mextra" Height="36" RenderTransformOrigin="0.512,0.962" Width="111" FontSize="14" />
+            --><!--<MenuItem Header="Procurement" Name="mprocurement" Height="36" RenderTransformOrigin="0.512,0.962" Width="126" FontSize="16" >
+            </MenuItem>--><!--
+
+
+        </Menu>-->
+        <Menu Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="0,48,0,0" VerticalAlignment="Top" Width="2056">
+            <MenuItem Header="Home" x:Name="mHome" Width="70" FontSize="14" Margin="20,4,0,0" RenderTransformOrigin="0.512,0.962"/>
+            <MenuItem Header=" ADD Procurement" x:Name="mSADD" Height="36" RenderTransformOrigin="0.512,0.962" Width="133" FontSize="14" >
+                <MenuItem Header="Procurement" x:Name="addprocure">
+                    <MenuItem Header="Open New Procurement" x:Name="smprocurement" Click="smprocurement_Click"   />
+                    <MenuItem Header="View Pending Procurement" x:Name="smpendingpro" />
+                    <MenuItem Header="View Finalizes Procurement" x:Name="smfinalize"  />
+                    <MenuItem Header="Procurement Report" x:Name="smproreport"  />
+                    <MenuItem Header="Import/Export" x:Name="smproimportexport"/>
+                </MenuItem>
+                <MenuItem Header="Notification " x:Name="smnoti" >
+                    <MenuItem Header=" "/>
+                </MenuItem>
+                <MenuItem Header="Messages" x:Name="smmsg">
+                    <MenuItem Header="Text Thank You Message" x:Name="sthank" Click="sthank_Click"/>
+                    <MenuItem Header="Texe Follow-up Message" x:Name="sfollow" Click="sfollow_Click"/>
+                    <MenuItem Header="Text Birthday Greeting " x:Name="sbirth" Click="sbirth_Click"/>
+                </MenuItem>
+                <MenuItem Header="Default Timespan" x:Name="smSalesreport"  >
+                    <MenuItem Header="Follow-up Time " x:Name="ftime"/>
+                    <MenuItem Header="Services Interval " x:Name="stime"/>
+                </MenuItem>
+                <MenuItem Header="Employee Deatils" x:Name="addemp" Click="addemp_Click"/>
+
+            </MenuItem>
+            <MenuItem Header="View Options" x:Name="mpview" Height="36" RenderTransformOrigin="0.512,0.962" Width="105" FontSize="14" >
+                <MenuItem Header="Products List" x:Name="plist"   />
+                <MenuItem Header="Insurance List" x:Name="smpendiinsurlistngpro" />
+                <MenuItem Header="Warranty List" x:Name="smwarranty"  />
+                <MenuItem Header="View Messages" x:Name="smvmessage"  />
+                <MenuItem Header="Default Timespan" x:Name="smpdtime"/>
+                <MenuItem Header="Employee Details" x:Name="empdetails"/>
+                <MenuItem Header="Stock" x:Name="vstock"/>
+            </MenuItem>
+
+            <MenuItem Header="Reports" x:Name="report" Height="36" RenderTransformOrigin="0.512,0.962" Width="70" FontSize="14" >
+                <!--<MenuItem Header="View Warranty on Sale" Name="smviewwarratny"/>
+                <MenuItem Header="Check Status" Name="smchkstatus"/>
+                <MenuItem Header="Extend Particular Warranty" Name="smextendwarranty"/>-->
+            </MenuItem>
+            <MenuItem Header="Change Password" x:Name="cpassword" Height="36" RenderTransformOrigin="0.512,0.962" Width="132" FontSize="14" >
+                <MenuItem Header="Main Login Password" x:Name="mpassword"/>
+                <MenuItem Header="Admin Password" x:Name="apassword"/>
+                <MenuItem Header="Check Status" x:Name="sminsurancechkstatus"/>
+            </MenuItem>
+            <MenuItem Header="Calender" x:Name="mcalender" Height="36" RenderTransformOrigin="0.512,0.962" Width="81" FontSize="14"/>
+            <MenuItem Header="Alerts" x:Name="malert" Height="36" RenderTransformOrigin="0.512,0.962" Width="70" FontSize="14" />
+            <MenuItem Header="Extra Feature" x:Name="mextra" Height="36" RenderTransformOrigin="0.512,0.962" Width="102" FontSize="14" />
+            <!--<MenuItem Header="Procurement" Name="mprocurement" Height="36" RenderTransformOrigin="0.512,0.962" Width="126" FontSize="16" >
+            </MenuItem>-->
+
+        </Menu>
+        <Label Content="Customer Relationship Management" HorizontalAlignment="Left"  Margin="30,15,0,0" VerticalAlignment="Top"   FontSize="16" FontWeight="Bold" Grid.RowSpan="2"/>
+
+        <Grid  Name="newprocurementgrd" Visibility="Visible"      Height="547" Grid.RowSpan="2" VerticalAlignment="Top" Width="769" Margin="66,108,65,0">
+            <GroupBox Header="New Procurement " VerticalAlignment="Top" Margin="10,10,10,0" Height="527"/>
+            <Grid Margin="-11,0,11,-8" >
+                <Label Content="Procurement ID :" HorizontalAlignment="Left" Margin="50,46,0,0" VerticalAlignment="Top" Width="123"/>
+                <Label Content="Product Name :" HorizontalAlignment="Left" Margin="50,78,0,0" VerticalAlignment="Top" Width="123"/>
+                <TextBox x:Name="txtptid" HorizontalAlignment="Left" Height="27" Margin="253,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213"/>
+                <Button Content="Save" Name="btnpsave" HorizontalAlignment="Left" Margin="240,434,0,0" VerticalAlignment="Top" Width="75" Height="25" Background="#FFA6F2E8" Click="btnpsave_Click"/>
+                <Button Content="Clear" x:Name="btnpclear" HorizontalAlignment="Left" Margin="331,435,0,0" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="1.347,0.36" Background="#FFA6F2E8" Click="btnpclear_Click"/>
+                <Button Content="Exit" x:Name="btnpexit" HorizontalAlignment="Left" Margin="425,437,0,0" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="1.347,0.36" Click="btnpexit_Click" Background="#FFA6F2E8"/>
+                <ComboBox HorizontalAlignment="Left" Margin="255,78,0,0" VerticalAlignment="Top" Width="213" Name="cmbpname" Height="26"/>
+                <Label Content="Delivery Date :" HorizontalAlignment="Left" Margin="50,351,0,0" VerticalAlignment="Top"/>
+                <Label Content="Brand Name:" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top"/>
+                <Label Content="Model No /Name :" HorizontalAlignment="Left" Margin="50,189,0,0" VerticalAlignment="Top"/>
+                <Label Content="Price:" HorizontalAlignment="Left" Margin="50,282,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtpprice" HorizontalAlignment="Left" Height="23" Margin="145,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213"/>
+                <Label Content="Quantity :" HorizontalAlignment="Left" Margin="391,282,0,0" VerticalAlignment="Top" Width="96"/>
+                <TextBox x:Name="txtpqty" HorizontalAlignment="Left" Height="23" Margin="492,281,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="211"/>
+                <Label Content="Warranty:" HorizontalAlignment="Left" Margin="391,316,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.545,1.125"/>
+                <TextBox x:Name="txtpwarranty" HorizontalAlignment="Left" Height="23" Margin="492,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213"/>
+                <Label Content="Date:" HorizontalAlignment="Left" Margin="391,351,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.545,1.125"/>
+                <DatePicker HorizontalAlignment="Left" x:Name="dpcdate" Margin="492,351,0,0" VerticalAlignment="Top" Width="209"/>
+                <Label Content="Product Category :" HorizontalAlignment="Left" Margin="50,113,0,0" VerticalAlignment="Top" Width="135"/>
+                <ComboBox HorizontalAlignment="Left" Margin="255,113,0,0" VerticalAlignment="Top" Width="213" x:Name="cmbp_category" Height="27"/>
+                <ComboBox HorizontalAlignment="Left" Margin="254,151,0,0" VerticalAlignment="Top" Width="213" x:Name="cmbbrand" Height="25"/>
+                <ComboBox HorizontalAlignment="Left" Margin="254,186,0,0" VerticalAlignment="Top" Width="213" x:Name="cmbmodelno" Height="25"/>
+                <Label Content="Series No:" HorizontalAlignment="Left" Margin="50,218,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnAddProduct" Content="ADD..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="58" Margin="518,80,0,0" Height="24" Click="btnAddProduct_Click"/>
+                <Button x:Name="btnAddP_Category" Content="ADD..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="58" Margin="519,115,0,0" Height="24"/>
+                <Button x:Name="btnAddBrand" Content="ADD..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="58" Margin="519,152,0,0" Height="24"/>
+                <Button x:Name="btnmodelandseries" Content="ADD..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="58" Margin="520,189,0,0" Height="40"/>
+                <DatePicker HorizontalAlignment="Left" x:Name="dpdelivrydate" Margin="145,351,0,0" VerticalAlignment="Top" Width="209"/>
+                <Label Content="Follow-Up" HorizontalAlignment="Left" Margin="50,388,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.545,1.125"/>
+                <ComboBox x:Name="cmbseriesno" HorizontalAlignment="Left" Margin="256,218,0,0" VerticalAlignment="Top" Width="213" Height="25"/>
+                <ComboBox HorizontalAlignment="Left" Margin="145,388,0,0" VerticalAlignment="Top" Width="213" x:Name="cmbfollowup" Height="25"/>
+                <CheckBox  Content="Is-Finalized" HorizontalAlignment="Left"   VerticalAlignment="Top"   Margin="391,394,0,0" FlowDirection="RightToLeft" Height="19" Width="91" />
+                <Label Content="Total Amount :" HorizontalAlignment="Left" Margin="50,316,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txttotalamt" HorizontalAlignment="Left" Height="23" Margin="145,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213"/>
+
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Name="Addthankgrd" Visibility="Hidden" Height="345" Margin="231,161,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="505">
+            <GroupBox Header="Thank You Text"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="485" Height="325">
+                <Grid HorizontalAlignment="Left" Height="304" Margin="0,0,-2,-1" VerticalAlignment="Bottom" Width="475">
+                    <Label Content="Thank You Message :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtthankmessage"  HorizontalAlignment="Left" Height="177" Margin="145,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+                    <Button Content="Save" Name="btnthanksave" HorizontalAlignment="Left" Margin="161,248,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Clear" x:Name="btnthankclear" HorizontalAlignment="Left" Margin="270,249,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Exit" x:Name="btnthankexit" HorizontalAlignment="Left" Margin="378,251,0,0" VerticalAlignment="Top" Width="82" Height="26" Click="btnthankexit_Click"/>
+                    <Label Content="Date :" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Name="dpthank" Margin="145,202,0,0" VerticalAlignment="Top" Width="200"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Name="AddtFollowupgrd" Visibility="Hidden"  Height="345" Margin="199,161,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="505">
+            <GroupBox Header="Follow-up"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="485" Height="325">
+                <Grid HorizontalAlignment="Left" Height="304" Margin="0,0,-2,-1" VerticalAlignment="Bottom" Width="475">
+                    <Label Content="Follow-up Message :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtfollowupmessage"  HorizontalAlignment="Left" Height="177" Margin="145,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+                    <Button Content="Save" Name="btnfollowsave" HorizontalAlignment="Left" Margin="161,248,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Clear" x:Name="btnfollowupclear" HorizontalAlignment="Left" Margin="270,249,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Exit" x:Name="btnfollowupexit" HorizontalAlignment="Left" Margin="378,251,0,0" VerticalAlignment="Top" Width="82" Height="26" Click="btnfollowupexit_Click" />
+                    <Label Content="Date :" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Name="dpfollowup" Margin="145,202,0,0" VerticalAlignment="Top" Width="200"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Name="Addbirthgrd" Visibility="Hidden"  Height="345" Margin="199,161,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="505">
+            <GroupBox Header="Birth-Day"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="485" Height="325">
+                <Grid HorizontalAlignment="Left" Height="304" Margin="0,0,-2,-1" VerticalAlignment="Bottom" Width="475">
+                    <Label Content="Birth-Day Message :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtbirthmessage"  HorizontalAlignment="Left" Height="177" Margin="145,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+                    <Button Content="Save" Name="btnbirthsave" HorizontalAlignment="Left" Margin="161,248,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Clear" x:Name="btnbirthclear" HorizontalAlignment="Left" Margin="270,249,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+                    <Button Content="Exit" x:Name="btnbirthexit" HorizontalAlignment="Left" Margin="378,251,0,0" VerticalAlignment="Top" Width="82" Height="26" Click="btnbirthexit_Click" />
+                    <Label Content="Date :" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Name="dpbirth" Margin="145,202,0,0" VerticalAlignment="Top" Width="200"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Visibility="Hidden"  Name="Addemployeegrd" Height="279" Margin="136,128,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="588">
+            <GroupBox Header="Employee Details" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="263" Width="578">
+                <Grid Margin="-10,-11,-12,-44">
+                    <Label Content="Employee ID :" HorizontalAlignment="Left" Margin="26,29,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtempid" HorizontalAlignment="Left" Height="23" Margin="137,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="Date :" HorizontalAlignment="Left" Margin="302,29,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Name="dpdate" Margin="371,29,0,0" VerticalAlignment="Top" Width="169"/>
+                    <Label Content=" Name :" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtempname" HorizontalAlignment="Left" Height="23" Margin="137,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="Phone :" HorizontalAlignment="Left" Margin="312,63,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtempphone" HorizontalAlignment="Left" Height="23" Margin="370,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="Address :" HorizontalAlignment="Left" Margin="26,92,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtaddress" HorizontalAlignment="Left" Height="23" Margin="137,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="DOB :" HorizontalAlignment="Left" Margin="312,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,1.125"/>
+                    <TextBox x:Name="txtdesig" HorizontalAlignment="Left" Height="23" Margin="137,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="Designation :" HorizontalAlignment="Left" Margin="26,123,0,0" VerticalAlignment="Top" Width="91"/>
+                    <DatePicker HorizontalAlignment="Left" x:Name="dpdob" Margin="370,93,0,0" VerticalAlignment="Top" Width="169"/>
+                    <Label Content="Experiance :" HorizontalAlignment="Left" Margin="312,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,1.125"/>
+                    <TextBox x:Name="txtexp" HorizontalAlignment="Left" Height="23" Margin="396,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="DOJ :" HorizontalAlignment="Left" Margin="26,159,0,0" VerticalAlignment="Top" Width="91"/>
+                    <TextBox x:Name="txtdoj" HorizontalAlignment="Left" Height="23" Margin="137,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Label Content="Salary :" HorizontalAlignment="Left" Margin="312,159,0,0" VerticalAlignment="Top" Width="91"/>
+                    <TextBox x:Name="txtsalary" HorizontalAlignment="Left" Height="23" Margin="371,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,0.5"/>
+                    <Button Content="Save" HorizontalAlignment="Left" Margin="231,219,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btnempclear" Content="Clear" HorizontalAlignment="Left" Margin="320,219,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btnempexit" Content="Exit" HorizontalAlignment="Left" Margin="409,219,0,0" VerticalAlignment="Top" Width="75" Click="btnempexit_Click"/>
+
+
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Button Content="X"  Margin="671,15,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right"  Width="75" Background="#FFE02525" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
