@@ -8,8 +8,8 @@
 
             </Button>
             <Grid Background="#FFF0F0F0">
-                <Label Content="Open New Insurance" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-                <Grid HorizontalAlignment="Left" Height="342" Margin="25,33,0,0" VerticalAlignment="Top" Width="495" Background="White">
+                <Label Content="New Insurance" HorizontalAlignment="Left" Margin="10,-27,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="#FFFCFCFC"/>
+                <Grid HorizontalAlignment="Left" Height="342" Margin="25,32,0,0" VerticalAlignment="Top" Width="495" Background="White">
                     <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="32,35,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblCustomerName" Content="Customer Name:" HorizontalAlignment="Left" Margin="164,36,0,0" VerticalAlignment="Top" Width="275"/>
                     <Label Content="Mobile No.:" HorizontalAlignment="Left" Margin="32,64,0,0" VerticalAlignment="Top"/>
@@ -25,22 +25,22 @@
                     <Label Content="Validity:" HorizontalAlignment="Left" Margin="33,237,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtValidity" HorizontalAlignment="Left" Height="23" Margin="164,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
                     <ComboBox x:Name="cmbValidity" HorizontalAlignment="Left" Margin="241,239,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbValidity_SelectionChanged"/>
-                    <Label Content="Installment Interval:" HorizontalAlignment="Left" Margin="33,347,0,-31" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtInterval" HorizontalAlignment="Left" Height="23" Margin="164,348,0,-29" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" TextChanged="txtInterval_TextChanged" Text="0"/>
+                    <Label Content="Installment Interval:" HorizontalAlignment="Left" Margin="33,347,0,-31" VerticalAlignment="Top" Visibility="Hidden"/>
+                    <TextBox x:Name="txtInterval" HorizontalAlignment="Left" Height="23" Margin="164,348,0,-29" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" TextChanged="txtInterval_TextChanged" Text="0" Visibility="Hidden"/>
                     <Label Content="First Party Insurance:" HorizontalAlignment="Left" Margin="33,267,0,0" VerticalAlignment="Top"/>
                     <CheckBox x:Name="chbInsurance" Content="" HorizontalAlignment="Left" Margin="165,273,0,0" VerticalAlignment="Top"/>
                     <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="156,304,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnSave_Click"/>
                     <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="242,304,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnClear_Click"/>
                     <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="329,304,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnExit_Click"/>
                     <Label Content="Date:" HorizontalAlignment="Left" Margin="33,206,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cmbInterval" HorizontalAlignment="Left" Margin="241,349,0,-29" VerticalAlignment="Top" Width="120" SelectionChanged="cmbInterval_SelectionChanged"/>
+                    <ComboBox x:Name="cmbInterval" HorizontalAlignment="Left" Margin="241,349,0,-29" VerticalAlignment="Top" Width="120" SelectionChanged="cmbInterval_SelectionChanged" Visibility="Hidden"/>
                     <DatePicker x:Name="dtpDate"   HorizontalAlignment="Left" Margin="164,208,0,0" VerticalAlignment="Top" Width="127" Text="dd - MM - yyyy" SelectedDateChanged="dtpDate_SelectedDateChanged"/>
-                    <DatePicker x:Name="dtpInstallmentDate" HorizontalAlignment="Left" Margin="367,270,0,0" VerticalAlignment="Top" Width="127"/>
-                    <TextBox x:Name="txtMonths" HorizontalAlignment="Left" Height="23" Margin="379,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
-                    <TextBox x:Name="txtIntervalTotalAmt" HorizontalAlignment="Left" Height="23" Margin="380,347,-2,-28" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="0.00"/>
+                    <DatePicker x:Name="dtpInstallmentDate" HorizontalAlignment="Left" Margin="367,270,0,0" VerticalAlignment="Top" Width="127" Visibility="Hidden"/>
+                    <TextBox x:Name="txtMonths" HorizontalAlignment="Left" Height="23" Margin="379,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Visibility="Hidden"/>
+                    <TextBox x:Name="txtIntervalTotalAmt" HorizontalAlignment="Left" Height="23" Margin="380,347,-2,-28" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="0.00" Visibility="Hidden"/>
                     <Label Content="ProductName" HorizontalAlignment="Left" Margin="32,119,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblProductName" Content="ProductName" HorizontalAlignment="Left" Margin="164,118,0,0" VerticalAlignment="Top" Width="301"/>
-                    <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" Margin="379,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+                    <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" Margin="379,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Visibility="Hidden"/>
                 </Grid>
                 <TextBox x:Name="txtInsuranceID" HorizontalAlignment="Left" Height="23" Margin="454,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
                 <TextBox x:Name="txtCustomerID" HorizontalAlignment="Left" Height="23" Margin="501,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
