@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\
+=======
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\
+>>>>>>> origin/master
 CRM_User_Interface
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\App.xaml
+14-1762376750
+1-9177176
+241860579577
+211130327752
+Add Product\Add_Products.xaml;ADD_Tax.xaml;AdminLogin.xaml;Admin_Dashbord.xaml;CRM_AdminDashbord.xaml;CRM_MainDashbord.xaml;CRM_MainForm.xaml;CSS.xaml;frmCRM_DealerDetailsEdit.xaml;frmCRM_EmpDetailsEdit.xaml;frmCustomerBirthdayAlert.xaml;MainWindow.xaml;CRM_Main_Login.xaml;frmInsurance.xaml;
+=======
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\App.xaml
 15411067390
 1-9177176
 25408174343
 211833442941
 Add Product\Add_Products.xaml;ADD_Tax.xaml;AdminLogin.xaml;Admin_Dashbord.xaml;CRM_AdminDashbord.xaml;CRM_MainDashbord.xaml;CRM_MainForm.xaml;CSS.xaml;frmCRM_DealerDetailsEdit.xaml;frmCRM_EmpDetailsEdit.xaml;frmCustomerBirthdayAlert.xaml;frmDefaultSMS.xaml;MainWindow.xaml;CRM_Main_Login.xaml;frmInsurance.xaml;
+>>>>>>> origin/master
 
 False
 
