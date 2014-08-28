@@ -39,6 +39,7 @@ namespace CRM_User_Interface
         NumberFormatInfo nfi = CultureInfo.CurrentCulture.NumberFormat;
         string caption = "Green Future Glob";
         int cid, I, ID, i;
+        int cnt1 = 0,cnt2=0,cntb,cntf;
         double y1, m1, o, p, availqty;
         string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob,cd;
         public Button targetButton;
@@ -5252,9 +5253,9 @@ namespace CRM_User_Interface
         {
             try
             {
-                int cnt1 = 0;
+                
                 con.Open();
-                string sqlquery1 = "SELECT ID,Cust_ID,Name,Date_Of_Birth from tlb_Customer where S_Status='Active' ";
+                string sqlquery1 = "SELECT ID,Cust_ID,Name,Date_Of_Birth from tlb_Customer where S_Status='Active' and Date_Of_Birth='"+CommonDate +"' ";
                 SqlCommand cmd = new SqlCommand(sqlquery1, con);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -5274,8 +5275,8 @@ namespace CRM_User_Interface
                     }
                 }
 
-                txtnoti.Text = cnt1.ToString();
-                lblcalert.Content = cnt1.ToString();
+                cntb  = cnt1;
+                lblcalert.Content = cntb.ToString();
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
             catch (Exception)
@@ -5449,15 +5450,15 @@ namespace CRM_User_Interface
             DateTime dob1 = Convert.ToDateTime(dob);
             //CRM_DAL.
             DateDiff dateDifference = new DateDiff(commondate1, dob1);
-            txtdiffdate.Text = dateDifference.ToString();
-           // txttestdate.Text = dateDifference.tesydate();
+            txtdiffdateF.Text = dateDifference.ToString();
+            txttestdate.Text = dateDifference.tesydate();
 
         }
         public void fetch_C_Followup()
         {
             try
             {
-                int cnt1 = 0;
+               // int cnt1 = 0;
                 con.Open();
                 string sqlquery1 = "SELECT ID,Followup_ID,Name,C_Date from tlb_FollowUp where S_Status='Active' ";
                 SqlCommand cmd = new SqlCommand(sqlquery1, con);
@@ -5472,15 +5473,19 @@ namespace CRM_User_Interface
                     string nam = dt.Rows[0]["Name"].ToString();
                     cd = dt.Rows[0]["C_Date"].ToString();
                     Calculate_Cfollowup();
-                    if (txtdiffdate.Text == "2")
+                    if (txtdiffdateF.Text == "2")
                     {
                         MessageBox.Show("Today '" + nam + "'have to be saend message '" + cd + "'");
-                        cnt1 = cnt1 + 1;
+                        cnt2 = cnt2 + 1;
                     }
                 }
+                cntf = cnt2;
+                if(txtnoti.Text!="")
+                {
+                    txtnoti.Text =(cntb + cntf).ToString ();
+                }
 
-                txtnoti.Text = cnt1.ToString();
-                lblcalert.Content = cnt1.ToString();
+                lblcalert.Content = txtnoti.Text;
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
             catch (Exception)
