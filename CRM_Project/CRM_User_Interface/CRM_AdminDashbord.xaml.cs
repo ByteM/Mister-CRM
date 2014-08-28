@@ -5157,7 +5157,7 @@ namespace CRM_User_Interface
                       "INNER JOIN [tlb_Color] C ON C.[ID]=P.[Color_ID] " +
                       "INNER JOIN [StockDetails] S ON S.[Model_No_ID]=P.[Model_No_ID] " +
                       "WHERE ";
-                if (cmbAdm_DealerFilter_Search.SelectedIndex > 0)
+                if (cmbInsurance_CustName.SelectedIndex >= 0)
                 {
                     str = str + "P.[Customer_ID] = '" + cmbInsurance_CustName.SelectedValue.GetHashCode() + "' AND ";
                 }
@@ -5252,7 +5252,7 @@ namespace CRM_User_Interface
                 str = "SELECT [ID],[Customer_ID],[InsuranceNo],[ProductName],[InsuranceAmt],[BankName],[InsuranceDate],[NoOfMonth],[NoOfYearMonths],[YearsMonths] AS [YearMonth],[IntervalMonths],[IntervalMonthY],[IntervalAmt],[NewInsuranceDate],[FirstPartyInsurance],[IsClear],[S_Status] " +
                       "FROM [tlb_InsuranceEntry] " +
                       "WHERE ";       //[Customer_ID]= '" + cmbInsurance_CustName.SelectedValue.GetHashCode() + "' AND [IsClear] = 'Active' ORDER BY [ProductName] ASC ";
-                if (cmbAdm_DealerFilter_Search.SelectedIndex > 0)
+                if (cmbInsurance_CustName.SelectedIndex > 0)
                 {
                     str = str + "[Customer_ID] = '" + cmbInsurance_CustName.SelectedValue.GetHashCode() + "' AND ";
                 }
@@ -5403,62 +5403,6 @@ namespace CRM_User_Interface
             //AllInsurance_ProductsDetails();
         }
 
-        //private void sminsurance_Click(object sender, RoutedEventArgs e)
-        //{
-        //    grd_Insurance.Visibility = System.Windows.Visibility.Visible;
-        //    Load_CustomerDetails();
-        //}
-
-        //private void cmbInsurance_CustName_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    Products_CustomerDetails();
-        //    Insurance_ProductsDetails();
-        //}
-
-        //private void dgvInsurance_Details_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        //{
-        //    //frmInsurance obj = new frmInsurance();
-        //    //obj.ShowDialog();
-        //    //obj.LoadYearsMonth();
-        //    //obj.LoadInterval();
-        //}
-
-        //private void chkInsurance_Checked(object sender, RoutedEventArgs e)
-        //{
-
-        //    try
-        //    {
-        //        var Iid = (DataRowView)dgvInsurance_Details.SelectedItem; //get specific ID from          DataGrid after click on Edit button in DataGrid   
-        //        PK_ID = Convert.ToInt32(Iid.Row["ID"].ToString());
-        //        con.Open();
-        //        string sqlquery = "SELECT * FROM tlb_InvoiceDetails where ID='" + PK_ID + "' ";
-        //        SqlCommand cmd = new SqlCommand(sqlquery, con);
-        //        SqlDataAdapter adp = new SqlDataAdapter(cmd);
-        //        DataTable dt = new DataTable();
-        //        adp.Fill(dt);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            txtInsurance_InvoiceID.Text = dt.Rows[0]["ID"].ToString();
-        //        }
-
-        //        frmInsurance obj = new frmInsurance();
-        //        obj.InsuranceID(txtInsurance_InvoiceID.Text.Trim(), txtInsurance_CustID.Text.Trim());
-        //        obj.Insurance_FillData();
-        //        obj.ShowDialog();
-
-        //        // con.Close();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-        //    }
-        //    AllInsurance_ProductsDetails();
-        //}
-
         private void cmbAllInsurance_CustName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AllInsurance_ProductsDetails();
@@ -5501,11 +5445,20 @@ namespace CRM_User_Interface
                 if (dt.Rows.Count > 0)
                 {
                     txtInsurance_InvoiceID.Text = dt.Rows[0]["ID"].ToString();
+                    txtInsurance_CIID.Text = dt.Rows[0]["Customer_ID"].ToString();
                 }
 
                 frmInsurance obj = new frmInsurance();
-                obj.InsuranceID(txtInsurance_ID.Text.Trim(), txtInsurance_CustID.Text.Trim());
-                obj.Insurance_FillData();
+                if (txtInsurance_InvoiceID.Text.Length > 0)
+                {
+                    obj.InsuranceID(txtInsurance_InvoiceID.Text.Trim(), txtInsurance_CIID.Text.Trim());
+                    obj.FillData();
+                }
+                else
+                {
+                    obj.InsuranceID(txtInsurance_ID.Text.Trim(), txtInsurance_CustID.Text.Trim());
+                    obj.Insurance_FillData();
+                }
                 //obj.LoadNoOfYears1();
                 //obj.LoadNoOfMonths1();
                 obj.ShowDialog();

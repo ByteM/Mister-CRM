@@ -1111,7 +1111,11 @@
                     <Label Content="Waranty:" HorizontalAlignment="Left" Margin="532,239,0,0" VerticalAlignment="Top" Width="135"/>
                 </Grid>
             </Grid>
+<<<<<<< HEAD
+            <Grid x:Name="grd_Insurance" Visibility="Visible" HorizontalAlignment="Left" Height="565" Margin="20,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+=======
             <Grid x:Name="grd_Insurance" Visibility="Visible"  HorizontalAlignment="Left" Height="565" Margin="20,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+>>>>>>> origin/master
                 <Button x:Name="btnInsurance_Exit" Content="Exit" HorizontalAlignment="Left" Margin="1085,0,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnInsurance_Exit_Click"/>
                 <Grid HorizontalAlignment="Left" Height="500" Margin="20,50,0,0" VerticalAlignment="Top" Width="1125" Background="White">
                     <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="388,12,0,0" VerticalAlignment="Top"/>
@@ -1154,13 +1158,14 @@
                     <ComboBox x:Name="cmbInsurance_CustomerID" HorizontalAlignment="Left" Margin="102,14,0,0" VerticalAlignment="Top" Width="227" Height="24" SelectionChanged="cmbInsurance_CustomerID_SelectionChanged"/>
                 </Grid>
                 <TextBox x:Name="txtInsurance_InvoiceID" HorizontalAlignment="Left" Height="23" Margin="1020,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45"/>
+                <TextBox x:Name="txtInsurance_CIID" HorizontalAlignment="Left" Height="23" Margin="953,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45"/>
             </Grid>
             <Grid x:Name="grd_InsuranceDetails" Visibility="Hidden" HorizontalAlignment="Left" Height="563" Margin="21,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" Loaded="grd_InsuranceDetails_Loaded">
                 <Button x:Name="btnInsurance_Exit1" Content="Exit" HorizontalAlignment="Left" Margin="1085,0,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnInsurance_Exit1_Click"/>
                 <Grid HorizontalAlignment="Left" Height="498" Margin="20,50,0,0" VerticalAlignment="Top" Width="1125" Background="White">
                     <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="330,12,0,0" VerticalAlignment="Top"/>
                     <Label Content="Insurance Details" HorizontalAlignment="Left" Margin="5,-48,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-                    <ComboBox x:Name="cmbAllInsurance_CustName" HorizontalAlignment="Left" Margin="439,15,0,0" VerticalAlignment="Top" Width="361" Height="24" SelectionChanged="cmbAllInsurance_CustName_SelectionChanged" IsEditable="True"/>
+                    <ComboBox x:Name="cmbAllInsurance_CustName" HorizontalAlignment="Left" Margin="444,15,0,0" VerticalAlignment="Top" Width="356" Height="24" SelectionChanged="cmbAllInsurance_CustName_SelectionChanged" IsEditable="True"/>
                     <DataGrid x:Name="dgvAllInsuranceDetails" HorizontalAlignment="Left" Margin="5,52,0,0" VerticalAlignment="Top" Height="441" Width="1115" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" x:Name="grdInsurance_ID1" Visibility="Visible" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}"/>

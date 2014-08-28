@@ -37,8 +37,10 @@ namespace CRM_User_Interface
         public frmInsurance()
         {
             InitializeComponent();
+            Insuranceid123();
             LoadYearsMonth();
             LoadInterval();
+            Load_BankName();
         }
 
         #region Button Event
@@ -61,7 +63,10 @@ namespace CRM_User_Interface
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (btnSave.Content == "Save")
+            if (Insurance_Validation() == true)
+                return;
+
+            if (btnSave.Content.ToString() == "Save")
             {
                 try
                 {
@@ -188,7 +193,7 @@ namespace CRM_User_Interface
                     con.Close();
                 }
             }
-            else if (btnSave.Content == "Update")
+            else if (btnSave.Content.ToString() == "Update")
             {
                 try
                 {
@@ -327,6 +332,22 @@ namespace CRM_User_Interface
         #endregion Event
 
         #region Insurance Function
+        public void Insuranceid123()
+        {
+
+            int id1 = 0;
+            // SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select (COUNT(ID)) from tlb_InsuranceEntry", con);
+            id1 = Convert.ToInt32(cmd.ExecuteScalar());
+            id1 = id1 + 1;
+            lblInsuranceNo.Content = "# Insurance No /" + id1.ToString();
+            con.Close();
+
+
+        }
+
+
         public void Clear_ALL()
         {
             txtCustomerID.Text = "";
@@ -359,6 +380,8 @@ namespace CRM_User_Interface
                 cmbBankIntegration.DisplayMemberPath = ds.Tables[0].Columns["BankName"].ToString();
             }
         }
+
+
 
         public void InsuranceID(string iid, string cuID)
         {
@@ -608,6 +631,38 @@ namespace CRM_User_Interface
                 con.Close();
             }
             btnSave.Content = "Update";
+        }
+
+        public void FillData()
+        {
+            try
+            {
+                con.Open();
+                string sqlquery = "SELECT P.[ID],P.[Customer_ID],P.[Products123] " +
+                      ",M.[Name],M.[Mobile_No],M.[Email_ID] " +
+                      "FROM [tlb_InvoiceDetails] P " +
+                      "INNER JOIN [tlb_Customer] M ON M.[ID]=P.[Customer_ID] " +
+                      "WHERE P.[ID] ='" + txtInsuranceID.Text.Trim() + "' ";
+                SqlCommand cmd = new SqlCommand(sqlquery, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    lblCustomerName.Content = dt.Rows[0]["Name"].ToString();
+                    lblMobileNo.Content = dt.Rows[0]["Mobile_No"].ToString();
+                    lblEmailID.Content = dt.Rows[0]["Email_ID"].ToString();
+                    lblProductName.Content = dt.Rows[0]["Products123"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         
         //string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
