@@ -133,7 +133,7 @@ namespace CRM_DAL
                 //  cmd.Parameters.AddWithValue("@Followup_Walkin_Option", balfp.Followup_Walkin_Option);
 
                 cmd.Parameters.AddWithValue("@Followup_Type", balfp.Followup_Type);
-               // cmd.Parameters.AddWithValue("@F_Date", balfp.F_Date);
+                cmd.Parameters.AddWithValue("@F_Date", balfp.F_Date);
                // cmd.Parameters.AddWithValue("@F_Message", balfp.F_Message);
                 // cmd.Parameters.AddWithValue("@Walkins", balfp.Walkins);
                 cmd.Parameters.AddWithValue("@Folloup_Update", balfp.Folloup_Update);

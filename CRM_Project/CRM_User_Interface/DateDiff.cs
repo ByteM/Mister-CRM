@@ -107,11 +107,11 @@ namespace CRM_User_Interface
             //return base.ToString();
             return this.day.ToString () ;
         }
-        //public override string ToString()
-        //{
-        //    //return base.ToString();
-        //    return this.year + " Year(s), " + this.month + " month(s), " + this.day + " day(s)";
-        //}
+        public override string tesydate()
+        {
+            //return base.ToString();
+            return this.year + " Year(s), " + this.month + " month(s), " + this.day + " day(s)";
+        }
         public int Years
         {
             get
