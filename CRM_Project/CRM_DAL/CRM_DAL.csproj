@@ -46,6 +46,7 @@
     <Compile Include="DAL_C_Installment.cs" />
     <Compile Include="DAL_DealerEntry.cs" />
     <Compile Include="DAL_DealerUpdate.cs" />
+    <Compile Include="DAL_DefaultSMS.cs" />
     <Compile Include="DAL_EmployeeEntry.cs" />
     <Compile Include="DAL_EmployeeUpdate.cs" />
     <Compile Include="DAL_FinalDealer.cs" />

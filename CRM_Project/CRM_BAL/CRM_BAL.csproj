@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BALDefaultSMS.cs" />
     <Compile Include="BAL_AddProduct.cs" />
     <Compile Include="BAL_CheckClearUpdate.cs" />
     <Compile Include="BAL_Customer.cs" />

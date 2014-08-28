@@ -311,6 +311,7 @@ C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\C
 C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
 C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
 C:\Users\Nazia Tabassum\Desktop\27-08\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
+<<<<<<< HEAD
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
@@ -360,3 +361,58 @@ C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interfa
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
+=======
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.config
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.ResolveComReference.cache
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe.manifest
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.exe
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_User_Interface.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.dll
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.dll
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.dll
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_BAL.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\CRM_DAL.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\bin\Debug\WPFToolkit.pdb
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csprojResolveAssemblyReference.cache
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CSS.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\Add Product\Add_Products.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\ADD_Tax.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\AdminLogin.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\Admin_Dashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_AdminDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainDashbord.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_MainForm.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_DealerDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCRM_EmpDetailsEdit.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmCustomerBirthdayAlert.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_Main_Login.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmInsurance.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\App.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_Content.g.cs
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface_MarkupCompile.cache
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.g.resources
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.Properties.Resources.resources
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.csproj.GenerateResource.Cache
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\CRM_User_Interface.exe.manifest
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.baml
+C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_User_Interface\obj\Debug\frmDefaultSMS.g.cs
+>>>>>>> origin/master
