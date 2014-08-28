@@ -5450,7 +5450,7 @@ namespace CRM_User_Interface
             //CRM_DAL.
             DateDiff dateDifference = new DateDiff(commondate1, dob1);
             txtdiffdate.Text = dateDifference.ToString();
-            txttestdate.Text = dateDifference.tesydate();
+           // txttestdate.Text = dateDifference.tesydate();
 
         }
         public void fetch_C_Followup()
