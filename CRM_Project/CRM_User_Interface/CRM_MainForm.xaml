@@ -535,7 +535,7 @@
             <Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales"  Visibility="Hidden"                        VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <!--<Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales1"  Visibility="Hidden" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">-->
 
-                <Grid HorizontalAlignment="Left" Height="545" Visibility="Visible"  Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
+                <Grid HorizontalAlignment="Left" Height="545" Visibility="Hidden"   Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="191*"/>
                         <ColumnDefinition Width="38*"/>
@@ -1168,7 +1168,7 @@
             <TextBox x:Name="txtdiffdate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="690,15,0,0"/>
             <TextBox x:Name="txtnoti" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="470,38,0,0" Background="#FFD30711" Foreground="White"/>
 
-            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Hidden"      Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Visible"       Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
