@@ -127,10 +127,10 @@ namespace CRM_User_Interface
         }
         public void Preview()
         {
-            message_Boday = " Dear Customer " + lblCBA_CName.Content + "," + "\n" +
-         " Dated " + lblCBA_CDOB.Content + "\n" +
-        "" + txtCBA_Message.Text + "\n" +
-         "From :" + lblCBA_From.Content + "\n";
+            message_Boday = " Dear Customer " + lblCBA_CName.Content + "," + "\n" +   
+       " " + txtCBA_Message.Text + "\n" +
+         "From :" + lblCBA_From.Content + "\n"+
+              " Dated " + lblCBA_CDOB.Content + "\n" ;
 
         }
 
