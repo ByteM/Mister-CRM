@@ -39,18 +39,19 @@ namespace CRM_User_Interface
         NumberFormatInfo nfi = CultureInfo.CurrentCulture.NumberFormat;
         string caption = "Green Future Glob";
         int cid, I, ID, i;
-        int cnt1 = 0,cnt2=0,cntb,cntf;
+        int cnt1 = 0, cnt2 = 0, cntb, cntf, idcfa;
         double y1, m1, o, p, availqty;
-        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob,cd;
+        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob, cd, bday, IDCB;
         public Button targetButton;
-
+        static DataTable dtalert = new DataTable();
+        DataRow dralert;
         public CRM_MainForm()
         {
             InitializeComponent();
 
             calculate_FollowupDate();
             DateTime s = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
-            Birthday_Notification();
+           // Birthday_Notification();
             Chart_Followup();
             Chart_Seals();
             Chart_Procurment();
@@ -64,7 +65,7 @@ namespace CRM_User_Interface
             //Load_Domain();
             checkedStuff = new List<string>();
             PREPROCUREMENTid();
-
+            
 
         }
         public SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["ConstCRM"].ToString());
@@ -74,12 +75,13 @@ namespace CRM_User_Interface
         DAL_AddProduct dalprd = new DAL_AddProduct();
         string maincked, CName, soe;
         string bpg, cid1;
-        int fetcdoc, Cust_id;
+        int fetcdoc, Cust_id, idcba;
         int exist, vsoe;
         List<string> checkedStuff;
         static DataTable dtstat = new DataTable();
         double MA;
-
+      
+      
 
         BAL_Pre_Procurement bpreproc = new BAL_Pre_Procurement();
         DAL_Pre_Procurement dpreproc = new DAL_Pre_Procurement();
@@ -5263,19 +5265,30 @@ namespace CRM_User_Interface
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
-                    int id = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-                    string cid = dt.Rows[0]["Cust_ID"].ToString();
-                    string nam = dt.Rows[0]["Name"].ToString();
-                    dob = dt.Rows[0]["Date_Of_Birth"].ToString();
+                    idcba = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["Cust_ID"].ToString();
+                    string nam = dt.Rows[i]["Name"].ToString();
+                    dob = dt.Rows[i]["Date_Of_Birth"].ToString();
                     Calculate_CBday();
                     if (txtdiffdate.Text == "0")
                     {
                         MessageBox.Show("Today '" + nam + "' have a Birthday Dated on '" + dob + "'");
+
+                        bday = "Today " + nam + "(" + cid + ")" + "have a Birthday Dated on " +""+ dob+  "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcba.ToString();
+                        dralert["Type"] = "CB";
+                        dralert["Alert"]=bday ;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                       // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                       // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
                         cnt1 = cnt1 + 1;
                     }
+                    bday = "";
                 }
 
-                cntb  = cnt1;
+                txtnoti.Text   = cnt1.ToString ();
                 lblcalert.Content = cntb.ToString();
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
@@ -5323,37 +5336,37 @@ namespace CRM_User_Interface
         {
             GRD_AllertCustomer.Visibility = Visibility.Hidden;
         }
-        public void FetchCustomerBday_Alert()
-        {
-            try
-            {
-                string str;
-                //con.Open();
-                DataSet ds = new DataSet();
-                str = "SELECT  Distinct [ID],[Cust_ID],[Name],[Mobile_No],[Date_Of_Birth], [Email_ID],[Address],[Occupation] " +
-                      "FROM [tlb_Customer]  " +
-                      "WHERE ";
-                str = str + " [S_Status] = 'Active' and [Date_Of_Birth]= '" + CommonDate + "'  ORDER BY [Name] ASC ";
-                //str = str + " S_Status = 'Active' ";
-                SqlCommand cmd = new SqlCommand(str, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ds);
+        //public void FetchCustomerBday_Alert()
+        //{
+        //    try
+        //    {
+        //        string str;
+        //        //con.Open();
+        //        DataSet ds = new DataSet();
+        //        str = "SELECT  Distinct [ID],[Cust_ID],[Name],[Mobile_No],[Date_Of_Birth], [Email_ID],[Address],[Occupation] " +
+        //              "FROM [tlb_Customer]  " +
+        //              "WHERE ";
+        //        str = str + " [S_Status] = 'Active' and [Date_Of_Birth]= '" + CommonDate + "'  ORDER BY [Name] ASC ";
+        //        //str = str + " S_Status = 'Active' ";
+        //        SqlCommand cmd = new SqlCommand(str, con);
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        da.Fill(ds);
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    DGRD_AlertCust.ItemsSource = ds.Tables[0].DefaultView;
-                }
-                else { MessageBox.Show("No Rows Found !!!!!"); }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        //        if (ds.Tables[0].Rows.Count > 0)
+        //        {
+        //            DGRD_AlertCust.ItemsSource = ds.Tables[0].DefaultView;
+        //        }
+        //        else { MessageBox.Show("No Rows Found !!!!!"); }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
 
         private void malerts_Click(object sender, RoutedEventArgs e)
         {
@@ -5366,7 +5379,7 @@ namespace CRM_User_Interface
          
             DGRD_AlertCust.Visibility = Visibility;
             DGRD_CAFollowup.Visibility = Visibility.Hidden ;
-            FetchCustomerBday_Alert();
+           // FetchCustomerBday_Alert();
         }
 
         private void chkSend_Message_Checked(object sender, RoutedEventArgs e)
@@ -5381,13 +5394,7 @@ namespace CRM_User_Interface
 
         private void btnDefaultBirthAlert_Click(object sender, RoutedEventArgs e)
         {
-            object item = DGRD_AlertCust.SelectedItem;
-            frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
-            fcba.cid_CAB = (DGRD_AlertCust.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
-            fcba.cname_CAB = (DGRD_AlertCust.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            fcba.cphone_CAB = (DGRD_AlertCust.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
-            fcba.cdob_CAB = (DGRD_AlertCust.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
-            fcba.Show();
+           
 
             //   MessageBox.Show(ID);
 
@@ -5412,42 +5419,42 @@ namespace CRM_User_Interface
         {
 
         }
-        public void FetchCustomerFollowup_Alert()
-        {
-            try
-            {
-                string str;
-                //con.Open();
-                DataSet ds = new DataSet();
-                str = "SELECT  Distinct [ID],[Followup_ID],[Name],[Mobile_No],[Product_Details],[Followup_Type],[F_Date],[F_Message] " +
-                      "FROM [tlb_FollowUp]  " +
-                      "WHERE ";
-                str = str + " [S_Status] = 'Active'   ORDER BY [Name] ASC ";
-                //and [Date_Of_Birth]= '" + CommonDate + "'
-                //str = str + " S_Status = 'Active' ";
-                SqlCommand cmd = new SqlCommand(str, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ds);
+        //public void FetchCustomerFollowup_Alert()
+        //{
+        //    try
+        //    {
+        //        string str;
+        //        //con.Open();
+        //        DataSet ds = new DataSet();
+        //        str = "SELECT  Distinct [ID],[Followup_ID],[Name],[Mobile_No],[Product_Details],[Followup_Type],[F_Date],[F_Message] " +
+        //              "FROM [tlb_FollowUp]  " +
+        //              "WHERE ";
+        //        str = str + " [S_Status] = 'Active'   ORDER BY [Name] ASC ";
+        //        //and [Date_Of_Birth]= '" + CommonDate + "'
+        //        //str = str + " S_Status = 'Active' ";
+        //        SqlCommand cmd = new SqlCommand(str, con);
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        da.Fill(ds);
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    DGRD_CAFollowup.ItemsSource = ds.Tables[0].DefaultView;
-                }
-                else { MessageBox.Show("No Rows Found !!!!!"); }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        //        if (ds.Tables[0].Rows.Count > 0)
+        //        {
+        //            DGRD_CAFollowup.ItemsSource = ds.Tables[0].DefaultView;
+        //        }
+        //        else { MessageBox.Show("No Rows Found !!!!!"); }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
         public void Calculate_Cfollowup()
         {
             DateTime commondate1 = Convert.ToDateTime(CommonDate);
-            DateTime dob1 = Convert.ToDateTime(dob);
+            DateTime dob1 = Convert.ToDateTime(cd);
             //CRM_DAL.
             DateDiff dateDifference = new DateDiff(commondate1, dob1);
             txtdiffdateF.Text = dateDifference.ToString();
@@ -5468,23 +5475,41 @@ namespace CRM_User_Interface
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
-                    int id = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-                    string cid = dt.Rows[0]["Followup_ID"].ToString();
-                    string nam = dt.Rows[0]["Name"].ToString();
-                    cd = dt.Rows[0]["C_Date"].ToString();
+                    idcfa = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["Followup_ID"].ToString();
+                    string nam = dt.Rows[i]["Name"].ToString();
+                    cd = dt.Rows[i]["C_Date"].ToString();
                     Calculate_Cfollowup();
-                    if (txtdiffdateF.Text == "2")
+                    if (txtdiffdateF.Text == "0")
                     {
                         MessageBox.Show("Today '" + nam + "'have to be saend message '" + cd + "'");
-                        cnt2 = cnt2 + 1;
+                        bday = "Today " + nam + "(" + cid+ ")" + "Followup" + "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcfa.ToString();
+                        dralert["Type"] = "CF";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                       // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                       // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                           // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+
+                      
                     }
                 }
-                cntf = cnt2;
-                if(txtnoti.Text!="")
-                {
-                    txtnoti.Text =(cntb + cntf).ToString ();
-                }
 
+                //cntf = cnt2;
+               
                 lblcalert.Content = txtnoti.Text;
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
@@ -5503,9 +5528,103 @@ namespace CRM_User_Interface
         {
             DGRD_AlertCust.Visibility = Visibility.Hidden;
             DGRD_CAFollowup.Visibility = Visibility;
-            FetchCustomerFollowup_Alert();
+           // FetchCustomerFollowup_Alert();
         }
 
+        private void btnAlertExit1_Click(object sender, RoutedEventArgs e)
+        {
+            Grd_Alerts.Visibility = Visibility.Hidden;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+         
+            dtalertload();
+           // DGRD_Alerts.Columns.Add("Text");
+           // DGRD_Alerts.Columns.Add("View");
+        }
+public void dtalertload()
+        {if(dtalert .Rows .Count == 0)
+        {
+            dtalert.Columns.Add("ID");
+            dtalert.Columns.Add("Type");
+            dtalert.Columns.Add("Alert");
+            
+            dtalert.Columns.Add("View");
+           
+           
+            fetch_C_Birthdays();
+            fetch_C_Followup();
+           
+            //dralert["Alert"] = "asdfghjh";
+            //dralert["View"] = "asdfghjh";
+            //dtalert.Rows.Add(dralert);
+         
+        }
+      
+        }
+
+private void btnalert_Click(object sender, RoutedEventArgs e)
+{
+    Grd_Alerts.Visibility = Visibility;
+}
+
+private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+{
+    object item = DGRD_Alerts .SelectedItem;
+   IDCB = (DGRD_Alerts.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+    string Type = (DGRD_Alerts.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+    MessageBox.Show(IDCB);
+    if(Type =="CB")
+    {
+        Fetch_CB();
+    }
+    else if (Type=="CF")
+    {
+
+    }
+}
+        public void Fetch_CB()
+{
+    try
+    {
+
+        con.Open();
+        string sqlquery1 = "SELECT ID,Cust_ID,Name,Mobile_No,Date_Of_Birth from tlb_Customer where S_Status='Active' and ID='" + IDCB + "'";
+        SqlCommand cmd = new SqlCommand(sqlquery1, con);
+        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        adp.Fill(dt);
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            object item = DGRD_AlertCust.SelectedItem;
+            idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+            string cid = dt.Rows[0]["Cust_ID"].ToString();
+            string nam = dt.Rows[0]["Name"].ToString();
+            string mn = dt.Rows[0]["Mobile_No"].ToString();
+            dob = dt.Rows[0]["Date_Of_Birth"].ToString();
+            
+            frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+            fcba.cid_CAB = cid;
+            fcba.cname_CAB = nam;
+            fcba.cphone_CAB = mn;
+            fcba.cdob_CAB = dob;
+            fcba.Show();
+            
+         
+        }
+
+    
+    }
+    catch (Exception)
+    {
+        throw;
+    }
+    finally
+    {
+        con.Close();
+    }
+}
     }
 }
 
