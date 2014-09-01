@@ -92,7 +92,7 @@ namespace CRM_User_Interface
                 bdealerupd.CompanyName = txtAdmEdit_CompanyName.Text;
                 bdealerupd.DealerFirstName = txtAdmEdit_DealerFirstName.Text;
                 bdealerupd.DealerLastName = txtAdmEdit_DealerLastName.Text;
-                bdealerupd.DateOfBirth = Convert.ToDateTime(dtpAdmEdit_Dealer_DOB.SelectedDate);
+                bdealerupd.DateOfBirth =dtpAdmEdit_Dealer_DOB.Text ;
                 bdealerupd.MobileNo = txtAdmEdit_Dealer_MobileNo.Text;
                 bdealerupd.PhoneNo = txtAdmEdit_Dealer_PhoneNo.Text;
                 bdealerupd.DealerAddress = txtAdmEdit_Dealer_Address.Text;
@@ -113,7 +113,7 @@ namespace CRM_User_Interface
                 ////txttime.Text = time;
 
                 //baddprd.C_Date =Convert .ToDateTime( DATE);
-                bdealerupd.C_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+                bdealerupd.C_Date = System .DateTime .Now .ToShortDateString ();
                 ddealerupd.EmployeeEntry_Insert_Update_Delete(bdealerupd);
                 MessageBox.Show("Updated Data Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
                 

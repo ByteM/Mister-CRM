@@ -19,7 +19,7 @@ namespace CRM_BAL
 
         public string EmployeeName { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public string  DateOfBirth { get; set; }
 
         public string EmpAddress { get; set; }
 
@@ -29,7 +29,7 @@ namespace CRM_BAL
 
         public string Designation { get; set; }
 
-        public DateTime DateOfJoining { get; set; }
+        public string  DateOfJoining { get; set; }
 
         public string NoOfYears { get; set; }
 
@@ -43,6 +43,6 @@ namespace CRM_BAL
 
         public string S_Status { get; set; }
 
-        public DateTime C_Date { get; set; }
+        public string  C_Date { get; set; }
     }
 }

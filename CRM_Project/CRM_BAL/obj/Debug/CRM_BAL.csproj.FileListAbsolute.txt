@@ -30,7 +30,6 @@ C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_BAL\obj\Debug\C
 C:\Users\Dexter\Documents\GitHub\CRM\CRM_Project\CRM_Project\CRM_BAL\obj\Debug\CRM_BAL.pdb
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\bin\Debug\CRM_BAL.dll
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\bin\Debug\CRM_BAL.pdb
-C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\obj\Debug\CRM_BAL.csprojResolveAssemblyReference.cache
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\obj\Debug\CRM_BAL.dll
 C:\Users\Nazia Tabassum\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\obj\Debug\CRM_BAL.pdb
 C:\Users\Dexter\Documents\GitHub\Mister-CRM\CRM_Project\CRM_BAL\bin\Debug\CRM_BAL.dll

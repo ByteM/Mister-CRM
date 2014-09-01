@@ -127,19 +127,19 @@ namespace CRM_User_Interface
                 bempupd.EID = Convert.ToInt32(txtAdm_EmployeeID.Text);
                 bempupd.EmployeeID = lblEmpID.Content.ToString();
                 bempupd.EmployeeName = txtAdm_EmpName.Text;
-                bempupd.DateOfBirth = Convert.ToDateTime(dtpAdm_Emp_DOB.SelectedDate);
+                bempupd.DateOfBirth =dtpAdm_Emp_DOB.Text ;
                 bempupd.EmpAddress = txtAdm_Emp_Address.Text;
                 bempupd.MobileNo = txtAdm_Emp_MobileNo.Text;
                 bempupd.PhoneNo = txtAdm_Emp_PhoneNo.Text;
                 bempupd.Designation = txtAdm_Emp_Designation.Text;
-                bempupd.DateOfJoining = Convert.ToDateTime(dtpAdm_Emp_DOJ.SelectedDate);
+                bempupd.DateOfJoining = dtpAdm_Emp_DOJ.Text ;
                 bempupd.NoOfYears = cmbAdm_Emp_YearExp.Text;
                 bempupd.Years = lblYears.Content.ToString();
                 bempupd.NoOfMonths = cmbAdm_Emp_Months.Text;
                 bempupd.Months = lblMonths.Content.ToString();
                 bempupd.Salary = Convert.ToDouble(txtAdm_Emp_Salary.Text);
                 bempupd.S_Status = "Active";
-                bempupd.C_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+                bempupd.C_Date = System.DateTime.Now.ToShortDateString();
 
                 //string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
                 //string time = System.DateTime.Now.ToShortTimeString();

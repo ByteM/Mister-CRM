@@ -319,7 +319,7 @@
 
             </Grid>
 
-            <Grid x:Name="grd_EmployeeDetails" Visibility="Hidden" HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid x:Name="grd_EmployeeDetails" Visibility="Visible" HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Grid HorizontalAlignment="Left" Height="480" Margin="80,60,0,0" VerticalAlignment="Top" Width="995" Background="#FFF6F6F6">
                     <ComboBox x:Name="cmbAdm_Emp_YearExp" HorizontalAlignment="Left" Margin="450,358,0,0" VerticalAlignment="Top" Width="110" SelectionChanged="cmbAdm_Emp_YearExp_SelectionChanged" IsEditable="True">
 
@@ -353,7 +353,7 @@
                 <Label Content="EmployeeID" x:Name="lblEmpID" HorizontalAlignment="Left" Margin="530,130,0,0" VerticalAlignment="Top"/>
             </Grid>
 
-            <Grid x:Name="grd_DealerEntry" Visibility="Hidden"  HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid x:Name="grd_DealerEntry" Visibility="Hidden"   HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Grid HorizontalAlignment="Left" Height="480" Margin="87,56,0,0" VerticalAlignment="Top" Width="995" Background="#FFFFFDFD">
                     <ComboBox x:Name="cmbAdm_Emp_Months1" HorizontalAlignment="Left" Margin="615,358,0,0" VerticalAlignment="Top" Width="110" Visibility="Hidden"/>
                     <Button x:Name="btnAdm_Dealer_Exit" Content="Exit" HorizontalAlignment="Left" Margin="617,440,0,0" VerticalAlignment="Top" Width="75" Click="btnAdm_Dealer_Exit_Click" Height="25" />
