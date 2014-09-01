@@ -40,8 +40,8 @@ namespace CRM_User_Interface
         string caption = "Green Future Glob";
         int cid, I, ID, i;
         int cnt1 = 0, cnt2 = 0, cntb, cntf, idcfa;
-        double y1, m1, o, p, availqty;
-        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob, cd, bday, IDCB;
+        double y1, m1, o, p, availqty,ba;
+        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob, cd, bday, IDCB,chc,chdatae;
         public Button targetButton;
         static DataTable dtalert = new DataTable();
         DataRow dralert;
@@ -5289,7 +5289,7 @@ namespace CRM_User_Interface
                 }
 
                 txtnoti.Text   = cnt1.ToString ();
-                lblcalert.Content = cntb.ToString();
+               // lblcalert.Content = cntb.ToString();
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
             catch (Exception)
@@ -5490,6 +5490,7 @@ namespace CRM_User_Interface
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
                         DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+
                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
                         if (txtnoti.Text != "")
@@ -5510,7 +5511,7 @@ namespace CRM_User_Interface
 
                 //cntf = cnt2;
                
-                lblcalert.Content = txtnoti.Text;
+               // lblcalert.Content = txtnoti.Text;
                 //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
             }
             catch (Exception)
@@ -5523,7 +5524,297 @@ namespace CRM_User_Interface
             }
 
         }
+        public void fetch_C_CashBalance()
+        {
+            try
+            {
+                // int cnt1 = 0;
+                con.Open();
+                string sqlquery1 = "Select cc.ID, c.Cust_ID,cc.Bill_No,c.Name ,c.Mobile_No ,id.Products123 ,cc.Total_Price,cc.Paid_Amount,cc.Balance_Amount from tlb_Cash cc INNER JOIN tlb_Customer c on c.ID =cc.Customer_ID INNER JOIN tlb_InvoiceDetails id on id.Customer_ID =cc.Customer_ID where cc.S_Status ='Active' and cc.Balance_Amount !=0  ORDER BY cc.Customer_ID  ASC ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
 
+                    idcfa = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["Cust_ID"].ToString();
+
+                    string nam = dt.Rows[i]["Name"].ToString();
+                    ba =Convert .ToDouble ( dt.Rows[i]["Balance_Amount"].ToString());
+                    Calculate_Cfollowup();
+                    if (cd != "0")
+                    {
+                        MessageBox.Show("Today '" + nam + "'have to be saend message of balance Amount'" + ba + "'");
+                        bday = "" + nam + "(" + cid + ")" + "'have a Balance of ' " + ba+ "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcfa.ToString();
+                        dralert["Type"] = "Cash";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+
+                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                            // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+
+
+                    }
+                }
+
+                //cntf = cnt2;
+
+                //lblcalert.Content = txtnoti.Text;
+                //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void fetch_C_ChequeBalance()
+        {
+            try
+            {
+                // int cnt1 = 0;
+                con.Open();
+                string sqlquery1 = "Select ch.ID , c.Cust_ID ,ch.Bill_No,id.Products123 ,ch.Cheque_Amount,ch.Cheque_Date ,ch.IsClear  ,c.Name ,c.Mobile_No from tlb_Cheque  ch INNER JOIN tlb_Customer c on c.ID =ch.Customer_ID INNER JOIN tlb_InvoiceDetails id on id.Customer_ID =ch.Customer_ID where ch.S_Status ='Active' and ch.IsClear ='Active' and ch.Cheque_Date='"+CommonDate +"'  ORDER BY ch.Customer_ID  ASC ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    idcfa = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["Cust_ID"].ToString();
+
+                    string nam = dt.Rows[i]["Name"].ToString();
+                    chc = dt.Rows[i]["Cheque_Amount"].ToString();
+                    chdatae = dt.Rows[i]["Cheque_Date"].ToString();
+                    string clear = dt.Rows[i]["IsClear"].ToString();
+                    Calculate_Chhequebal();
+                    if (txtdiffdate.Text  == "0")
+                    {
+                        MessageBox.Show("" + nam + " check is not clear of amount'" + chc + "'");
+                        bday = "" + nam + "(" + cid + ")" + "check is not clear of amount " + chc + "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcfa.ToString();
+                        dralert["Type"] = "Cheque";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+
+                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                            // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+
+
+                    }
+                }
+
+                //cntf = cnt2;
+
+               // lblcalert.Content = txtnoti.Text;
+                //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void Calculate_Chhequebal()
+        {
+            DateTime commondate1 = Convert.ToDateTime(CommonDate);
+            DateTime dob1 = Convert.ToDateTime(chdatae);
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtdiffdate.Text = dateDifference.ToString();
+
+            //DateDiff dateDifference = new DateDiff(this.dateTimeTo.Value, this.dateTimeFrom.Value);
+            //this.lblOutput.Text = "Difference between " + this.dateTimeFrom.Value.ToShortDateString()
+            //                    + " and " + this.dateTimeTo.Value.ToShortDateString() + " is :\n"
+            //                    + dateDifference.ToString();
+        }
+        public void fetch_D_Birthdays()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select ID,DealerEntryID,CompanyName,(DealerFirstName + ' ' + DealerLastName)as DealerName , DateOfBirth from tbl_DealerEntry where S_Status='Active' and DateOfBirth='" + CommonDate + "' ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    idcba = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["DealerEntryID"].ToString();
+                    string nam = dt.Rows[i]["DealerName"].ToString();
+                    dob = dt.Rows[i]["DateOfBirth"].ToString();
+                    Calculate_DBday();
+                    if (txtdiffdate.Text == "0")
+                    {
+                        MessageBox.Show("Today '" + nam + " Dealer's have a Birthday Dated on " + dob + "'");
+
+                        bday = "Today " + nam + "(" + cid + ")" + "Dealer's have a Birthday Dated on " + "" + dob + "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcba.ToString();
+                        dralert["Type"] = "DB";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                            // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+                    }
+                    bday = "";
+                }
+
+                //txtnoti.Text = cnt1.ToString();
+               // lblcalert.Content = txtnoti.Text;
+                //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void Calculate_DBday()
+        {
+            DateTime commondate1 = Convert.ToDateTime(CommonDate);
+            DateTime dob1 = Convert.ToDateTime(dob);
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtdiffdate.Text = dateDifference.ToString();
+
+            //DateDiff dateDifference = new DateDiff(this.dateTimeTo.Value, this.dateTimeFrom.Value);
+            //this.lblOutput.Text = "Difference between " + this.dateTimeFrom.Value.ToShortDateString()
+            //                    + " and " + this.dateTimeTo.Value.ToShortDateString() + " is :\n"
+            //                    + dateDifference.ToString();
+        }
+        public void fetch_E_Birthdays()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select ID,EmployeeID,EmployeeName,MobileNo,DateOfBirth from tbl_Employee where S_Status='Active' and DateOfBirth='" + CommonDate + "' ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    idcba = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["EmployeeID"].ToString();
+                    string nam = dt.Rows[i]["EmployeeName"].ToString();
+                    dob = dt.Rows[i]["DateOfBirth"].ToString();
+                    Calculate_EBday();
+                    if (txtdiffdate.Text == "0")
+                    {
+                        MessageBox.Show("Today '" + nam + " Employee's have a Birthday Dated on " + dob + "'");
+
+                        bday = "Today " + nam + "(" + cid + ")" + "Employee's have a Birthday Dated on " + "" + dob + "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcba.ToString();
+                        dralert["Type"] = "EB";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                            // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+                    }
+                    bday = "";
+                }
+
+                //txtnoti.Text = cnt1.ToString();
+                //lblcalert.Content = txtnoti.Text;
+                //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void Calculate_EBday()
+        {
+            DateTime commondate1 = Convert.ToDateTime(CommonDate);
+            DateTime dob1 = Convert.ToDateTime(dob);
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtdiffdate.Text = dateDifference.ToString();
+
+            //DateDiff dateDifference = new DateDiff(this.dateTimeTo.Value, this.dateTimeFrom.Value);
+            //this.lblOutput.Text = "Difference between " + this.dateTimeFrom.Value.ToShortDateString()
+            //                    + " and " + this.dateTimeTo.Value.ToShortDateString() + " is :\n"
+            //                    + dateDifference.ToString();
+        }
         private void rdo_AlertsCFollow_up_Checked(object sender, RoutedEventArgs e)
         {
             DGRD_AlertCust.Visibility = Visibility.Hidden;
@@ -5555,7 +5846,11 @@ public void dtalertload()
            
             fetch_C_Birthdays();
             fetch_C_Followup();
-           
+            fetch_C_CashBalance();
+            fetch_C_ChequeBalance();
+            fetch_D_Birthdays();
+            fetch_E_Birthdays();
+
             //dralert["Alert"] = "asdfghjh";
             //dralert["View"] = "asdfghjh";
             //dtalert.Rows.Add(dralert);
@@ -5581,7 +5876,23 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     }
     else if (Type=="CF")
     {
-
+        Fetch_CB();
+    }
+    else if (Type == "Cash")
+    {
+        fetch_CCB();
+    }
+    else if (Type == "Cheque")
+    {
+        fetch_CChB();
+    }
+    else if(Type =="DB")
+    {
+        Fetch_DB();
+    }
+    else if(Type =="EB")
+    {
+        Fetch_EB();
     }
 }
         public void Fetch_CB()
@@ -5590,7 +5901,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
 
         con.Open();
-        string sqlquery1 = "SELECT ID,Cust_ID,Name,Mobile_No,Date_Of_Birth from tlb_Customer where S_Status='Active' and ID='" + IDCB + "'";
+        string sqlquery1 = "SELECT ID,Followup_ID,Name,Mobile_No,C_Date from tlb_FollowUp where S_Status='Active' and ID='" + IDCB + "'";
         SqlCommand cmd = new SqlCommand(sqlquery1, con);
         SqlDataAdapter adp = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
@@ -5599,10 +5910,10 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             object item = DGRD_AlertCust.SelectedItem;
             idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-            string cid = dt.Rows[0]["Cust_ID"].ToString();
+            string cid = dt.Rows[0]["Followup_ID"].ToString();
             string nam = dt.Rows[0]["Name"].ToString();
             string mn = dt.Rows[0]["Mobile_No"].ToString();
-            dob = dt.Rows[0]["Date_Of_Birth"].ToString();
+            dob = dt.Rows[0]["C_Date"].ToString();
             
             frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
             fcba.cid_CAB = cid;
@@ -5625,6 +5936,230 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         con.Close();
     }
 }
+        public void fetch_CF()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "SELECT ID,Cust_ID,Name,Mobile_No,Date_Of_Birth from tlb_Customer where S_Status='Active' and ID='" + IDCB + "'";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["Cust_ID"].ToString();
+                    string nam = dt.Rows[0]["Name"].ToString();
+                    string mn = dt.Rows[0]["Mobile_No"].ToString();
+                    dob = dt.Rows[0]["Date_Of_Birth"].ToString();
+
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.Show();
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void fetch_CCB()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select cc.ID, c.Cust_ID,cc.Bill_No,c.Name ,c.Mobile_No ,id.Products123 ,cc.Total_Price,cc.Paid_Amount,cc.Balance_Amount from tlb_Cash cc INNER JOIN tlb_Customer c on c.ID =cc.Customer_ID INNER JOIN tlb_InvoiceDetails id on id.Customer_ID =cc.Customer_ID where cc.S_Status ='Active' and cc.Balance_Amount !=0 and cc.ID='" + IDCB + "' ORDER BY cc.Customer_ID  ASC ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["Cust_ID"].ToString();
+                    string nam = dt.Rows[0]["Name"].ToString();
+                    string mn = dt.Rows[0]["Mobile_No"].ToString();
+                    dob = dt.Rows[0]["Products123"].ToString();
+
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.Show();
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void fetch_CChB()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select ch.ID , c.Cust_ID ,c.Name ,c.Mobile_No,ch.Bill_No,id.Products123 ,ch.Cheque_Amount,ch.Cheque_Date ,ch.IsClear   from tlb_Cheque  ch INNER JOIN tlb_Customer c on c.ID =ch.Customer_ID INNER JOIN tlb_InvoiceDetails id on id.Customer_ID =ch.Customer_ID where ch.S_Status ='Active' and ch.IsClear ='Active'  and ch.ID='" + IDCB + "' and ch.Cheque_Date='" + CommonDate + "' ORDER BY ch.Customer_ID  ASC ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["Cust_ID"].ToString();
+                    string nam = dt.Rows[0]["Name"].ToString();
+                    string mn = dt.Rows[0]["Mobile_No"].ToString();
+                  
+                    string camt = dt.Rows[0]["Cheque_Amount"].ToString();
+                    dob = dt.Rows[0]["Cheque_Date"].ToString();
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.camt_CAB= camt;
+                    fcba.Show();
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void Fetch_DB()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select ID,DealerEntryID,CompanyName,(DealerFirstName + ' ' + DealerLastName)as DealerName ,MobileNo, DateOfBirth from tbl_DealerEntry where S_Status='Active' and DateOfBirth='" + CommonDate + "' and  ID='" + IDCB + "'";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["DealerEntryID"].ToString();
+                    string nam = dt.Rows[0]["DealerName"].ToString();
+                    string mn = dt.Rows[0]["MobileNo"].ToString();
+                    dob = dt.Rows[0]["DateOfBirth"].ToString();
+
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.Show();
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+         
+         public void Fetch_EB()
+        {
+            try
+            {
+
+                con.Open();
+                string sqlquery1 = "Select ID,EmployeeID,EmployeeName,MobileNo,DateOfBirth from tbl_Employee where S_Status='Active' and DateOfBirth='" + CommonDate + "' and  ID='" + IDCB + "'";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["EmployeeID"].ToString();
+                    string nam = dt.Rows[0]["EmployeeName"].ToString();
+                    string mn = dt.Rows[0]["MobileNo"].ToString();
+                    dob = dt.Rows[0]["DateOfBirth"].ToString();
+
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.Show();
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        private void btnalertexit_Click_1(object sender, RoutedEventArgs e)
+        {
+            Grd_Alerts.Visibility = Visibility.Hidden;
+        }
+
+        private void btnmnualert_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Grd_Alerts.Visibility = Visibility;
+        }
+
+       
     }
 }
 

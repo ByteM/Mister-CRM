@@ -88,7 +88,7 @@
 
                     <!--<MenuItem Header=" View Sales"/>
                     <MenuItem Header=" View Reports"/>
-                    <MenuItem Header=" Import/Export"/>-->
+                    <MenuItem Header=" Import/Export"/>--> 
                 </MenuItem>
                 <MenuItem Width="85">
                     <MenuItem.Header>
@@ -160,8 +160,8 @@
                 <MenuItem Width="100" Click="MenuItem_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-
-                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" Content="Alerts" />
+                            <!--<Button Padding="0" Margin="0 0 0 1" Foreground="White" Name="btnmnualert" Content="Alerts" />-->
+                            <Label Padding="0" Margin="0 0 0 1" Foreground="White" Content="Alerts" MouseDoubleClick="Label_MouseDoubleClick" />
                             <Border>
                                 <ToggleButton IsChecked="False" IsHitTestVisible="False"
 									BorderBrush="{TemplateBinding Border.BorderBrush}"
@@ -186,14 +186,14 @@
                             </Border>
                         </StackPanel>
                     </MenuItem.Header>
-                    <MenuItem Header="Customer" x:Name="smcustomer" Click="smcustomer_Click" HorizontalAlignment="Right" Width="137" >
+                    <!--<MenuItem Header="Customer" x:Name="smcustomer" Click="smcustomer_Click" HorizontalAlignment="Right" Width="137" >
                         <MenuItem.Icon >
                             <Label Name="lblcalert" Margin="0,-6,-15,-3" Height="25" VerticalAlignment="Top"></Label>
-                            <!--<Button Click="Button_Click">i</Button>-->
+                            --><!--<Button Click="Button_Click">i</Button>--><!--
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="Dealer" x:Name="smdealer" Click="smdealer_Click"/>
-                    <MenuItem Header="Employee" x:Name="smcemployee" Click="smcemployee_Click"/> `
+                    <MenuItem Header="Employee" x:Name="smcemployee" Click="smcemployee_Click"/> `-->
 
                 </MenuItem>
                 <MenuItem Header="Calender"  Foreground="White" Width="70" x:Name="mcalender"/>
@@ -432,7 +432,7 @@
 
             </Grid>
             <Button Content="Admin" Name="btnadminl" Foreground="White"  HorizontalAlignment="Left" Margin="980,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF302D2D" Click="btnadminl_Click"/>
-            <Grid HorizontalAlignment="Left" Visibility="Hidden"    Name="GRD_NewProcurement" Height="560" Margin="21,65,0,0" VerticalAlignment="Top" Width="1159" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Visibility="Hidden"      Name="GRD_NewProcurement" Height="560" Margin="21,65,0,0" VerticalAlignment="Top" Width="1159" Background="#FFF0F0F0">
                 <Grid Height="530" Margin="70,20,54,0" VerticalAlignment="Top" Background="White" >
                     <Label Content="Pre-Procurement No :" HorizontalAlignment="Left" Margin="85,34,0,0" VerticalAlignment="Top" Width="146"/>
                     <Label Content="Dealer Name :" HorizontalAlignment="Left" Margin="89,63,0,0" VerticalAlignment="Top" Width="85"/>
@@ -496,7 +496,7 @@
                         </StackPanel>-->
                 </Grid>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="565" Margin="20,66,0,0" Name="GRD_Follwupandnew"  Visibility="Hidden"       VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" >
+            <Grid HorizontalAlignment="Left" Height="565" Margin="20,66,0,0" Name="GRD_Follwupandnew"  Visibility="Hidden"          VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" >
                 <Grid HorizontalAlignment="Left" Height="540" Name="grd_addfollowupandwalkin" Margin="160,15,0,0" VerticalAlignment="Top" Width="835" Background="White">
                     <Label Content="Follow up Details" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" />
                     <Label Content="Follow_up ID :" HorizontalAlignment="Left" Margin="95,47,0,0" VerticalAlignment="Top" Width="90"/>
@@ -538,7 +538,7 @@
             <Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales"  Visibility="Hidden"                        VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <!--<Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales1"  Visibility="Hidden" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">-->
 
-                <Grid HorizontalAlignment="Left" Height="545" Visibility="Hidden"   Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
+                <Grid HorizontalAlignment="Left" Height="545" Visibility="Visible"   Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="191*"/>
                         <ColumnDefinition Width="38*"/>
@@ -653,7 +653,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="0*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Visibility="Hidden"     x:Name="GRD_SaleCustomer1" Height="420" VerticalAlignment="Top" Margin="6,65,0,0" Background="White">
+                    <Grid Visibility="Visible"      x:Name="GRD_SaleCustomer1" Height="420" VerticalAlignment="Top" Margin="6,65,0,0" Background="White">
                         <DataGrid x:Name="DGRD_SaleOldCustomer" HorizontalAlignment="Left" IsReadOnly="False" Margin="-5,0,0,-15" VerticalAlignment="Top" Height="435" Width="1135" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" SelectedCellsChanged="DGRD_SaleFollowup_SelectedCellsChanged" MouseDoubleClick="DGRD_SaleFollowup_MouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ID"  x:Name="grdidO" Width="30" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}" />
@@ -1171,7 +1171,7 @@
             <TextBox x:Name="txtdiffdate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="690,15,0,0"/>
             <TextBox x:Name="txtnoti" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="470,38,0,0" Background="#FFD30711" Foreground="White"/>
 
-            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Hidden"        Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Name="GRD_AllertCustomer" Visibility="Hidden"          Height="560" VerticalAlignment="Top" Width="1150" Margin="25,68,0,0" Background="#FFF0F0F0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
@@ -1294,8 +1294,8 @@
                 <Label Content="Employee Alerts" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,-2,0,0"/>
             </Grid>
             <TextBox x:Name="txtdiffdateF" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Margin="727,16,0,0"/>
-            <Grid HorizontalAlignment="Left" Name="Grd_Alerts" Visibility="Visible"    Height="352" VerticalAlignment="Top" Width="540" Margin="470,57,0,0" Background="#FFF0F0F0">
-                <DataGrid Name="DGRD_Alerts" VerticalAlignment="Top" Background="White" Margin="4,6,0,0" Height="341" HorizontalAlignment="Left" Width="531" MouseDoubleClick="DGRD_Alerts_MouseDoubleClick">
+            <Grid HorizontalAlignment="Left" Name="Grd_Alerts" Visibility="Hidden"       Height="367" VerticalAlignment="Top" Width="540" Margin="470,57,0,0" Background="#FFF0F0F0">
+                <DataGrid Name="DGRD_Alerts" VerticalAlignment="Top" Background="White" Margin="4,20,0,0" Height="341" HorizontalAlignment="Left" Width="531" MouseDoubleClick="DGRD_Alerts_MouseDoubleClick">
                     <!--<DataGridTemplateColumn Header="IsInterested" Width="50" x:Name = "views" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -1307,7 +1307,8 @@
                 </DataGrid>
 
                 <Button x:Name="btnAlertExit1" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="1097,4,0,0" Click="btnAlertExit1_Click"/>
-                
+                <Button x:Name="btnalertexit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Margin="473,2,0,0" Click="btnalertexit_Click_1" Height="20"/>
+
             </Grid>
 
         </Grid>

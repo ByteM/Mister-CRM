@@ -118,12 +118,12 @@ namespace CRM_User_Interface
                 bempetr.Flag = 1;
                 bempetr.EmployeeID = lblEmpID.Content.ToString();
                 bempetr.EmployeeName = txtAdm_EmpName.Text;
-                bempetr.DateOfBirth = Convert.ToDateTime(dtpAdm_Emp_DOB.SelectedDate);
+                bempetr.DateOfBirth =dtpAdm_Emp_DOB.Text ;
                 bempetr.EmpAddress = txtAdm_Emp_Address.Text;
                 bempetr.MobileNo = txtAdm_Emp_MobileNo.Text;
                 bempetr.PhoneNo = txtAdm_Emp_PhoneNo.Text;
                 bempetr.Designation = txtAdm_Emp_Designation.Text;
-                bempetr.DateOfJoining = Convert.ToDateTime(dtpAdm_Emp_DOJ.SelectedDate);
+                bempetr.DateOfJoining =dtpAdm_Emp_DOJ.Text ;
                 bempetr.NoOfYears = cmbAdm_Emp_YearExp.SelectedItem.ToString();
                 bempetr.Years = lblYears.Content.ToString();
                 bempetr.NoOfMonths = cmbAdm_Emp_Months.SelectedItem.ToString();
@@ -142,7 +142,7 @@ namespace CRM_User_Interface
                 ////txttime.Text = time;
 
                 //baddprd.C_Date =Convert .ToDateTime( DATE);
-                bempetr.C_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+                bempetr.C_Date = System.DateTime.Now.ToShortDateString();
                 dempetr.EmployeeEntry_Insert_Update_Delete(bempetr);
                 MessageBox.Show("Data Save Successfully", caption, MessageBoxButton.OK, MessageBoxImage.Information);
                 ResetText();
@@ -450,7 +450,7 @@ namespace CRM_User_Interface
                 bdealeretr.CompanyName = txtAdm_CompanyName.Text;
                 bdealeretr.DealerFirstName = txtAdm_DealerFirstName.Text;
                 bdealeretr.DealerLastName = txtAdm_DealerLastName.Text;
-                bdealeretr.DateOfBirth = Convert.ToDateTime(dtpAdm_Dealer_DOB.SelectedDate);
+                bdealeretr.DateOfBirth = dtpAdm_Dealer_DOB.Text ;
                 bdealeretr.MobileNo = txtAdm_Dealer_MobileNo.Text;
                 bdealeretr.PhoneNo = txtAdm_Dealer_PhoneNo.Text;
                 bdealeretr.DealerAddress = txtAdm_Dealer_Address.Text;
@@ -471,7 +471,7 @@ namespace CRM_User_Interface
                 ////txttime.Text = time;
 
                 //baddprd.C_Date =Convert .ToDateTime( DATE);
-                bdealeretr.C_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+                bdealeretr.C_Date = System.DateTime.Now.ToShortDateString();
                 ddealeretr.EmployeeEntry_Insert_Update_Delete(bdealeretr);
                 MessageBox.Show("Data Save Successfully");
                 Dealer_ResetText();

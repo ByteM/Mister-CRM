@@ -25,7 +25,7 @@ namespace CRM_BAL
 
         public string DealerLastName { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public string  DateOfBirth { get; set; }
 
         public string MobileNo { get; set; }
 
@@ -43,6 +43,6 @@ namespace CRM_BAL
 
         public string S_Status { get; set; }
 
-        public DateTime C_Date { get; set; }
+        public string  C_Date { get; set; }
     }
 }

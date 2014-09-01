@@ -34,7 +34,7 @@ namespace CRM_User_Interface
     /// </summary>
     public partial class frmCustomerBirthdayAlert : Window
     {
-        public string cid_CAB = "", cname_CAB = "", cphone_CAB = "", cdob_CAB = "", message_Boday;
+        public string cid_CAB = "", cname_CAB = "", cphone_CAB = "", cdob_CAB = "",camt_CAB="", message_Boday;
         public string caption = "Green Future Glob";
         public frmCustomerBirthdayAlert()
         {
