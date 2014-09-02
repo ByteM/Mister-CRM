@@ -41,7 +41,7 @@ namespace CRM_User_Interface
         int cid, I, ID, i;
         int cnt1 = 0, cnt2 = 0, cntb, cntf, idcfa;
         double y1, m1, o, p, availqty,ba;
-        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins, monthvalue, occu, dob, cd, bday, IDCB,chc,chdatae;
+        string yarvalue, year, month, g, pm_c, pm_ch, pm_f, pm_ins,insd, monthvalue, occu, dob, cd, bday, IDCB,chc,chdatae;
         public Button targetButton;
         static DataTable dtalert = new DataTable();
         DataRow dralert;
@@ -5280,7 +5280,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "CB";
                         dralert["Alert"]=bday ;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                       // DGRD_Alerts.ItemsSource = dtalert.DefaultView;
                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
                         cnt1 = cnt1 + 1;
@@ -5489,7 +5489,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "CF";
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                       // DGRD_Alerts.ItemsSource = dtalert.DefaultView;
 
                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
@@ -5553,7 +5553,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "Cash";
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                       // DGRD_Alerts.ItemsSource = dtalert.DefaultView;
 
                         // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                         // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
@@ -5619,7 +5619,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "Cheque";
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                      //  DGRD_Alerts.ItemsSource = dtalert.DefaultView;
 
                         // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                         // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
@@ -5652,6 +5652,82 @@ namespace CRM_User_Interface
             {
                 con.Close();
             }
+
+        }
+
+        public void fetch_C_InstalBalance()
+        {
+            try
+            {
+                // int cnt1 = 0;
+                con.Open();
+                string sqlquery1 = "Select mi.ID , c.Cust_ID ,c.Name ,c.Mobile_No  ,mi.Bill_No ,mi.Monthly_Amount,mi.Installment_Date from tlb_MainInstallment  mi INNER JOIN tlb_Customer c on c.ID =mi.Customer_ID  where mi.S_Status ='Active' and mi.Ins ='Not_Nill' and mi.Installment_Date='"+CommonDate +"' ORDER BY mi.Customer_ID  ASC ";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+
+                    idcfa = Convert.ToInt32(dt.Rows[i]["ID"].ToString());
+                    string cid = dt.Rows[i]["Cust_ID"].ToString();
+
+                    string nam = dt.Rows[i]["Name"].ToString();
+                    ba = Convert.ToDouble(dt.Rows[i]["Monthly_Amount"].ToString());
+                    insd = dt.Rows[i]["Installment_Date"].ToString();
+                    Calculate_CInstall();
+                    if (txtdiffdateF.Text == "0")
+                    {
+                        MessageBox.Show("Today '" + nam + "'have to be saend message for Installment Amount of'" + ba + "'");
+                        bday = "" + nam + "(" + cid + ")" + "'have a Installment of ' " + ba + "\n";
+                        dralert = dtalert.NewRow();
+                        dralert["ID"] = idcfa.ToString();
+                        dralert["Type"] = "Install";
+                        dralert["Alert"] = bday;
+                        dtalert.Rows.Add(dralert);
+                       // DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+
+                        // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
+                        // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
+                        if (txtnoti.Text != "")
+                        {
+                            int w = Convert.ToInt32(txtnoti.Text);
+                            txtnoti.Text = (w + 1).ToString();
+                            // txtnoti.Text = w.ToString();
+                        }
+                        else if (txtnoti.Text == "")
+                        {
+                            cnt1 = cnt1 + 1;
+                            txtnoti.Text = cnt1.ToString();
+                        }
+
+
+                    }
+                }
+
+                //cntf = cnt2;
+
+                //lblcalert.Content = txtnoti.Text;
+                //grd_FinalizeProducts.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void Calculate_CInstall()
+        {
+            DateTime commondate1 = Convert.ToDateTime(CommonDate);
+            DateTime dob1 = Convert.ToDateTime(insd);
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtdiffdateF.Text = dateDifference.ToString();
+           // txttestdate.Text = dateDifference.tesydate();
 
         }
         public void Calculate_Chhequebal()
@@ -5696,7 +5772,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "DB";
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                        //DGRD_Alerts.ItemsSource = dtalert.DefaultView;
                         // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                         // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
                         if (txtnoti.Text != "")
@@ -5770,7 +5846,7 @@ namespace CRM_User_Interface
                         dralert["Type"] = "EB";
                         dralert["Alert"] = bday;
                         dtalert.Rows.Add(dralert);
-                        DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+                        //DGRD_Alerts.ItemsSource = dtalert.DefaultView;
                         // DGRD_Alerts.Columns[0].Visibility = Visibility.Hidden;
                         // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
                         if (txtnoti.Text != "")
@@ -5841,7 +5917,7 @@ public void dtalertload()
             dtalert.Columns.Add("Type");
             dtalert.Columns.Add("Alert");
             
-            dtalert.Columns.Add("View");
+           // dtalert.Columns.Add("View");
            
            
             fetch_C_Birthdays();
@@ -5850,11 +5926,13 @@ public void dtalertload()
             fetch_C_ChequeBalance();
             fetch_D_Birthdays();
             fetch_E_Birthdays();
+            fetch_C_InstalBalance();
 
-            //dralert["Alert"] = "asdfghjh";
-            //dralert["View"] = "asdfghjh";
+            DGRD_Alerts.ItemsSource = dtalert.DefaultView;
+             DGRD_Alerts.Columns[0].Width=-3;
+            // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
             //dtalert.Rows.Add(dralert);
-         
+          //  Grd_Alerts.Columns[0].Visibility = Visibility.Hidden;
         }
       
         }
@@ -5876,7 +5954,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     }
     else if (Type=="CF")
     {
-        Fetch_CB();
+        fetch_CF();
     }
     else if (Type == "Cash")
     {
@@ -5894,33 +5972,39 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
         Fetch_EB();
     }
+    else if(Type =="Install")
+    {
+        fetch_Install();
+    }
 }
         public void Fetch_CB()
 {
     try
     {
+         con.Open();
+                string sqlquery1 = "SELECT ID,Cust_ID,Name,Mobile_No,Date_Of_Birth from tlb_Customer where S_Status='Active' and ID='" + IDCB + "'";
+                SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    object item = DGRD_AlertCust.SelectedItem;
+                    idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                    string cid = dt.Rows[0]["Cust_ID"].ToString();
+                    string nam = dt.Rows[0]["Name"].ToString();
+                    string mn = dt.Rows[0]["Mobile_No"].ToString();
+                    dob = dt.Rows[0]["Date_Of_Birth"].ToString();
 
-        con.Open();
-        string sqlquery1 = "SELECT ID,Followup_ID,Name,Mobile_No,C_Date from tlb_FollowUp where S_Status='Active' and ID='" + IDCB + "'";
-        SqlCommand cmd = new SqlCommand(sqlquery1, con);
-        SqlDataAdapter adp = new SqlDataAdapter(cmd);
-        DataTable dt = new DataTable();
-        adp.Fill(dt);
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            object item = DGRD_AlertCust.SelectedItem;
-            idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-            string cid = dt.Rows[0]["Followup_ID"].ToString();
-            string nam = dt.Rows[0]["Name"].ToString();
-            string mn = dt.Rows[0]["Mobile_No"].ToString();
-            dob = dt.Rows[0]["C_Date"].ToString();
-            
-            frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
-            fcba.cid_CAB = cid;
-            fcba.cname_CAB = nam;
-            fcba.cphone_CAB = mn;
-            fcba.cdob_CAB = dob;
-            fcba.Show();
+                    frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                    fcba.cid_CAB = cid;
+                    fcba.cname_CAB = nam;
+                    fcba.cphone_CAB = mn;
+                    fcba.cdob_CAB = dob;
+                    fcba.camt_DCMessage = "CB";
+                    fcba.Show();
+
+       
             
          
         }
@@ -5942,7 +6026,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
             {
 
                 con.Open();
-                string sqlquery1 = "SELECT ID,Cust_ID,Name,Mobile_No,Date_Of_Birth from tlb_Customer where S_Status='Active' and ID='" + IDCB + "'";
+                string sqlquery1 = "SELECT ID,Followup_ID,Name,Mobile_No,C_Date from tlb_FollowUp where S_Status='Active' and ID='" + IDCB + "'";
                 SqlCommand cmd = new SqlCommand(sqlquery1, con);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -5951,18 +6035,18 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                 {
                     object item = DGRD_AlertCust.SelectedItem;
                     idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-                    string cid = dt.Rows[0]["Cust_ID"].ToString();
+                    string cid = dt.Rows[0]["Followup_ID"].ToString();
                     string nam = dt.Rows[0]["Name"].ToString();
                     string mn = dt.Rows[0]["Mobile_No"].ToString();
-                    dob = dt.Rows[0]["Date_Of_Birth"].ToString();
+                    dob = System.DateTime.Now.ToShortDateString();
 
                     frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
                     fcba.cid_CAB = cid;
                     fcba.cname_CAB = nam;
                     fcba.cphone_CAB = mn;
                     fcba.cdob_CAB = dob;
-                    fcba.Show();
-
+                    fcba.camt_DCMessage = "CF";
+                    fcba.Show(); 
 
                 }
 
@@ -6001,7 +6085,9 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                     fcba.cid_CAB = cid;
                     fcba.cname_CAB = nam;
                     fcba.cphone_CAB = mn;
-                    fcba.cdob_CAB = dob;
+                    fcba.cdob_CAB = CommonDate;
+                    fcba.cdob_CProduct = dob;
+                    fcba.camt_DCMessage = "CCB";
                     fcba.Show();
 
 
@@ -6045,6 +6131,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                     fcba.cphone_CAB = mn;
                     fcba.cdob_CAB = dob;
                     fcba.camt_CAB= camt;
+                    fcba.camt_DCMessage = "CChB";
                     fcba.Show();
 
 
@@ -6086,6 +6173,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                     fcba.cname_CAB = nam;
                     fcba.cphone_CAB = mn;
                     fcba.cdob_CAB = dob;
+                    fcba.camt_DCMessage = "DB";
                     fcba.Show();
 
 
@@ -6128,6 +6216,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                     fcba.cname_CAB = nam;
                     fcba.cphone_CAB = mn;
                     fcba.cdob_CAB = dob;
+                    fcba.camt_DCMessage = "EB";
                     fcba.Show();
 
 
@@ -6144,6 +6233,49 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                 con.Close();
             }
         }
+         public void fetch_Install()
+         {
+             try
+             {
+
+                 con.Open();
+                 string sqlquery1 = "Select mi.ID , c.Cust_ID ,c.Name ,c.Mobile_No,'DISTINCTid.Products123'  ,mi.Bill_No ,mi.Monthly_Amount,mi.Installment_Date from tlb_MainInstallment  mi INNER JOIN tlb_Customer c on c.ID =mi.Customer_ID INNER JOIN tlb_InvoiceDetails id on id.Customer_ID =mi.Customer_ID where mi.S_Status ='Active' and mi.Ins ='Not_Nill' and mi.Installment_Date='" + CommonDate + "' AND mi.ID='" + IDCB + "' ORDER BY mi.Customer_ID  ASC  ";
+                 SqlCommand cmd = new SqlCommand(sqlquery1, con);
+                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                 DataTable dt = new DataTable();
+                 adp.Fill(dt);
+                 for (int i = 0; i < dt.Rows.Count; i++)
+                 {
+                     object item = DGRD_AlertCust.SelectedItem;
+                     idcba = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                     string cid = dt.Rows[0]["Cust_ID"].ToString();
+                     string nam = dt.Rows[0]["Name"].ToString();
+                     string mn = dt.Rows[0]["Mobile_No"].ToString();
+                     dob = System.DateTime.Now.ToShortDateString();
+
+                     frmCustomerBirthdayAlert fcba = new frmCustomerBirthdayAlert();
+                     fcba.cid_CAB = cid;
+                     fcba.cname_CAB = nam;
+                     fcba.cphone_CAB = mn;
+                     fcba.cdob_CAB = CommonDate;
+                     fcba.cdob_CProduct = dob;
+                     fcba.camt_DCMessage = "Install";
+                     fcba.Show();
+
+
+                 }
+
+
+             }
+             catch (Exception)
+             {
+                 throw;
+             }
+             finally
+             {
+                 con.Close();
+             }
+         }
         private void btnalertexit_Click_1(object sender, RoutedEventArgs e)
         {
             Grd_Alerts.Visibility = Visibility.Hidden;

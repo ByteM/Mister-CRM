@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BALDefaultSMS.cs" />
     <Compile Include="BAL_AddProduct.cs" />
+    <Compile Include="BAL_Alerts.cs" />
     <Compile Include="BAL_CheckClearUpdate.cs" />
     <Compile Include="BAL_Customer.cs" />
     <Compile Include="BAL_C_Installment.cs" />

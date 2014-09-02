@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DAL_AddProduct.cs" />
+    <Compile Include="DAL_Alerts.cs" />
     <Compile Include="DAL_CheckClearUpdate.cs" />
     <Compile Include="DAL_Customer.cs" />
     <Compile Include="DAL_C_Installment.cs" />
