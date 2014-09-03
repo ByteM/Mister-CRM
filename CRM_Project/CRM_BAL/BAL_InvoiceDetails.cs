@@ -34,6 +34,7 @@ namespace CRM_BAL
     
       public double Paid_Amount { get; set; }
       public double Balance_Amount { get; set; }
+      public string Warranty { get; set; }
       public string S_Status { get; set; }
       public string C_Date { get; set; }
 

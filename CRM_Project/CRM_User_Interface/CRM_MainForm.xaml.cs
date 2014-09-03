@@ -2954,7 +2954,7 @@ namespace CRM_User_Interface
 
                 DataTable dt = new DataTable();
                 // cmd = new SqlCommand(qry,con);
-                string qry = "select ID,AvilableQty,FinalPrice  from StockDetails where [ID]= '" + cmbInvoiceStockProducts.SelectedValue.GetHashCode() + "'";
+                string qry = "select ID,AvilableQty,FinalPrice,Warranty  from StockDetails where [ID]= '" + cmbInvoiceStockProducts.SelectedValue.GetHashCode() + "'";
                 cmd = new SqlCommand(qry, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 // con.Open();
@@ -2967,6 +2967,7 @@ namespace CRM_User_Interface
 
                     txtInvoice_AvailabeQty.Text = dt.Rows[0]["AvilableQty"].ToString();
                     txtInvoiceActualPrice.Text = dt.Rows[0]["FinalPrice"].ToString();
+                    lblInvcWarranty.Content = dt.Rows[0]["Warranty"].ToString();
 
 
                 }
@@ -3044,7 +3045,7 @@ namespace CRM_User_Interface
                 con.Open();
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
-                string qry = "Select  S.ID,S.Domain_ID , S.Product_ID ,S.Brand_ID ,S.P_Category ,S.Model_No_ID ,S.Color_ID  " +
+                string qry = "Select  S.ID,S.Domain_ID , S.Product_ID ,S.Brand_ID ,S.P_Category ,S.Model_No_ID ,S.Color_ID " +
                              ",D.Domain_Name + ' , ' + P.Product_Name + ' , ' + B.Brand_Name + ' , ' + PC.Product_Category + ' , ' + M.Model_No + ' , ' + C.Color AS Products " +
                              "From StockDetails S " +
                              "INNER JOIN tb_Domain D on D.ID=S.Domain_ID " +
@@ -5929,7 +5930,7 @@ public void dtalertload()
             fetch_C_InstalBalance();
 
             DGRD_Alerts.ItemsSource = dtalert.DefaultView;
-             DGRD_Alerts.Columns[0].Width=-3;
+            // DGRD_Alerts.Columns[0].Width=0;
             // DGRD_Alerts.Columns[1].Visibility = Visibility.Hidden;
             //dtalert.Rows.Add(dralert);
           //  Grd_Alerts.Columns[0].Visibility = Visibility.Hidden;

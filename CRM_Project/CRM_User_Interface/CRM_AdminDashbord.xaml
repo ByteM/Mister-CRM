@@ -319,7 +319,7 @@
 
             </Grid>
 
-            <Grid x:Name="grd_EmployeeDetails" Visibility="Visible" HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid x:Name="grd_EmployeeDetails" Visibility="Hidden" HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Grid HorizontalAlignment="Left" Height="480" Margin="80,60,0,0" VerticalAlignment="Top" Width="995" Background="#FFF6F6F6">
                     <ComboBox x:Name="cmbAdm_Emp_YearExp" HorizontalAlignment="Left" Margin="450,358,0,0" VerticalAlignment="Top" Width="110" SelectionChanged="cmbAdm_Emp_YearExp_SelectionChanged" IsEditable="True">
 
@@ -432,7 +432,7 @@
                 <TextBox x:Name="txtAdm_DealerID1" HorizontalAlignment="Left" Height="23" Margin="953,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" TextChanged="txtAdm_DealerMN_Search_TextChanged" Visibility="Hidden"/>
             </Grid>
 
-            <Grid x:Name="grd_FinalProcurment" Visibility="Hidden"    HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid x:Name="grd_FinalProcurment" Visibility="Hidden"      HorizontalAlignment="Left" Height="565" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Button x:Name="btnAdm_FinalProcurment" Content="Exit" HorizontalAlignment="Left" Margin="1084,0,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="btnAdm_FinalProcurment_Click"/>
                 <Label Content="Final Procurement" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
                 <Grid HorizontalAlignment="Left" Height="510" Margin="18,40,0,0" VerticalAlignment="Top" Width="1120" Background="#FFFEFEFE">
@@ -469,7 +469,7 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Grid x:Name="grd_FinalizeProducts" Visibility="Hidden" HorizontalAlignment="Left" Height="384" Margin="536,106,0,0" VerticalAlignment="Top" Width="505" Background="#FF01060C">
+                    <Grid x:Name="grd_FinalizeProducts" Visibility="Hidden"   HorizontalAlignment="Left" Height="384" Margin="536,106,0,0" VerticalAlignment="Top" Width="505" Background="#FF01060C">
                         <Grid HorizontalAlignment="Left" Height="276" Margin="10,10,0,0" VerticalAlignment="Top" Width="485" Background="White">
                             <Label Content="Sales No:" HorizontalAlignment="Left" Margin="12,6,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="lblSalesNo" Content="SalesNo" HorizontalAlignment="Left" Margin="107,5,0,0" VerticalAlignment="Top" Width="106"/>
@@ -487,7 +487,7 @@
                             <Label x:Name="lblProceQty" Content="ProceQty" HorizontalAlignment="Left" Margin="356,144,0,0" VerticalAlignment="Top" Width="89"/>
                             <Label Content="Final Qty:" HorizontalAlignment="Left" Margin="260,175,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="txtQuantityF" HorizontalAlignment="Left" Height="23" Margin="356,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" TextChanged="txtQuantityF_TextChanged"/>
-                            <Grid HorizontalAlignment="Left" Height="60" Visibility="Hidden"  Margin="215,5,0,0" VerticalAlignment="Top" Width="260" Background="#FFF06969">
+                            <Grid HorizontalAlignment="Left" Height="59" Visibility="Hidden"    Margin="215,5,0,0" VerticalAlignment="Top" Width="260" Background="#FFF06969">
                                 <TextBox x:Name="txtAdm_DomainID" HorizontalAlignment="Left" Height="23" Margin="5,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
                                 <TextBox x:Name="txtAdm_ProductID" HorizontalAlignment="Left" Height="23" Margin="54,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
                                 <TextBox x:Name="txtAdm_BrandID" HorizontalAlignment="Left" Height="23" Margin="101,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
@@ -504,6 +504,8 @@
                             <TextBox x:Name="txtTotalPrice" HorizontalAlignment="Left" Height="23" Margin="275,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Hidden"/>
                             <TextBox x:Name="txtpreroundoff" HorizontalAlignment="Left" Height="23" Margin="365,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Hidden"/>
                             <TextBox x:Name="txtNetAmount" HorizontalAlignment="Left" Height="23" Margin="275,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Visibility="Hidden"/>
+                            <Label Content="Warranty :" HorizontalAlignment="Left" Margin="266,214,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lblProceWarranty" Content="Warranty :" HorizontalAlignment="Left" Margin="361,214,0,0" VerticalAlignment="Top"/>
                         </Grid>
                         <Grid HorizontalAlignment="Left" Height="40" Margin="10,287,0,0" VerticalAlignment="Top" Width="485" Background="White">
                             <Label Content="Service Interval:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
@@ -579,7 +581,7 @@
                 <TextBox x:Name="txtAdm_DealerID2" HorizontalAlignment="Left" Height="23" Margin="953,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" TextChanged="txtAdm_DealerMN_Search_TextChanged" Visibility="Hidden"/>
             </Grid>
 
-            <Grid x:Name="grd_FinalDealerDetails" Visibility="Hidden" HorizontalAlignment="Left" Height="563" Margin="22,67,0,0" VerticalAlignment="Top" Width="1157" Background="#FFF6F6F6" >
+            <Grid x:Name="grd_FinalDealerDetails" Visibility="Hidden"  HorizontalAlignment="Left" Height="563" Margin="22,67,0,0" VerticalAlignment="Top" Width="1157" Background="#FFF6F6F6" >
                 <Button x:Name="btnAdm_FinalDealerExit" Content="Exit" HorizontalAlignment="Left" Margin="1093,0,-1,0" VerticalAlignment="Top" Width="65" Height="25" Click="btnAdm_FinalDealerExit_Click" />
                 <Label Content="Dealer Details" HorizontalAlignment="Left" Margin="518,4,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
                 <Grid HorizontalAlignment="Left" Height="491" Margin="23,47,0,0" VerticalAlignment="Top" Width="1105" Background="White">
@@ -616,7 +618,7 @@
                 <DatePicker x:Name="dtpAdm_To_FinalDealer" HorizontalAlignment="Left" Margin="271,65,0,0" VerticalAlignment="Top" Width="122" SelectedDateChanged="dtpAdm_To_FinalDealer_SelectedDateChanged"/>
             </Grid>
 
-            <Grid x:Name="grd_StockDetails" Visibility="Hidden"   HorizontalAlignment="Left" Height="565" Margin="20,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid x:Name="grd_StockDetails" Visibility="Hidden"     HorizontalAlignment="Left" Height="565" Margin="20,67,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <Button x:Name="btnAdm_StockDetails_Exit" Content="Exit" HorizontalAlignment="Left" Margin="1084,0,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="btnAdm_StockDetails_Exit_Click"/>
                 <Label Content="Stock Details" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
                 <Grid HorizontalAlignment="Left" Height="510" Margin="18,40,0,0" VerticalAlignment="Top" Width="1120" Background="#FFFEFEFE">

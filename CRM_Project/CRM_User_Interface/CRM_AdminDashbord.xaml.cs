@@ -1166,7 +1166,7 @@ namespace CRM_User_Interface
                     txtAdm_ProductCatID.Text = dt.Rows[0]["P_Category"].ToString();
                     txtAdm_ModelID.Text = dt.Rows[0]["Model_No_ID"].ToString();
                     txtAdm_ColorID.Text = dt.Rows[0]["Color_ID"].ToString();
-
+                    lblProceWarranty.Content = dt.Rows[0]["Warranty"].ToString();
                     lblProcDate.Content = dt.Rows[0]["C_Date"].ToString();
                     lblProducts.Content = dt.Rows[0]["Products"].ToString();
                     double Abc = Convert.ToDouble(dt.Rows[0]["Net_Amount"].ToString());
@@ -1407,6 +1407,7 @@ namespace CRM_User_Interface
                     bstockDet.NewQty = txtQuantityF.Text;
                     bstockDet.FinalPrice = Convert.ToDouble(txtPrice.Text);
                     bstockDet.Insurance = lblInsurance.Content.ToString();
+                    bstockDet.Warranty = lblProceWarranty .Content.ToString();
                     bstockDet.S_Status = "Active";
 
                     //string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
