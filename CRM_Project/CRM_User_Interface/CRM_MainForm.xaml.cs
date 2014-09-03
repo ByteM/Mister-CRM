@@ -3590,6 +3590,11 @@ namespace CRM_User_Interface
                      fmonth = month + 1;
                      fda = 01;
                 }
+                else
+                {
+                    fda = da;
+                    fmonth = month;
+                }
             }
             else if (month == 02)
             {
@@ -3600,6 +3605,7 @@ namespace CRM_User_Interface
                         fda = 01;
                         fmonth = month + 1;
                     }
+                  
             }
                 else if (da == 28)
             {
@@ -3607,6 +3613,11 @@ namespace CRM_User_Interface
                 fmonth = month + 1;
 
             }
+                else
+                {
+                    fda = da;
+                    fmonth = month;
+                }
                 
             }
             FDATE = fda + "-" + fmonth + "-" + year;
