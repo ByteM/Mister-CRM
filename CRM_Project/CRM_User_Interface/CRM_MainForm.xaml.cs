@@ -35,9 +35,10 @@ namespace CRM_User_Interface
         string asd = System.DateTime.Now.ToString();
         string CommonDate = System.DateTime.Now.ToShortDateString();
         DateTime azx = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
-
+        string warryearmonth, STR_Value,STR_Y_M;
         NumberFormatInfo nfi = CultureInfo.CurrentCulture.NumberFormat;
         string caption = "Green Future Glob";
+        int fmonth, fda;
         int cid, I, ID, i;
         int cnt1 = 0, cnt2 = 0, cntb, cntf, idcfa;
         double y1, m1, o, p, availqty,ba;
@@ -74,7 +75,7 @@ namespace CRM_User_Interface
         BAL_AddProduct baddprd = new BAL_AddProduct();
         DAL_AddProduct dalprd = new DAL_AddProduct();
         string maincked, CName, soe;
-        string bpg, cid1;
+        string bpg, cid1, FDATE;
         int fetcdoc, Cust_id, idcba;
         int exist, vsoe;
         List<string> checkedStuff;
@@ -103,6 +104,10 @@ namespace CRM_User_Interface
 
         BAL_C_Installment bcins = new BAL_C_Installment();
         DAL_C_Installment dcins = new DAL_C_Installment();
+
+        BAL_Warranty balw = new BAL_Warranty();
+        DAL_Warranty dalw = new DAL_Warranty();
+
         public void PREPROCUREMENTid()
         {
 
@@ -1574,7 +1579,7 @@ namespace CRM_User_Interface
                 }
 
                 bpreproc.Have_Insurance = cmbPreInsurance.SelectedValue.ToString();
-                string a = (txtPreWarranty.Text) + "" + (cmbPreWarrantyYM.SelectedItem.ToString());
+                string a = (txtPreWarranty.Text) + "-" + (cmbPreWarrantyYM.SelectedItem.ToString());
                 bpreproc.Warranty = a;
                 bpreproc.re_ferb_cost = Convert.ToDouble(txtPreFerbcost.Text);
                 bpreproc.Follow_up = cmbPreFollowup.SelectedValue.ToString();
@@ -3193,6 +3198,7 @@ namespace CRM_User_Interface
 
                 dtstat.Columns.Add("Products");
                 dtstat.Columns.Add("ID");
+                dtstat.Columns.Add("Warranty");
                 dtstat.Columns.Add("RatePer_Product");
                 dtstat.Columns.Add("Qty");
                 dtstat.Columns.Add("Total_Price");
@@ -3208,6 +3214,7 @@ namespace CRM_User_Interface
             dr["SrNo"] = lblinvoiceSr.Content;
             dr["Products"] = cmbInvoiceStockProducts.Text;
             dr["ID"] = cmbInvoiceStockProducts.SelectedValue.GetHashCode();
+            dr["Warranty"] = lblInvcWarranty.Content.ToString();
             dr["RatePer_Product"] = txtInvoiceActualPrice.Text;
             dr["Qty"] = txtInvoice_Qty.Text;
 
@@ -3452,7 +3459,7 @@ namespace CRM_User_Interface
             SaveInvoiceDetails();
             Save_CommonBill();
             SaveCash();
-            updateQuantity();
+            //updateQuantity();
             clear_CustomerFields();
             clearAllAddedProducts();
         }
@@ -3516,6 +3523,7 @@ namespace CRM_User_Interface
                     {
                         binvd.Payment_Mode = "Installment";
                     }
+                    binvd.Warranty = dtstat.Rows[i]["Warranty"].ToString();
                     binvd.S_Status = "Active";
                     binvd.C_Date = System.DateTime.Now.ToShortDateString();
                     dinvd.InvoiceDetails_Save(binvd);
@@ -3525,6 +3533,165 @@ namespace CRM_User_Interface
             }
 
         }
+        public void Save_Warranty()
+        {
+            balw.Flag = 1;
+            balw.Customer_ID = I;
+            balw.Bill_No = lblbillno.Content.ToString();
+            balw.Products123 = dtstat.Rows[i]["Products"].ToString();
+            balw.Warranty = dtstat.Rows[i]["Warranty"].ToString();
+            string warr=dtstat.Rows[i]["Warranty"].ToString();
+             warryearmonth = warr;
+            string[] STRVAL = warryearmonth.Split('-');
+             STR_Value = STRVAL[0];
+             STR_Y_M = STRVAL[1];
+           // string STR_YEAR = STRVAL[2];
+           // string DATE = STR_MONTH + "/" + STR_DATE1 + "/" + STR_YEAR;
+            if (STR_Y_M=="Year")
+            {int  v1= Convert .ToInt32 (STR_Value) * 12;
+            balw.Warr_Months = v1.ToString();
+            }
+            else if (STR_Y_M == "Month")
+            {
+
+                balw.Warr_Months = STR_Value;
+            }
+          //  balw.Warr_Months = "";
+            balw.Warr_StartDate =System .DateTime .Now .ToShortDateString ();
+            C_YEar_Month_DateforWarranty();
+            balw.Warr_EndDate = FDATE ;
+            balw.Warr_RemainingDate = "";
+            balw.Warr_RemainingMonths = "";
+            balw.Extend_Y_M = "";
+            balw.C_ExtendDate = "";
+            balw.Warr_Status = "";
+            balw.S_Status = "";
+            balw.C_Date = "";
+            dalw.Warranty_Save(balw);
+            MessageBox.Show("Warranty Added Succsessfully",caption , MessageBoxButton .OK );
+
+        }
+        public void C_YEar_Month_DateforWarranty()
+        {
+            string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
+
+            string[] STRVAL = STRTODAYDATE.Split('-');
+            string STR_DATE1 = STRVAL[0];
+            string STR_MONTH = STRVAL[1];
+            string STR_YEAR = STRVAL[2];
+            int year =Convert .ToInt32 ( STR_YEAR + 1);
+            int month = Convert.ToInt32(STR_MONTH);
+            int da =Convert .ToInt32 ( STR_DATE1);
+            if (month==01)
+            {
+                int DA = 31;
+                if(da==DA)
+                {
+                     fmonth = month + 1;
+                     fda = 01;
+                }
+            }
+            else if (month == 02)
+            {
+                if (year % 4 == 0)
+            {
+                   if (da == 29)
+                    {
+                        fda = 01;
+                        fmonth = month + 1;
+                    }
+            }
+                else if (da == 28)
+            {
+                fda = 01;
+                fmonth = month + 1;
+
+            }
+                
+            }
+            FDATE = fda + "-" + fmonth + "-" + year;
+ 
+        }
+        //public void CalculateDatesWithMonthandYEar()
+        //{
+        //    string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
+
+        //    string[] STRVAL = STRTODAYDATE.Split('-');
+        //    string STR_DATE1 = STRVAL[0];
+        //    string STR_MONTH = STRVAL[1];
+        //    string STR_YEAR = STRVAL[2];
+
+        //    if (cmbValidity.SelectedItem.Equals("Year"))
+        //    {
+        //        int vlYear, vlNo, addNY;
+        //        vlYear = Convert.ToInt32(STR_YEAR);
+        //        vlNo = Convert.ToInt32(txtValidity.Text);
+        //        addNY = vlYear + vlNo;
+        //        SET_YEAR = Convert.ToString(addNY);
+
+        //        DATE1 = STR_DATE1 + "-" + STR_MONTH + "-" + SET_YEAR;
+        //    }
+        //    else
+        //        if (cmbValidity.SelectedItem.Equals("Month"))
+        //        {
+        //            int vlMonth, vlNo;
+        //            vlMonth = Convert.ToInt32(STR_MONTH);
+        //            vlNo = Convert.ToInt32(txtValidity.Text);
+
+        //            for (int i = 1; i <= vlNo; i++)
+        //            {
+        //                if (addNY == 12)
+        //                {
+        //                    int abc;
+        //                    abc = Convert.ToInt32(STR_YEAR) + 1;
+        //                    SET_YEAR = Convert.ToString(abc);
+        //                    int neMonth;
+        //                    addNY = 0;
+        //                    vlMonth = 0;
+        //                    vlNo = 1;
+        //                    totMonth = Convert.ToInt32(txtMonths.Text);
+        //                    neMonth = totMonth - iadd;
+        //                    for (int j = 1; j <= neMonth; j++)
+        //                    {
+        //                        addNY = vlMonth + j;
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    int k = 0;
+        //                    addNY = vlMonth + i;
+        //                    iadd = k + i;
+        //                }
+
+        //            }
+        //            SET_MONTH = Convert.ToString(addNY);
+
+        //            DATE = STR_DATE1 + "-" + SET_MONTH + "-" + SET_YEAR;
+
+        //            chsetYear = Convert.ToInt32(SET_YEAR);
+        //            chsetMonth = Convert.ToInt32(SET_MONTH);
+        //            chsetDate1 = Convert.ToInt32(STR_DATE1);
+        //            if (chsetYear % 4 == 0)
+        //            {
+        //                if (chsetMonth == 2)
+        //                {
+        //                    if (chsetDate1 == 29)
+        //                    {
+        //                        newLpDate = 01;
+        //                        newLPMonth = 03;
+        //                    }
+        //                }
+        //                DATE1 = newLpDate + "-" + newLPMonth + "-" + SET_YEAR;
+        //            }
+        //            else
+        //            {
+        //                DATE1 = STR_DATE1 + "-" + SET_MONTH + "-" + SET_YEAR;
+        //            }
+        //        }
+
+        //    dtpInstallmentDate.Text = DATE1;
+
+        //}
         public void updateQuantity()
         {
             for (i = 0; i < dtstat.Rows.Count; i++)

@@ -434,7 +434,7 @@
 
             </Grid>
             <Button Content="Admin" Name="btnadminl" Foreground="White"  HorizontalAlignment="Left" Margin="980,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF302D2D" Click="btnadminl_Click"/>
-            <Grid HorizontalAlignment="Left" Visibility="Hidden"      Name="GRD_NewProcurement" Height="560" Margin="21,65,0,0" VerticalAlignment="Top" Width="1159" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Visibility="Hidden"        Name="GRD_NewProcurement" Height="560" Margin="21,65,0,0" VerticalAlignment="Top" Width="1159" Background="#FFF0F0F0">
                 <Grid Height="530" Margin="70,20,54,0" VerticalAlignment="Top" Background="White" >
                     <Label Content="Pre-Procurement No :" HorizontalAlignment="Left" Margin="85,34,0,0" VerticalAlignment="Top" Width="146"/>
                     <Label Content="Dealer Name :" HorizontalAlignment="Left" Margin="89,63,0,0" VerticalAlignment="Top" Width="85"/>
@@ -692,7 +692,7 @@
                 </Grid>
 
             </Grid>
-            <Grid HorizontalAlignment="Right" Visibility="Visible"               Name="Grd_genratebill" Height="565" Margin="0,55,13,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
+            <Grid HorizontalAlignment="Right" Visibility="Visible"  Name="Grd_genratebill" Height="565" Margin="0,55,13,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
                 <!--<Grid HorizontalAlignment="Right" Visibility="Visible"    x:Name="Grd_genratebill1" Height="565" Margin="-4,0,4,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
 
 

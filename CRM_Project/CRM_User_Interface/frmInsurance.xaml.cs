@@ -545,11 +545,11 @@ namespace CRM_User_Interface
                 result = true;
                 MessageBox.Show("Please Enter Insurance Amount", "Green Future Glob", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
-            else if(cmbBankIntegration.SelectedItem == null)
-            {
-                result = true;
-                MessageBox.Show("Please Select Bank Name", "Green Future Glob", MessageBoxButton.OK, MessageBoxImage.Stop);
-            }
+            //else if(cmbBankIntegration.SelectedItem == null)
+            //{
+            //    result = true;
+            //    MessageBox.Show("Please Select Bank Name", "Green Future Glob", MessageBoxButton.OK, MessageBoxImage.Stop);
+            //}
             else if(dtpDate.Text == "")
             {
                 result = true;
