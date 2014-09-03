@@ -62,6 +62,7 @@
     <Compile Include="DAL_StockAddQty.cs" />
     <Compile Include="DAL_StockDetails.cs" />
     <Compile Include="DAL_Tax.cs" />
+    <Compile Include="DAL_Warranty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

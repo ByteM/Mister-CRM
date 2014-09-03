@@ -57,6 +57,7 @@
     <Compile Include="BAL_Pre_Procurement.cs" />
     <Compile Include="BAL_StockDetails.cs" />
     <Compile Include="BAL_Tax.cs" />
+    <Compile Include="BAL_Warranty.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

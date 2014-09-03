@@ -42,6 +42,7 @@ namespace CRM_DAL
                cmd.Parameters.AddWithValue("@Tax", balid.Tax);
                cmd.Parameters.AddWithValue("@Total_Price", balid.Total_Price);
                cmd.Parameters.AddWithValue("@Payment_Mode", balid.Payment_Mode);
+               cmd.Parameters.AddWithValue("@Warranty", balid.Warranty);
                cmd.Parameters.AddWithValue("@S_Status", balid.S_Status);
                cmd.Parameters.AddWithValue("@C_Date", balid.C_Date);
                int i = cmd.ExecuteNonQuery();
