@@ -19,6 +19,7 @@ namespace CRM_BAL
         public string Warr_EndDate { get; set; }
         public string Warr_RemainingDate { get; set; }
         public string Warr_RemainingMonths { get; set; }
+        public string Warr_RemainingDays { get; set; }
         public string Extend_Y_M { get; set; }
         public string C_ExtendDate { get; set; }
         public string Warr_Status { get; set; }

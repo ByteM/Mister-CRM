@@ -112,6 +112,11 @@ namespace CRM_User_Interface
         {
             //return base.ToString();
             return this.year + " Year(s), " + this.month + " month(s), " + this.day + " day(s)";
+
+        }
+      public int  monthcal()
+        {
+            return this.month;
         }
         public int Years
         {
