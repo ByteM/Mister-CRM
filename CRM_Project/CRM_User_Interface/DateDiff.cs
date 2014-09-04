@@ -111,13 +111,14 @@ namespace CRM_User_Interface
         public  string   tesydate()
         {
             //return base.ToString();
-            return this.year + " Year(s), " + this.month + " month(s), " + this.day + " day(s)";
+            return this.year + "-" + this.month + "-" + this.day ;
 
         }
       public int  monthcal()
         {
             return this.month;
         }
+    
         public int Years
         {
             get

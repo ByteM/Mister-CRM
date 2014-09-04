@@ -121,7 +121,7 @@
                     <!--<MenuItem Header="Add Warranty" x:Name=""/>-->
                     <MenuItem Header="View Warranty On Sale " x:Name="smviewwarranty"/>
                     <MenuItem Header=" Check Status" x:Name="smchksataus"/>
-                    <MenuItem Header=" Extend Particular Warranty" x:Name="smextendwarranty"/>
+                    <MenuItem Header=" Extend Particular Warranty" x:Name="smextendwarranty" Click="smextendwarranty_Click"/>
 
                 </MenuItem>
                 <MenuItem Width="85">
@@ -537,7 +537,7 @@
                 </Grid>
             </Grid>
 
-            <Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales"  Visibility="Hidden"                        VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales"  Visibility="Hidden"    VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">
                 <!--<Grid HorizontalAlignment="Left" Height="565" Margin="24,65,0,0" Name="GRD_Sales1"  Visibility="Hidden" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0">-->
 
                 <Grid HorizontalAlignment="Left" Height="545" Visibility="Visible"   Margin="6,10,0,0" VerticalAlignment="Top" Width="1145" Background="White">
@@ -615,7 +615,7 @@
                         </GroupBox>
                     </Grid>
                 </Grid>
-                <Grid HorizontalAlignment="Left" Name="GRD_Customer_Billing" Height="509" VerticalAlignment="Top"  Visibility="Hidden"      Width="1130" Margin="16,56,0,0" Background="#FFF0F0F0" Loaded="GRD_Customer_Billing_Loaded">
+                <Grid HorizontalAlignment="Left" Name="GRD_Customer_Billing" Height="509" VerticalAlignment="Top"  Visibility="Hidden"        Width="1130" Margin="16,56,0,0" Background="#FFF0F0F0" Loaded="GRD_Customer_Billing_Loaded">
 
                     <Grid HorizontalAlignment="Left" Visibility="Visible"  Height="455" VerticalAlignment="Top"  Width="1090" Margin="15,20,0,0" Background="White">
 
@@ -650,7 +650,7 @@
                         <Button x:Name="btnSaleCustomerExit" Content="Edit" HorizontalAlignment="Left" Margin="841,294,0,0" VerticalAlignment="Top" Width="89" Height="23" FontSize="14" Click="btnSaleCustomerExit_Click"/>
                     </Grid>
                 </Grid>
-                <Grid x:Name="grd_OldCustomerDetails" Visibility="Visible" HorizontalAlignment="Left" Height="510" Margin="10,55,0,0" VerticalAlignment="Top" Width="1140" Background="White">
+                <Grid x:Name="grd_OldCustomerDetails" Visibility="Hidden"  HorizontalAlignment="Left" Height="510" Margin="10,55,0,0" VerticalAlignment="Top" Width="1140" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="0*"/>
@@ -692,7 +692,7 @@
                 </Grid>
 
             </Grid>
-            <Grid HorizontalAlignment="Right" Visibility="Visible"  Name="Grd_genratebill" Height="565" Margin="0,55,13,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
+            <Grid HorizontalAlignment="Right" Visibility="Hidden"  Name="Grd_genratebill" Height="565" Margin="0,55,13,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
                 <!--<Grid HorizontalAlignment="Right" Visibility="Visible"    x:Name="Grd_genratebill1" Height="565" Margin="-4,0,4,0" VerticalAlignment="Top" Width="1160" Background="#FFEEEEF2">
 
 
@@ -765,7 +765,7 @@
                                 <ComboBox x:Name="cmbInvoice_Tax1" HorizontalAlignment="Left" Margin="737,30,0,0" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="cmbInvoice_Tax_SelectionChanged" Height="24" DropDownClosed="cmbInvoice_Tax1_DropDownClosed"/>
                                 <Label x:Name="lblinvoiceSr" Content="1" HorizontalAlignment="Left" Margin="123,0,0,0" VerticalAlignment="Top"/>
                                 <Label x:Name="txtInvoice_remainingqty" Content="Qty" HorizontalAlignment="Left" Margin="566,-19,0,0" VerticalAlignment="Top"/>
-                                <ComboBox x:Name="cmbInvoiceEmployeename" HorizontalAlignment="Left" Margin="694,-41,0,0" VerticalAlignment="Top" Width="330" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True"/>
+                                <ComboBox x:Name="cmbInvoiceEmployeename" HorizontalAlignment="Left" Margin="694,-41,0,0" VerticalAlignment="Top" Width="198" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True"/>
                                 <Label Content="Available Qty :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="337,-1,0,0"/>
                                 <Label x:Name="lblInvcWarranty" Content="Warranty" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,0,0,0"/>
 
@@ -881,7 +881,6 @@
                         <Label x:Name="lblbillno" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="359,6,0,0" FontSize="16" FontWeight="Bold" Width="115" Grid.ColumnSpan="2"/>
                         <Label Content="Employee Name :" HorizontalAlignment="Left" Margin="600,8,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                         <TextBox x:Name="txtwarr_rem" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="993,56,0,0"/>
-                        <TextBox x:Name="txtwarrmonth_rem" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Margin="928,51,0,0"/>
                     </Grid>
 
                 </Grid>
@@ -1314,6 +1313,27 @@
 
                 <Button x:Name="btnAlertExit1" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="1097,4,0,0" Click="btnAlertExit1_Click"/>
                 <Button x:Name="btnalertexit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Margin="473,2,0,0" Click="btnalertexit_Click_1" Height="20"/>
+
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="559" Name="GRD_ExtendWarranty" Visibility="Visible"    VerticalAlignment="Top" Width="1155" Margin="25,70,0,0" Background="#FFF0F0F0">
+                <Grid HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="1145" Margin="5,34,0,0" Background="White">
+                    <GroupBox Header="Search Options" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,4,0,0" Width="1136" Height="71">
+                        <Grid HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="1126" Margin="0,0,-2,0">
+                            <Label Content="Enter Name :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,4,0,0"/>
+                            <TextBox x:Name="txtWExtendCName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="105,12,0,0"/>
+                            <Label Content="Enter Customer ID :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="319,9,0,0"/>
+                            <Label Content="Enter Bill No :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="665,9,0,0"/>
+                            <TextBox x:Name="txtWExtendCID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="440,12,0,0"/>
+                            <TextBox x:Name="txtWExtendCBillno" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="755,12,0,0"/>
+                            <Button x:Name="btnWExtendRefresh" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="995,14,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <DataGrid HorizontalAlignment="Left" Name="DGRD_WarrantyExtend" VerticalAlignment="Top" Margin="6,86,0,0" Height="419" Width="1134">
+                    </DataGrid>
+
+                </Grid>
+                <Label Content="Warranty Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="521,-1,0,0" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="btnWExtendExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1065,4,0,0" Click="btnWExtendExit_Click"/>
 
             </Grid>
 
