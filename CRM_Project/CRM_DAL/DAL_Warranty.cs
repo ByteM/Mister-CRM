@@ -32,6 +32,7 @@ namespace CRM_DAL
                 cmd.Parameters.AddWithValue("@Warr_EndDate", bw.Warr_EndDate);
                 cmd.Parameters.AddWithValue("@Warr_RemainingDate", bw.Warr_RemainingDate);
                 cmd.Parameters.AddWithValue("@Warr_RemainingMonths", bw.Warr_RemainingMonths);
+                cmd.Parameters.AddWithValue("@Warr_RemainingDays", bw.Warr_RemainingDays);
                 cmd.Parameters.AddWithValue("@Extend_Y_M", bw.Extend_Y_M);
                 cmd.Parameters.AddWithValue("@C_ExtendDate", bw.C_ExtendDate);
                 cmd.Parameters.AddWithValue("@Warr_Status", bw.Warr_Status);

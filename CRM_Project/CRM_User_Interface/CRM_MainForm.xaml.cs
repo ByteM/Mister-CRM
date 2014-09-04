@@ -35,7 +35,7 @@ namespace CRM_User_Interface
         string asd = System.DateTime.Now.ToString();
         string CommonDate = System.DateTime.Now.ToShortDateString();
         DateTime azx = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
-        string warryearmonth, STR_Value,STR_Y_M;
+        string warryearmonth, STR_Value,STR_Y_M,StartDate,EndDate;
         NumberFormatInfo nfi = CultureInfo.CurrentCulture.NumberFormat;
         string caption = "Green Future Glob";
         int fmonth, fda;
@@ -3457,6 +3457,7 @@ namespace CRM_User_Interface
         {
             FetchCustomerID();
             SaveInvoiceDetails();
+            
             Save_CommonBill();
             SaveCash();
             //updateQuantity();
@@ -3529,100 +3530,128 @@ namespace CRM_User_Interface
                     dinvd.InvoiceDetails_Save(binvd);
                     MessageBox.Show("Done");
                     updateQuantity();
+                    Save_Warranty();
                 }
             }
 
         }
         public void Save_Warranty()
         {
-            balw.Flag = 1;
-            balw.Customer_ID = I;
-            balw.Bill_No = lblbillno.Content.ToString();
-            balw.Products123 = dtstat.Rows[i]["Products"].ToString();
-            balw.Warranty = dtstat.Rows[i]["Warranty"].ToString();
-            string warr=dtstat.Rows[i]["Warranty"].ToString();
-             warryearmonth = warr;
-            string[] STRVAL = warryearmonth.Split('-');
-             STR_Value = STRVAL[0];
-             STR_Y_M = STRVAL[1];
-           // string STR_YEAR = STRVAL[2];
-           // string DATE = STR_MONTH + "/" + STR_DATE1 + "/" + STR_YEAR;
-            if (STR_Y_M=="Year")
-            {int  v1= Convert .ToInt32 (STR_Value) * 12;
-            balw.Warr_Months = v1.ToString();
-            }
-            else if (STR_Y_M == "Month")
+            for (i = 0; i < dtstat.Rows.Count; i++)
             {
+                balw.Flag = 1;
+                balw.Customer_ID = I;
+                balw.Bill_No = lblbillno.Content.ToString();
+                balw.Products123 = dtstat.Rows[i]["Products"].ToString();
+                balw.Warranty = dtstat.Rows[i]["Warranty"].ToString();
+                string warr = dtstat.Rows[i]["Warranty"].ToString();
+                warryearmonth = warr;
+                string[] STRVAL = warryearmonth.Split('-');
+                STR_Value = STRVAL[0];
+                STR_Y_M = STRVAL[1];
+                // string STR_YEAR = STRVAL[2];
+                // string DATE = STR_MONTH + "/" + STR_DATE1 + "/" + STR_YEAR;
+                if (STR_Y_M == "Year")
+                {
+                    int v1 = Convert.ToInt32(STR_Value) * 12;
+                    balw.Warr_Months = v1.ToString();
+                }
+                else if (STR_Y_M == "Month")
+                {
 
-                balw.Warr_Months = STR_Value;
+                    balw.Warr_Months = STR_Value;
+                }
+                //  balw.Warr_Months = "";
+                balw.Warr_StartDate = System.DateTime.Now.ToShortDateString();
+             
+               
+                int strvalue = Convert.ToInt32(STR_Value);
+                balw.Warr_EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString ();
+
+                StartDate = System.DateTime.Now.ToShortDateString();
+                EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString();
+
+                Calculate_Warr_RemainingDate();
+                balw.Warr_RemainingDate = txtwarr_rem.Text;
+                balw.Warr_RemainingMonths = txtwarrmonth_rem.Text;
+                //count days
+                System.DateTime sdate = System.DateTime.Today;
+                System.DateTime endd = System.DateTime.Now.AddYears(strvalue);
+                System.TimeSpan rem = (sdate).Subtract(endd);
+
+                balw.Warr_RemainingDays = rem.ToString ();
+
+                balw.Extend_Y_M = "";
+                balw.C_ExtendDate = "";
+                balw.Warr_Status = "Not_Extended";
+                balw.S_Status = "Active";
+                balw.C_Date = System .DateTime .Now .ToShortDateString ();
+                dalw.Warranty_Save(balw);
+                MessageBox.Show("Warranty Added Succsessfully", caption, MessageBoxButton.OK);
             }
-          //  balw.Warr_Months = "";
-            balw.Warr_StartDate =System .DateTime .Now .ToShortDateString ();
-            C_YEar_Month_DateforWarranty();
-            balw.Warr_EndDate = FDATE ;
-            balw.Warr_RemainingDate = "";
-            balw.Warr_RemainingMonths = "";
-            balw.Extend_Y_M = "";
-            balw.C_ExtendDate = "";
-            balw.Warr_Status = "";
-            balw.S_Status = "";
-            balw.C_Date = "";
-            dalw.Warranty_Save(balw);
-            MessageBox.Show("Warranty Added Succsessfully",caption , MessageBoxButton .OK );
-
         }
-        public void C_YEar_Month_DateforWarranty()
+        public void Calculate_Warr_RemainingDate()
         {
-            string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
-
-            string[] STRVAL = STRTODAYDATE.Split('-');
-            string STR_DATE1 = STRVAL[0];
-            string STR_MONTH = STRVAL[1];
-            string STR_YEAR = STRVAL[2];
-            int year =Convert .ToInt32 ( STR_YEAR + 1);
-            int month = Convert.ToInt32(STR_MONTH);
-            int da =Convert .ToInt32 ( STR_DATE1);
-            if (month==01)
-            {
-                int DA = 31;
-                if(da==DA)
-                {
-                     fmonth = month + 1;
-                     fda = 01;
-                }
-                else
-                {
-                    fda = da;
-                    fmonth = month;
-                }
-            }
-            else if (month == 02)
-            {
-                if (year % 4 == 0)
-            {
-                   if (da == 29)
-                    {
-                        fda = 01;
-                        fmonth = month + 1;
-                    }
-                  
-            }
-                else if (da == 28)
-            {
-                fda = 01;
-                fmonth = month + 1;
-
-            }
-                else
-                {
-                    fda = da;
-                    fmonth = month;
-                }
-                
-            }
-            FDATE = fda + "-" + fmonth + "-" + year;
- 
+            DateTime commondate1 = Convert.ToDateTime(StartDate );
+            DateTime dob1 = Convert.ToDateTime(EndDate );
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtwarr_rem.Text = dateDifference.tesydate();
+            txtwarrmonth_rem.Text = dateDifference.monthcal().ToString ();
         }
+
+        //public void C_YEar_Month_DateforWarranty()
+        //{
+        //    string STRTODAYDATE = System.DateTime.Now.AddYears(2);
+
+        //    string[] STRVAL = STRTODAYDATE.Split('-');
+        //    string STR_DATE1 = STRVAL[0];
+        //    string STR_MONTH = STRVAL[1];
+        //    string STR_YEAR = STRVAL[2];
+        //    int year =Convert .ToInt32 ( STR_YEAR + 1);
+        //    int month = Convert.ToInt32(STR_MONTH);
+        //    int da =Convert .ToInt32 ( STR_DATE1);
+        //    if (month==01)
+        //    {
+        //        int DA = 31;
+        //        if(da==DA)
+        //        {
+        //             fmonth = month + 1;
+        //             fda = 01;
+        //        }
+        //        else
+        //        {
+        //            fda = da;
+        //            fmonth = month;
+        //        }
+        //    }
+        //    else if (month == 02)
+        //    {
+        //        if (year % 4 == 0)
+        //    {
+        //           if (da == 29)
+        //            {
+        //                fda = 01;
+        //                fmonth = month + 1;
+        //            }
+                  
+        //    }
+        //        else if (da == 28)
+        //    {
+        //        fda = 01;
+        //        fmonth = month + 1;
+
+        //    }
+        //        else
+        //        {
+        //            fda = da;
+        //            fmonth = month;
+        //        }
+                
+        //    }
+        //    FDATE = fda + "-" + fmonth + "-" + year;
+ 
+        //}
         //public void CalculateDatesWithMonthandYEar()
         //{
         //    string STRTODAYDATE = System.DateTime.Now.ToShortDateString();
