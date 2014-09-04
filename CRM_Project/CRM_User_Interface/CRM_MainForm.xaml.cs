@@ -3551,43 +3551,101 @@ namespace CRM_User_Interface
                 STR_Y_M = STRVAL[1];
                 // string STR_YEAR = STRVAL[2];
                 // string DATE = STR_MONTH + "/" + STR_DATE1 + "/" + STR_YEAR;
-                if (STR_Y_M == "Year")
+                if (STR_Y_M == "Year")//for years
                 {
                     int v1 = Convert.ToInt32(STR_Value) * 12;
                     balw.Warr_Months = v1.ToString();
+                  
+                    balw.Warr_StartDate = System.DateTime.Now.ToShortDateString();
+
+
+                    int strvalue = Convert.ToInt32(STR_Value);
+                    balw.Warr_EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString();
+
+                    StartDate = System.DateTime.Now.ToShortDateString();
+                    EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString();
+
+                    Calculate_Warr_RemainingDate();
+                    balw.Warr_RemainingDate = txtwarr_rem.Text;
+                    //count months
+                    DateTime sdate1 = System.DateTime.Today;
+
+                    DateTime endd1 = System.DateTime.Now.AddYears(strvalue);
+                    // DateTime asxz =Convert .ToDateTime ( "04-04-2014");
+                    int compMonth = (endd1.Month + endd1.Year * 12) - (sdate1.Month + sdate1.Year * 12);
+                    double daysInEndMonth = (endd1 - endd1.AddMonths(1)).Days;
+                    double months = compMonth + (sdate1.Day - endd1.Day) / daysInEndMonth;
+                    int finalmonth = Convert.ToInt32(months);
+
+                    balw.Warr_RemainingMonths = finalmonth.ToString(); ;
+                    //count days
+                    System.DateTime sdate = System.DateTime.Today;
+                    System.DateTime endd = System.DateTime.Now.AddYears(strvalue);
+                    System.TimeSpan rem = (endd).Subtract(sdate);
+                    string a = rem.ToString();
+                    string[] warrdays = a.Split('.');
+                    string ddays = warrdays[0];
+                    string timedd = warrdays[1];
+
+                    balw.Warr_RemainingDays = ddays;
+
+                    balw.Extend_Y_M = "";
+                    balw.C_ExtendDate = "";
+                    balw.Warr_Status = "Not_Extended";
+                    balw.S_Status = "Active";
+                    balw.C_Date = System.DateTime.Now.ToShortDateString();
+                    dalw.Warranty_Save(balw);
+                    MessageBox.Show("Warranty Added Succsessfully", caption, MessageBoxButton.OK);
                 }
                 else if (STR_Y_M == "Month")
                 {
 
                     balw.Warr_Months = STR_Value;
+                    balw.Warr_StartDate = System.DateTime.Now.ToShortDateString();
+
+
+                    int strvalue = Convert.ToInt32(STR_Value);
+                    balw.Warr_EndDate = System.DateTime.Now.AddMonths (strvalue).ToShortDateString();
+
+                    StartDate = System.DateTime.Now.ToShortDateString();
+                    EndDate = System.DateTime.Now.AddMonths(strvalue).ToShortDateString();
+
+                    Calculate_Warr_RemainingDate();
+                    balw.Warr_RemainingDate = txtwarr_rem.Text;
+                    //count months
+                    DateTime sdate1 = System.DateTime.Today;
+
+                    DateTime endd1 = System.DateTime.Now.AddMonths(strvalue);
+                    // DateTime asxz =Convert .ToDateTime ( "04-04-2014");
+                    int compMonth = (endd1.Month + endd1.Year * 12) - (sdate1.Month + sdate1.Year * 12);
+                    double daysInEndMonth = (endd1 - endd1.AddMonths(1)).Days;
+                    double months = compMonth + (sdate1.Day - endd1.Day) / daysInEndMonth;
+                    int finalmonth = Convert.ToInt32(months);
+
+                    balw.Warr_RemainingMonths = finalmonth.ToString(); ;
+                    //count days
+                    System.DateTime sdate = System.DateTime.Today;
+                    System.DateTime endd = System.DateTime.Now.AddMonths(strvalue);
+                    System.TimeSpan rem = (endd).Subtract(sdate);
+                    string a = rem.ToString();
+                    string[] warrdays = a.Split('.');
+                    string ddays = warrdays[0];
+                    string timedd = warrdays[1];
+
+                    balw.Warr_RemainingDays = ddays;
+
+                    balw.Extend_Y_M = "";
+                    balw.C_ExtendDate = "";
+                    balw.Warr_Status = "Not_Extended";
+                    balw.S_Status = "Active";
+                    balw.C_Date = System.DateTime.Now.ToShortDateString();
+                    dalw.Warranty_Save(balw);
+                    MessageBox.Show("Warranty Added Succsessfully", caption, MessageBoxButton.OK);
+
+
+
                 }
-                //  balw.Warr_Months = "";
-                balw.Warr_StartDate = System.DateTime.Now.ToShortDateString();
-             
                
-                int strvalue = Convert.ToInt32(STR_Value);
-                balw.Warr_EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString ();
-
-                StartDate = System.DateTime.Now.ToShortDateString();
-                EndDate = System.DateTime.Now.AddYears(strvalue).ToShortDateString();
-
-                Calculate_Warr_RemainingDate();
-                balw.Warr_RemainingDate = txtwarr_rem.Text;
-                balw.Warr_RemainingMonths = txtwarrmonth_rem.Text;
-                //count days
-                System.DateTime sdate = System.DateTime.Today;
-                System.DateTime endd = System.DateTime.Now.AddYears(strvalue);
-                System.TimeSpan rem = (sdate).Subtract(endd);
-
-                balw.Warr_RemainingDays = rem.ToString ();
-
-                balw.Extend_Y_M = "";
-                balw.C_ExtendDate = "";
-                balw.Warr_Status = "Not_Extended";
-                balw.S_Status = "Active";
-                balw.C_Date = System .DateTime .Now .ToShortDateString ();
-                dalw.Warranty_Save(balw);
-                MessageBox.Show("Warranty Added Succsessfully", caption, MessageBoxButton.OK);
             }
         }
         public void Calculate_Warr_RemainingDate()
@@ -3597,9 +3655,10 @@ namespace CRM_User_Interface
             //CRM_DAL.
             DateDiff dateDifference = new DateDiff(commondate1, dob1);
             txtwarr_rem.Text = dateDifference.tesydate();
-            txtwarrmonth_rem.Text = dateDifference.monthcal().ToString ();
+            //txtwarrmonth_rem.Text = dateDifference.monthcal().ToString ();
+           
         }
-
+       
         //public void C_YEar_Month_DateforWarranty()
         //{
         //    string STRTODAYDATE = System.DateTime.Now.AddYears(2);
@@ -6499,6 +6558,61 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
             Grd_Alerts.Visibility = Visibility;
         }
 
+        private void smextendwarranty_Click(object sender, RoutedEventArgs e)
+        {
+            GRD_ExtendWarranty.Visibility = Visibility;
+            load_WarrantyFor_Extend();
+        }
+        public void load_WarrantyFor_Extend()
+        {
+          try
+            {
+                String str;
+                //con.Open();
+                DataSet ds = new DataSet();
+                str = " Select w.ID,c.Cust_ID,c.Name,w.Bill_No,w.Products123,w.Warranty,w.Warr_StartDate,w.Warr_EndDate,w.Warr_RemainingDays " +
+                    "from tlb_Warranty w INNER JOIN tlb_Customer c on c.ID =w.Customer_ID " +
+                    " where ";
+
+                if (txtWExtendCName.Text.Trim() != "")
+                {
+                    str = str + "c.Name LIKE ISNULL('" + txtWExtendCName.Text.Trim() + "',c.Name) + '%' AND ";
+                }
+                if (txtWExtendCID.Text.Trim() != "")
+                {
+                    str = str + "c.Cust_ID LIKE ISNULL('" + txtWExtendCID.Text.Trim() + "',c.Cust_ID) + '%' AND ";
+                }
+                if (txtWExtendCBillno.Text.Trim() != "")
+                {
+                    str = str + "w.Bill_No LIKE ISNULL('" + txtWExtendCBillno.Text.Trim() + "',w.Bill_No) + '%' AND ";
+                }
+                str = str + "  w.Warr_Status='Not_Extended' and w.S_Status='Active' ORDER BY w.Customer_ID ASC "; 
+                //str = str + " S_Status = 'Active' ";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                //if (ds.Tables[0].Rows.Count > 0)
+                //{
+                DGRD_WarrantyExtend.ItemsSource = ds.Tables[0].DefaultView;
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        
+        }
+
+        private void btnWExtendExit_Click(object sender, RoutedEventArgs e)
+        {
+            GRD_ExtendWarranty.Visibility = Visibility.Hidden ;
+        }
+           
        
     }
 }
