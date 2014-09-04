@@ -498,7 +498,7 @@
                         </StackPanel>-->
                 </Grid>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="565" Margin="20,66,0,0" Name="GRD_Follwupandnew"  Visibility="Hidden"          VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" >
+            <Grid HorizontalAlignment="Left" Height="565" Margin="20,66,0,0" Name="GRD_Follwupandnew"  Visibility="Hidden"            VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" >
                 <Grid HorizontalAlignment="Left" Height="540" Name="grd_addfollowupandwalkin" Margin="160,15,0,0" VerticalAlignment="Top" Width="835" Background="White">
                     <Label Content="Follow up Details" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" />
                     <Label Content="Follow_up ID :" HorizontalAlignment="Left" Margin="95,47,0,0" VerticalAlignment="Top" Width="90"/>
@@ -1315,21 +1315,57 @@
                 <Button x:Name="btnalertexit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Margin="473,2,0,0" Click="btnalertexit_Click_1" Height="20"/>
 
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="559" Name="GRD_ExtendWarranty" Visibility="Visible"    VerticalAlignment="Top" Width="1155" Margin="25,70,0,0" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Height="559" Name="GRD_ExtendWarranty" Visibility="Visible"      VerticalAlignment="Top" Width="1155" Margin="25,70,0,0" Background="#FFF0F0F0">
                 <Grid HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="1145" Margin="5,34,0,0" Background="White">
                     <GroupBox Header="Search Options" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,4,0,0" Width="1136" Height="71">
                         <Grid HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="1126" Margin="0,0,-2,0">
                             <Label Content="Enter Name :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,4,0,0"/>
-                            <TextBox x:Name="txtWExtendCName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="105,12,0,0"/>
+                            <TextBox x:Name="txtWExtendCName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="105,12,0,0" TextChanged="txtWExtendCName_TextChanged"/>
                             <Label Content="Enter Customer ID :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="319,9,0,0"/>
                             <Label Content="Enter Bill No :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="665,9,0,0"/>
-                            <TextBox x:Name="txtWExtendCID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="440,12,0,0"/>
-                            <TextBox x:Name="txtWExtendCBillno" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="755,12,0,0"/>
+                            <TextBox x:Name="txtWExtendCID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="440,12,0,0" TextChanged="txtWExtendCID_TextChanged"/>
+                            <TextBox x:Name="txtWExtendCBillno" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="755,12,0,0" TextChanged="txtWExtendCBillno_TextChanged"/>
                             <Button x:Name="btnWExtendRefresh" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="995,14,0,0"/>
                         </Grid>
                     </GroupBox>
-                    <DataGrid HorizontalAlignment="Left" Name="DGRD_WarrantyExtend" VerticalAlignment="Top" Margin="6,86,0,0" Height="419" Width="1134">
+                    <DataGrid HorizontalAlignment="Left" Name="DGRD_WarrantyExtend" VerticalAlignment="Top" AutoGenerateColumns="False"  Margin="6,86,0,0" Height="419" Width="1134">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="10" Visibility="Visible"  x:Name="grdidw" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="cID" Width="10" Visibility="Visible"  x:Name="grdidwc" SortMemberPath="ID" Binding="{Binding Customer_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Customer_ID" Width="110" x:Name="grdfidw" SortMemberPath="VisitorName" Binding="{Binding Cust_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Name" x:Name="grdNamew" Width="150" SortMemberPath="MobileNo" Binding="{Binding Name, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Bill_No" Width="100"  x:Name="grbillnow" SortMemberPath="PhoneNo" Binding="{Binding Bill_No, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Products" Width="180" x:Name="grdProducsw" SortMemberPath="VisitorAddress" Binding="{Binding Products123, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Warranty" x:Name="grdwarranty" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Warranty, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Start Date" x:Name="grdsdatew" Width="130" SortMemberPath="AvgBuget" Binding="{Binding Warr_StartDate, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="End Date" x:Name="grdeDatew" Width="130" SortMemberPath="AvgBuget" Binding="{Binding Warr_EndDate, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Remaining Days" x:Name="grdrdaysw" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Warr_RemainingDays, Mode=TwoWay}" />
+                            <DataGridTemplateColumn Header="Extend" Width="70" x:Name="Extend" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox  Name="chkExtend" Checked="chkExtend_Checked" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
                     </DataGrid>
+                    <Grid HorizontalAlignment="Left" Height="185" Name="GRD_ExtendPopup" Visibility="Visible"  VerticalAlignment="Top" Width="395" Margin="485,235,0,0" Background="White">
+                        <Label x:Name="lblwarrcid" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,5,0,0" Width="108"/>
+                        <Label x:Name="lblwarrExtension" Content="Extension By :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,34,0,0" Width="95"/>
+                        <Label x:Name="lblwarrPaid" Content="Paid Amount :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,67,0,0" Width="95"/>
+                        <Label x:Name="lblwarrDate" Content="Date :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,98,0,0" Width="90"/>
+                        <TextBox x:Name="txtwarrExtension" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,37,0,0"/>
+                        <TextBox x:Name="txtwarrPaidAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Margin="105,70,0,0"/>
+                        <ComboBox x:Name="cmbwarrExtension" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="235,38,0,0" IsEditable="True" IsReadOnly="True">
+                            <ComboBoxItem Name="cmbwarrYear" Content="Year"/>
+                            <ComboBoxItem Name="cmbwarrMonth" Content="Month"/>
+                        </ComboBox>
+                        <DatePicker x:Name="dpwarrDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="105,106,0,0" Width="180"/>
+                        <Button x:Name="btnwarrExtend" Content="Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="80,145,0,0"/>
+                        <Button x:Name="btnwarrClear" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,145,0,0" Click="btnwarrClear_Click"/>
+                        <Button x:Name="btnwarrExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="265,145,0,0" Click="btnwarrExit_Click"/>
+
+                    </Grid>
 
                 </Grid>
                 <Label Content="Warranty Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="521,-1,0,0" FontSize="16" FontWeight="Bold"/>

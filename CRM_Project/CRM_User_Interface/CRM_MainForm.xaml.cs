@@ -32,6 +32,7 @@ namespace CRM_User_Interface
 
     public partial class CRM_MainForm : Window
     {
+        string IDw, CuID, CustomerIDs, n, bn, prd, ed, rdy;
         string asd = System.DateTime.Now.ToString();
         string CommonDate = System.DateTime.Now.ToShortDateString();
         DateTime azx = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
@@ -6570,7 +6571,7 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
                 String str;
                 //con.Open();
                 DataSet ds = new DataSet();
-                str = " Select w.ID,c.Cust_ID,c.Name,w.Bill_No,w.Products123,w.Warranty,w.Warr_StartDate,w.Warr_EndDate,w.Warr_RemainingDays " +
+                str = " Select w.ID,w.Customer_ID,c.Cust_ID,c.Name,w.Bill_No,w.Products123,w.Warranty,w.Warr_StartDate,w.Warr_EndDate,w.Warr_RemainingDays " +
                     "from tlb_Warranty w INNER JOIN tlb_Customer c on c.ID =w.Customer_ID " +
                     " where ";
 
@@ -6611,6 +6612,55 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         private void btnWExtendExit_Click(object sender, RoutedEventArgs e)
         {
             GRD_ExtendWarranty.Visibility = Visibility.Hidden ;
+        }
+
+        private void txtWExtendCName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Extend();
+        }
+
+        private void txtWExtendCID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Extend();;
+           
+        }
+
+        private void txtWExtendCBillno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Extend();
+        }
+        public void load_extension()
+        {
+            cmbwarrExtension.Text = "--Select--";
+        }
+        private void chkExtend_Checked(object sender, RoutedEventArgs e)
+        {
+            object item = DGRD_WarrantyExtend.SelectedItem;
+             IDw = (DGRD_WarrantyExtend.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+             CuID = (DGRD_WarrantyExtend.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+             CustomerIDs= (DGRD_WarrantyExtend.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+             n = (DGRD_WarrantyExtend.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
+             bn = (DGRD_WarrantyExtend.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
+             prd = (DGRD_WarrantyExtend.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
+             ed = (DGRD_WarrantyExtend.SelectedCells[8].Column.GetCellContent(item) as TextBlock).Text;
+             rdy = (DGRD_WarrantyExtend.SelectedCells[9].Column.GetCellContent(item) as TextBlock).Text;
+            MessageBox.Show(IDw);
+
+            GRD_ExtendPopup.Visibility = Visibility;
+            load_extension();
+            lblwarrcid.Content = CustomerIDs;
+          
+        }
+
+        private void btnwarrExit_Click(object sender, RoutedEventArgs e)
+        {
+            GRD_ExtendPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void btnwarrClear_Click(object sender, RoutedEventArgs e)
+        {
+            cmbwarrExtension.SelectedItem = null;
+            load_extension();
         }
            
        
