@@ -119,7 +119,7 @@
                         </StackPanel>
                     </MenuItem.Header>
                     <!--<MenuItem Header="Add Warranty" x:Name=""/>-->
-                    <MenuItem Header="View Warranty On Sale " x:Name="smviewwarranty"/>
+                    <MenuItem Header="View Warranty On Sale " x:Name="smviewwarranty" Click="smviewwarranty_Click"/>
                     <MenuItem Header=" Check Status" x:Name="smchksataus"/>
                     <MenuItem Header=" Extend Particular Warranty" x:Name="smextendwarranty" Click="smextendwarranty_Click"/>
 
@@ -1315,7 +1315,7 @@
                 <Button x:Name="btnalertexit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" Margin="473,2,0,0" Click="btnalertexit_Click_1" Height="20"/>
 
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="559" Name="GRD_ExtendWarranty" Visibility="Visible"      VerticalAlignment="Top" Width="1155" Margin="25,70,0,0" Background="#FFF0F0F0">
+            <Grid HorizontalAlignment="Left" Height="559" Name="GRD_ExtendWarranty" Visibility="Hidden"       VerticalAlignment="Top" Width="1155" Margin="25,70,0,0" Background="#FFF0F0F0">
                 <Grid HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="1145" Margin="5,34,0,0" Background="White">
                     <GroupBox Header="Search Options" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,4,0,0" Width="1136" Height="71">
                         <Grid HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="1126" Margin="0,0,-2,0">
@@ -1349,7 +1349,7 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Grid HorizontalAlignment="Left" Height="185" Name="GRD_ExtendPopup" Visibility="Visible"  VerticalAlignment="Top" Width="395" Margin="485,235,0,0" Background="White">
+                    <Grid HorizontalAlignment="Left" Height="185" Name="GRD_ExtendPopup" Visibility="Hidden"   VerticalAlignment="Top" Width="395" Margin="485,235,0,0" Background="White">
                         <Label x:Name="lblwarrcid" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,5,0,0" Width="108"/>
                         <Label x:Name="lblwarrExtension" Content="Extension By :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,34,0,0" Width="95"/>
                         <Label x:Name="lblwarrPaid" Content="Paid Amount :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,67,0,0" Width="95"/>
@@ -1361,7 +1361,7 @@
                             <ComboBoxItem Name="cmbwarrMonth" Content="Month"/>
                         </ComboBox>
                         <DatePicker x:Name="dpwarrDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="105,106,0,0" Width="180"/>
-                        <Button x:Name="btnwarrExtend" Content="Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="80,145,0,0"/>
+                        <Button x:Name="btnwarrExtend" Content="Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="80,145,0,0" Click="btnwarrExtend_Click"/>
                         <Button x:Name="btnwarrClear" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,145,0,0" Click="btnwarrClear_Click"/>
                         <Button x:Name="btnwarrExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="265,145,0,0" Click="btnwarrExit_Click"/>
 
@@ -1370,6 +1370,67 @@
                 </Grid>
                 <Label Content="Warranty Extend" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="521,-1,0,0" FontSize="16" FontWeight="Bold"/>
                 <Button x:Name="btnWExtendExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1065,4,0,0" Click="btnWExtendExit_Click"/>
+                <TextBox x:Name="txtWExtenddate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Margin="805,11,0,0" TextChanged="txtWExtendCBillno_TextChanged"/>
+
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="562" Name="GRD_ViwWarrantyOnSales" VerticalAlignment="Top" Width="1150" Margin="25,67,0,0" Background="#FFF0F0F0">
+                <Grid HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="1150" Margin="0,32,0,0" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Search Options" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1145" Height="65">
+                        <Grid HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="1135" Margin="0,0,-2,0">
+                            <Label Content="Enter Name :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,6,0,0"/>
+                            <TextBox x:Name="txtWSExtendCName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="105,12,0,0" TextChanged="txtWSExtendCName_TextChanged"/>
+                            <Label Content="Enter Customer ID :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="319,9,0,0"/>
+                            <Label Content="Enter Bill No :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="665,9,0,0"/>
+                            <TextBox x:Name="txtWSExtendCID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="440,12,0,0" TextChanged="txtWSExtendCID_TextChanged" />
+                            <TextBox x:Name="txtWSExtendCBillno" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Margin="755,12,0,0" TextChanged="txtWSExtendCBillno_TextChanged" />
+                            <Button x:Name="btnWSExtendRefresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1017,14,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <DataGrid HorizontalAlignment="Left" Name="DGRD_LatestWarranties"  AutoGenerateColumns="False"  VerticalAlignment="Top" Margin="8,70,0,0" Height="185" Width="1137">
+                        <DataGrid.Columns >
+                       
+                            <DataGridTextColumn Header="ID" Width="10" Visibility="Visible"  x:Name="grdidwsl" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="cID" Width="10" Visibility="Visible"  x:Name="grdidwcsl" SortMemberPath="ID" Binding="{Binding Customer_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Customer_ID" Width="110" x:Name="grdfidwsl" SortMemberPath="VisitorName" Binding="{Binding Cust_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Name" x:Name="grdNamewsl" Width="200" SortMemberPath="MobileNo" Binding="{Binding Name, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Bill_No" Width="140"  x:Name="grbillnowsl" SortMemberPath="PhoneNo" Binding="{Binding Bill_No, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Products" Width="240" x:Name="grdProducswsl" SortMemberPath="VisitorAddress" Binding="{Binding Products123, Mode=TwoWay}" />
+                            <!--<DataGridTextColumn Header="Warranty" x:Name="grdwarranty" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Warranty, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Start Date" x:Name="grdsdatew" Width="130" SortMemberPath="AvgBuget" Binding="{Binding Warr_StartDate, Mode=TwoWa-->
+                            <DataGridTextColumn Header="End Date" x:Name="grdeDatewsl" Width="150" SortMemberPath="AvgBuget" Binding="{Binding Warr_EndDate, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Remaining Days" x:Name="grdrdayswsl" Width="150" SortMemberPath="AvgBuget" Binding="{Binding Warr_RemainingDays, Mode=TwoWay}" />
+                            <DataGridTemplateColumn Header="Show Details" Width="100" x:Name="VewDetails" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Vew Details" Name="btnVewDetailsWSL" Click="btnVewDetailsWSL_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid HorizontalAlignment="Left" Name="DGRD_AllWarranties" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="6,310,0,0" Height="185" Width="1137">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="10" Visibility="Visible"  x:Name="grdidwsa" SortMemberPath="ID" Binding="{Binding ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="cID" Width="10" Visibility="Visible"  x:Name="grdidwcsa" SortMemberPath="ID" Binding="{Binding Customer_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Customer_ID" Width="110" x:Name="grdfidwsa" SortMemberPath="VisitorName" Binding="{Binding Cust_ID, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Name" x:Name="grdNamewsa" Width="150" SortMemberPath="MobileNo" Binding="{Binding Name, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Bill_No" Width="100"  x:Name="grbillnowsa" SortMemberPath="PhoneNo" Binding="{Binding Bill_No, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Products" Width="180" x:Name="grdProducswsa" SortMemberPath="VisitorAddress" Binding="{Binding Products123, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Warranty" x:Name="grdwarrantysa" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Warranty, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Start Date" x:Name="grdsdatewsa" Width="130" SortMemberPath="AvgBuget" Binding="{Binding Warr_StartDate, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="End Date" x:Name="grdeDatewsa" Width="130" SortMemberPath="AvgBuget" Binding="{Binding Warr_EndDate, Mode=TwoWay}" />
+                            <DataGridTextColumn Header="Remaining Days" x:Name="grdrdayswsa" Width="120" SortMemberPath="AvgBuget" Binding="{Binding Warr_RemainingDays, Mode=TwoWay}" />
+                           
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnLatestWarrantiesPrint" Content="Print" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="975,275,0,0"/>
+                    <Button x:Name="btnLatestWarrantiesPrint1" Content="Print" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="978,500,0,0"/>
+                </Grid>
+                <Label Content="View Warranties On Sales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" FontSize="16" FontWeight="Bold"/>
+                <Button x:Name="btnWSExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1045,7,0,0" Click="btnWSExit_Click"/>
 
             </Grid>
 

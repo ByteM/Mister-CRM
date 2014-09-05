@@ -3592,6 +3592,7 @@ namespace CRM_User_Interface
 
                     balw.Extend_Y_M = "";
                     balw.C_ExtendDate = "";
+                    balw.Paid_Amount = "";
                     balw.Warr_Status = "Not_Extended";
                     balw.S_Status = "Active";
                     balw.C_Date = System.DateTime.Now.ToShortDateString();
@@ -3637,6 +3638,7 @@ namespace CRM_User_Interface
 
                     balw.Extend_Y_M = "";
                     balw.C_ExtendDate = "";
+                    balw.Paid_Amount = "";
                     balw.Warr_Status = "Not_Extended";
                     balw.S_Status = "Active";
                     balw.C_Date = System.DateTime.Now.ToShortDateString();
@@ -6649,9 +6651,145 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
             GRD_ExtendPopup.Visibility = Visibility;
             load_extension();
             lblwarrcid.Content = CustomerIDs;
-          
+            dpwarrDate.Text = System.DateTime.Now.ToShortDateString();
+           
         }
+        public void Save_ExtendWarranty()
+        {
+           
+                balw.Flag = 1;
+                balw.Customer_ID =Convert .ToInt32 (CuID);
+                balw.Bill_No = bn;
+                balw.Products123 = prd;
+            string warrnew=(txtwarrExtension .Text +"-"+cmbwarrExtension .Text) ;
+            balw.Warranty = warrnew;
+               // string warr = dtstat.Rows[i]["Warranty"].ToString();
+                warryearmonth = warrnew;
+                string[] STRVAL = warryearmonth.Split('-');
+                STR_Value = STRVAL[0];
+                STR_Y_M = STRVAL[1];
+                // string STR_YEAR = STRVAL[2];
+                // string DATE = STR_MONTH + "/" + STR_DATE1 + "/" + STR_YEAR;
+                if (STR_Y_M == "Year")//for years
+                {
+                    int v1 = Convert.ToInt32(STR_Value) * 12;
+                    balw.Warr_Months = v1.ToString();
 
+                    balw.Warr_StartDate = ed;
+                    DateTime ed1 = Convert.ToDateTime(ed);
+
+                    int strvalue = Convert.ToInt32(STR_Value);
+                    balw.Warr_EndDate = ed1.AddYears(strvalue).ToShortDateString();
+
+                    StartDate = ed;
+                  
+                    EndDate = ed1.AddYears(strvalue).ToShortDateString();
+
+                    Calculate_WarrExt_RemainingDate();
+                    balw.Warr_RemainingDate = txtWExtenddate.Text;
+                    //count months
+                    DateTime sdate1 =Convert .ToDateTime (ed);
+
+                    DateTime endd1 = ed1.AddYears(strvalue);
+                    // DateTime asxz =Convert .ToDateTime ( "04-04-2014");
+                    int compMonth = (endd1.Month + endd1.Year * 12) - (sdate1.Month + sdate1.Year * 12);
+                    double daysInEndMonth = (endd1 - endd1.AddMonths(1)).Days;
+                    double months = compMonth + (sdate1.Day - endd1.Day) / daysInEndMonth;
+                    int finalmonth = Convert.ToInt32(months);
+
+                    balw.Warr_RemainingMonths = finalmonth.ToString(); ;
+                    //count days
+                    System.DateTime sdate =Convert .ToDateTime (ed);
+                    System.DateTime endd = ed1.AddYears(strvalue);
+                    System.TimeSpan rem = (endd).Subtract(sdate);
+                    string a = rem.ToString();
+                    string[] warrdays = a.Split('.');
+                    string ddays = warrdays[0];
+                    string timedd = warrdays[1];
+
+                    balw.Warr_RemainingDays = ddays;
+
+                    balw.Extend_Y_M = warrnew;
+                    balw.C_ExtendDate =System .DateTime .Now .ToShortDateString ();
+                    balw.Paid_Amount = txtwarrPaidAmount .Text ;
+                    balw.Warr_Status = "Not_Extended";
+                    balw.S_Status = "Active";
+                    dpwarrDate.Text = System.DateTime.Now.ToShortDateString();
+                    balw.C_Date = dpwarrDate.Text;
+                    dalw.Warranty_Save(balw);
+                    MessageBox.Show("Warranty Extended Succsessfully", caption, MessageBoxButton.OK);
+                }
+                else if (STR_Y_M == "Month")
+                {
+
+                    balw.Warr_Months = STR_Value;
+                    balw.Warr_StartDate = ed;
+                    DateTime ed1 = Convert.ToDateTime(ed);
+
+
+                    int strvalue = Convert.ToInt32(STR_Value);
+                    balw.Warr_EndDate = ed1.AddMonths(strvalue).ToShortDateString();
+
+                    StartDate = ed;
+                    EndDate = ed1.AddMonths(strvalue).ToShortDateString();
+
+                    Calculate_WarrExt_RemainingDate();
+                    balw.Warr_RemainingDate = txtWExtenddate.Text;
+                    //count months
+                    DateTime sdate1 = Convert.ToDateTime(ed);
+
+                    DateTime endd1 = ed1.AddMonths(strvalue);
+                    // DateTime asxz =Convert .ToDateTime ( "04-04-2014");
+                    int compMonth = (endd1.Month + endd1.Year * 12) - (sdate1.Month + sdate1.Year * 12);
+                    double daysInEndMonth = (endd1 - endd1.AddMonths(1)).Days;
+                    double months = compMonth + (sdate1.Day - endd1.Day) / daysInEndMonth;
+                    int finalmonth = Convert.ToInt32(months);
+
+                    balw.Warr_RemainingMonths = finalmonth.ToString(); ;
+                    //count days
+                    System.DateTime sdate = Convert.ToDateTime(ed);
+                    System.DateTime endd = ed1.AddMonths(strvalue);
+                    System.TimeSpan rem = (endd).Subtract(sdate);
+                    string a = rem.ToString();
+                    string[] warrdays = a.Split('.');
+                    string ddays = warrdays[0];
+                    string timedd = warrdays[1];
+
+                    balw.Warr_RemainingDays = ddays;
+
+                    balw.Extend_Y_M = warrnew;
+                    balw.C_ExtendDate = System.DateTime.Now.ToShortDateString();
+                    balw.Paid_Amount = txtwarrPaidAmount.Text;
+                    balw.Warr_Status = "Not_Extended";
+                    balw.S_Status = "Active";
+                    dpwarrDate.Text = System.DateTime.Now.ToShortDateString();
+                    balw.C_Date = dpwarrDate.Text;
+                    dalw.Warranty_Save(balw);
+                    MessageBox.Show("Warranty Added Succsessfully", caption, MessageBoxButton.OK);
+                    extendedpopupclear();
+
+                }
+
+        }
+        public void Calculate_WarrExt_RemainingDate()
+        {
+            DateTime commondate1 = Convert.ToDateTime(StartDate);
+            DateTime dob1 = Convert.ToDateTime(EndDate);
+            //CRM_DAL.
+            DateDiff dateDifference = new DateDiff(commondate1, dob1);
+            txtWExtenddate.Text = dateDifference.tesydate();
+            //txtwarrmonth_rem.Text = dateDifference.monthcal().ToString ();
+
+        }
+        public void UpdateWarr_Satatus()
+        {
+            balw.Flag = 2;
+            balw.ID = Convert.ToInt32(IDw);
+            balw.Warr_Status = "Extended";
+            balw .S_Status ="Active";
+            dalw.Warranty_Column_Update(balw);
+            MessageBox.Show("Status Updated",caption , MessageBoxButton.OK );
+        }
         private void btnwarrExit_Click(object sender, RoutedEventArgs e)
         {
             GRD_ExtendPopup.Visibility = Visibility.Hidden;
@@ -6659,10 +6797,126 @@ private void DGRD_Alerts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
 
         private void btnwarrClear_Click(object sender, RoutedEventArgs e)
         {
+            extendedpopupclear();
+           
+        }
+        public void extendedpopupclear()
+        {
             cmbwarrExtension.SelectedItem = null;
+            txtwarrExtension.Text = "";
+            txtwarrPaidAmount.Text = "";
+            txtWExtenddate.Text = "";
+            dpwarrDate.Text = System.DateTime.Now.ToShortDateString();
             load_extension();
         }
-           
+        private void btnwarrExtend_Click(object sender, RoutedEventArgs e)
+        {
+            Save_ExtendWarranty();
+            UpdateWarr_Satatus();
+            load_WarrantyFor_Extend();
+            GRD_ExtendPopup.Visibility = Visibility.Hidden;
+        }
+
+        private void smviewwarranty_Click(object sender, RoutedEventArgs e)
+        {
+            GRD_ViwWarrantyOnSales.Visibility = Visibility;
+            load_WarrantyFor_Sales();
+        }
+        public void load_WarrantyFor_Sales()
+        {
+            try
+            {
+                String str;
+                //con.Open();
+                DataSet ds = new DataSet();
+                str = " Select w.ID,w.Customer_ID,c.Cust_ID,c.Name,w.Bill_No,w.Products123,w.Warr_EndDate,w.Warr_RemainingDays " +
+                    "from tlb_Warranty w INNER JOIN tlb_Customer c on c.ID =w.Customer_ID " +
+                    " where ";
+
+                if (txtWSExtendCName.Text.Trim() != "")
+                {
+                    str = str + "c.Name LIKE ISNULL('" + txtWSExtendCName.Text.Trim() + "',c.Name) + '%' AND ";
+                }
+                if (txtWSExtendCID.Text.Trim() != "")
+                {
+                    str = str + "c.Cust_ID LIKE ISNULL('" + txtWSExtendCID.Text.Trim() + "',c.Cust_ID) + '%' AND ";
+                }
+                if (txtWSExtendCBillno.Text.Trim() != "")
+                {
+                    str = str + "w.Bill_No LIKE ISNULL('" + txtWSExtendCBillno.Text.Trim() + "',w.Bill_No) + '%' AND ";
+                }
+                str = str + "  w.Warr_Status='Not_Extended' and w.S_Status='Active' ORDER BY w.Customer_ID ASC ";
+                //str = str + " S_Status = 'Active' ";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                //if (ds.Tables[0].Rows.Count > 0)
+                //{
+                DGRD_LatestWarranties.ItemsSource = ds.Tables[0].DefaultView;
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        private void txtWSExtendCName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Sales();
+        }
+
+        private void txtWSExtendCID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Sales();
+        }
+
+        private void txtWSExtendCBillno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            load_WarrantyFor_Sales();
+        }
+
+        private void btnWSExit_Click(object sender, RoutedEventArgs e)
+        {
+            GRD_ViwWarrantyOnSales.Visibility = Visibility.Hidden ;
+        }
+
+        private void btnVewDetailsWSL_Click(object sender, RoutedEventArgs e)
+        {
+            object item = DGRD_LatestWarranties.SelectedItem;
+            int  WSLCID =Convert .ToInt32 ( (DGRD_LatestWarranties.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text);
+            string WSLBillno = (DGRD_LatestWarranties.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
+            try
+            {
+                String str;
+                //con.Open();
+                DataSet ds = new DataSet();
+                str = " Select w.ID,w.Customer_ID,c.Cust_ID,c.Name,w.Bill_No,w.Products123,w.Warranty,w.Warr_StartDate,w.Warr_EndDate,w.Warr_RemainingDays from tlb_Warranty w INNER JOIN tlb_Customer c on c.ID =w.Customer_ID where  w.Warr_Status='Extended' and w.S_Status='Active'  and w.Customer_ID='" + WSLCID + "'  ORDER BY w.Customer_ID ASC";
+                     
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                //if (ds.Tables[0].Rows.Count > 0)
+                //{
+                DGRD_AllWarranties.ItemsSource = ds.Tables[0].DefaultView;
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
        
     }
 }

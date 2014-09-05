@@ -35,6 +35,7 @@ namespace CRM_DAL
                 cmd.Parameters.AddWithValue("@Warr_RemainingDays", bw.Warr_RemainingDays);
                 cmd.Parameters.AddWithValue("@Extend_Y_M", bw.Extend_Y_M);
                 cmd.Parameters.AddWithValue("@C_ExtendDate", bw.C_ExtendDate);
+                cmd.Parameters.AddWithValue("@Paid_Amount", bw.Paid_Amount);
                 cmd.Parameters.AddWithValue("@Warr_Status", bw.Warr_Status);
                 cmd.Parameters.AddWithValue("@S_Status", bw.S_Status);
                 cmd.Parameters.AddWithValue("@C_Date", bw.C_Date);
@@ -49,6 +50,27 @@ namespace CRM_DAL
                 throw;
             }
             finally { con.Close(); }
+        }
+
+       public int Warranty_Column_Update(BAL_Warranty bwu)
+        {
+            try
+            { con.Open();
+            cmd = new SqlCommand("SP_WarrantyUpdate", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Flag", 2);
+                cmd.Parameters.AddWithValue("@ID", bwu.ID);
+                cmd.Parameters.AddWithValue("@Warr_Status", bwu.Warr_Status);
+                cmd.Parameters.AddWithValue("@S_Status", bwu.S_Status);
+                int i = cmd.ExecuteNonQuery();
+                return i;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
         }
     }
 }
