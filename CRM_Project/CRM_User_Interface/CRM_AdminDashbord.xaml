@@ -487,7 +487,7 @@
                             <Label x:Name="lblProceQty" Content="ProceQty" HorizontalAlignment="Left" Margin="356,144,0,0" VerticalAlignment="Top" Width="89"/>
                             <Label Content="Final Qty:" HorizontalAlignment="Left" Margin="260,175,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="txtQuantityF" HorizontalAlignment="Left" Height="23" Margin="356,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" TextChanged="txtQuantityF_TextChanged"/>
-                            <Grid HorizontalAlignment="Left" Height="59" Visibility="Hidden"    Margin="215,5,0,0" VerticalAlignment="Top" Width="260" Background="#FFF06969">
+                            <Grid HorizontalAlignment="Left" Height="59" Visibility="Visible"    Margin="215,5,0,0" VerticalAlignment="Top" Width="260" Background="#FFF06969">
                                 <TextBox x:Name="txtAdm_DomainID" HorizontalAlignment="Left" Height="23" Margin="5,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
                                 <TextBox x:Name="txtAdm_ProductID" HorizontalAlignment="Left" Height="23" Margin="54,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
                                 <TextBox x:Name="txtAdm_BrandID" HorizontalAlignment="Left" Height="23" Margin="101,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
@@ -501,9 +501,9 @@
                             </Grid>
                             <Label Content="Proc Net Amt:" HorizontalAlignment="Left" Margin="11,114,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="lblProceNetAmt" Content="ProceNetAmt" HorizontalAlignment="Left" Margin="107,114,0,0" VerticalAlignment="Top" Width="138"/>
-                            <TextBox x:Name="txtTotalPrice" HorizontalAlignment="Left" Height="23" Margin="275,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Hidden"/>
-                            <TextBox x:Name="txtpreroundoff" HorizontalAlignment="Left" Height="23" Margin="365,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Hidden"/>
-                            <TextBox x:Name="txtNetAmount" HorizontalAlignment="Left" Height="23" Margin="275,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Visibility="Hidden"/>
+                            <TextBox x:Name="txtTotalPrice" HorizontalAlignment="Left" Height="23" Margin="275,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Visible"/>
+                            <TextBox x:Name="txtpreroundoff" HorizontalAlignment="Left" Height="23" Margin="365,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Visibility="Visible"/>
+                            <TextBox x:Name="txtNetAmount" HorizontalAlignment="Left" Height="23" Margin="275,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Visibility="Visible"/>
                             <Label Content="Warranty :" HorizontalAlignment="Left" Margin="266,214,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="lblProceWarranty" Content="Warranty :" HorizontalAlignment="Left" Margin="361,214,0,0" VerticalAlignment="Top"/>
                         </Grid>
@@ -512,7 +512,7 @@
                             <CheckBox x:Name="chbDefault" Content="Default" HorizontalAlignment="Left" Margin="116,14,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="txtAdm_FinalMonths" HorizontalAlignment="Left" Height="23" Margin="207,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
                             <Label x:Name="lblFinal_Months" Content="Months" HorizontalAlignment="Left" Margin="276,8,0,0" VerticalAlignment="Top"/>
-                            <Label x:Name="lblInsurance" Content="Insurance" HorizontalAlignment="Left" Margin="371,6,0,0" VerticalAlignment="Top" Width="106" Visibility="Hidden"/>
+                            <Label x:Name="lblInsurance" Content="Insurance" HorizontalAlignment="Left" Margin="371,6,0,0" VerticalAlignment="Top" Width="106" Visibility="Visible"/>
                         </Grid>
                         <Grid HorizontalAlignment="Left" Height="45" Margin="10,328,0,0" VerticalAlignment="Top" Width="485" Background="White">
                             <Button x:Name="btnFinalProcurement" Content="Save" HorizontalAlignment="Left" Margin="150,9,0,0" VerticalAlignment="Top" Width="75" Height="25" Foreground="White" FontWeight="Bold" FontSize="14" Click="btnFinalProcurement_Click">
@@ -899,7 +899,7 @@
                 </Grid>
                 <TextBox x:Name="txtSaleCustID" HorizontalAlignment="Left" Height="23" Margin="770,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="565" Visibility="Hidden" x:Name="grd_U_AddProducts" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" Loaded="grd_U_AddProducts_Loaded" d:IsLocked="True">
+            <Grid HorizontalAlignment="Left" Height="565" Visibility="Hidden" x:Name="grd_U_AddProducts" Margin="20,65,0,0" VerticalAlignment="Top" Width="1160" Background="#FFF0F0F0" Loaded="grd_U_AddProducts_Loaded">
                 <Grid x:Name="grdMainFormGrid" Height="430" Margin="150,75,85,0" VerticalAlignment="Top" Background="White">
                     <Label Content="Domain :" HorizontalAlignment="Left" Margin="49,29,0,0" VerticalAlignment="Top" Width="130"/>
                     <Label Content="Products :" HorizontalAlignment="Left" Margin="49,60,0,0" VerticalAlignment="Top" Width="130"/>
